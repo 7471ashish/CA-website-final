@@ -1,0 +1,5 @@
+# robots.txt for DRB & COMPANY Chartered Accountants
+User-agent: *
+Allow: /
+
+Sitemap: https://www.drbandcompany.com/sitemap.xml

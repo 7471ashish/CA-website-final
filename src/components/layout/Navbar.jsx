@@ -16,7 +16,6 @@ import {
   Award
 } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
-import ThemeToggle from '../common/ThemeToggle';
 
 export default function Navbar({ onOpenConsultation }) {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -42,90 +41,90 @@ export default function Navbar({ onOpenConsultation }) {
   }, [mobileOpen]);
 
   const navLinkClass = ({ isActive }) =>
-    `text-sm xl:text-[15px] font-extrabold tracking-tight whitespace-nowrap py-2 transition-colors duration-150 relative flex items-center gap-1 ${
+    `text-xs lg:text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold tracking-tight whitespace-nowrap py-1.5 transition-colors duration-150 relative flex items-center gap-1 ${
       isActive 
-        ? 'text-navy-950 dark:text-gold-400 font-black after:w-full' 
-        : 'text-slate-700 dark:text-slate-200 hover:text-navy-950 dark:hover:text-gold-400'
+        ? 'text-[#102c4c] font-black after:w-full' 
+        : 'text-slate-700 hover:text-[#102c4c]'
     } after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-gradient-to-r after:from-gold-400 after:to-gold-600 after:transition-all after:duration-200`;
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white/95 dark:bg-navy-950/95 backdrop-blur-md border-b-2 border-slate-200 dark:border-slate-800 shadow-md transition-colors duration-200 w-full">
-        <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 sm:h-24 w-full gap-4 xl:gap-8">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 shadow-md transition-colors duration-200 w-full">
+        <div className="w-full max-w-[1600px] mx-auto px-3 sm:px-5 lg:px-7">
+          <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20 w-full gap-3 lg:gap-4 xl:gap-6">
             
-            {/* 1. BRAND LOGO (Left) */}
-            <Link to="/" className="flex items-center gap-3 shrink-0 group">
-              <div className="p-1 sm:p-1.5 bg-white rounded-xl shadow-md border-2 border-gold-500/40 group-hover:border-gold-500 transition-colors">
+            {/* 1. BRAND LOGO (Left - Compact & Centered Text) */}
+            <Link to="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 group">
+              <div className="p-1 sm:p-1.5 bg-white rounded-xl shadow-sm border border-gold-500/40 group-hover:border-gold-500 transition-colors">
                 <img
                   src={siteConfig.caLogoUrl}
                   alt="ICAI Chartered Accountants Logo"
-                  className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
+                  className="h-8 sm:h-9 lg:h-11 xl:h-12 w-auto object-contain"
                 />
               </div>
               <div className="flex flex-col items-center justify-center text-center whitespace-nowrap">
-                <span className="block font-heading font-black text-base sm:text-xl lg:text-2xl text-[#102c4c] tracking-tight leading-tight group-hover:text-gold-600 transition-colors">
+                <span className="block font-heading font-black text-xs sm:text-base lg:text-lg xl:text-xl text-[#102c4c] tracking-tight leading-tight group-hover:text-gold-600 transition-colors">
                   {siteConfig.firmName}
                 </span>
-                <span className="inline-block text-[9px] sm:text-[11px] font-black text-gold-600 uppercase tracking-[0.18em] leading-none mt-1 bg-gold-50/80 px-2 py-0.5 rounded border border-gold-300/70 text-center">
+                <span className="inline-block text-[8px] sm:text-[9px] lg:text-[10px] xl:text-[11px] font-black text-gold-600 uppercase tracking-[0.16em] sm:tracking-[0.18em] leading-none mt-0.5 sm:mt-1 bg-gold-50/80 px-1.5 sm:px-2 py-0.5 rounded border border-gold-300/70 text-center">
                   {siteConfig.legalTitle}
                 </span>
               </div>
             </Link>
 
-            {/* 2. DESKTOP NAVIGATION (Center - Perfectly Spaced) */}
-            <nav className="hidden xl:flex items-center gap-5 2xl:gap-8 whitespace-nowrap">
+            {/* 2. DESKTOP & TABLET NAVIGATION (Visible on lg: >= 1024px) */}
+            <nav className="hidden lg:flex items-center gap-2.5 lg:gap-3.5 xl:gap-5 2xl:gap-7 whitespace-nowrap">
               <NavLink to="/" className={navLinkClass}>
                 Home
               </NavLink>
 
               {/* Start Business Dropdown */}
               <div
-                className="relative py-2"
+                className="relative py-1.5"
                 onMouseEnter={() => setActiveDropdown('business')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-sm xl:text-[15px] font-extrabold text-slate-700 dark:text-slate-200 hover:text-navy-950 dark:hover:text-gold-400 transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap">
+                <button className="text-xs lg:text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
                   <span>Start Business</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
 
                 {activeDropdown === 'business' && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[540px] bg-white dark:bg-navy-900 border-2 border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl p-6 animate-fadeIn z-50 grid grid-cols-2 gap-5">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[480px] xl:w-[540px] bg-white border-2 border-slate-200 rounded-2xl shadow-2xl p-5 animate-fadeIn z-50 grid grid-cols-2 gap-4">
                     <div>
-                      <div className="px-3 py-1 text-xs font-black uppercase tracking-wider text-gold-600 dark:text-gold-400 border-b-2 border-slate-100 dark:border-slate-800 mb-3">
+                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
                         Company Incorporation
                       </div>
                       <div className="space-y-1">
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • Private Limited Company
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • LLP Registration
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • One Person Company (OPC)
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • Partnership Registration
                         </Link>
                       </div>
                     </div>
                     <div>
-                      <div className="px-3 py-1 text-xs font-black uppercase tracking-wider text-gold-600 dark:text-gold-400 border-b-2 border-slate-100 dark:border-slate-800 mb-3">
+                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
                         Licenses &amp; Registrations
                       </div>
                       <div className="space-y-1">
-                        <Link to="/gst-registration" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/gst-registration" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • GST Registration (3-Day)
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • MSME Udyam Certificate
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • FSSAI Food License
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • Import Export Code (IEC)
                         </Link>
                       </div>
@@ -136,51 +135,51 @@ export default function Navbar({ onOpenConsultation }) {
 
               {/* Compliances & Audit Dropdown */}
               <div
-                className="relative py-2"
+                className="relative py-1.5"
                 onMouseEnter={() => setActiveDropdown('compliance')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-sm xl:text-[15px] font-extrabold text-slate-700 dark:text-slate-200 hover:text-navy-950 dark:hover:text-gold-400 transition-colors flex items-center gap-1 cursor-pointer whitespace-nowrap">
+                <button className="text-xs lg:text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
                   <span>Compliances &amp; Audit</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'compliance' ? 'rotate-180 text-gold-500' : ''}`} />
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'compliance' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
 
                 {activeDropdown === 'compliance' && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[540px] bg-white dark:bg-navy-900 border-2 border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl p-6 animate-fadeIn z-50 grid grid-cols-2 gap-5">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[480px] xl:w-[540px] bg-white border-2 border-slate-200 rounded-2xl shadow-2xl p-5 animate-fadeIn z-50 grid grid-cols-2 gap-4">
                     <div>
-                      <div className="px-3 py-1 text-xs font-black uppercase tracking-wider text-gold-600 dark:text-gold-400 border-b-2 border-slate-100 dark:border-slate-800 mb-3">
+                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
                         Filing &amp; Returns
                       </div>
                       <div className="space-y-1">
-                        <Link to="/itr-filing" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/itr-filing" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • ITR Filing (Forms 1-7)
                         </Link>
-                        <Link to="/gst-registration" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/gst-registration" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • GST Returns (GSTR-1, 3B)
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • ROC &amp; Annual MCA Filing
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • TDS Returns (24Q/26Q)
                         </Link>
                       </div>
                     </div>
                     <div>
-                      <div className="px-3 py-1 text-xs font-black uppercase tracking-wider text-gold-600 dark:text-gold-400 border-b-2 border-slate-100 dark:border-slate-800 mb-3">
+                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
                         Audit &amp; Assurance
                       </div>
                       <div className="space-y-1">
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • Tax Audit (Sec 44AB Form 3CD)
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • DISA (ICAI) Systems Audit
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • Statutory Company Audit
                         </Link>
-                        <Link to="/services" className="block px-3.5 py-2 text-sm font-bold text-slate-800 dark:text-slate-100 hover:text-gold-600 dark:hover:text-gold-400 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-xl whitespace-nowrap transition-colors">
+                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
                           • Bank &amp; Stock Audit
                         </Link>
                       </div>
@@ -206,26 +205,25 @@ export default function Navbar({ onOpenConsultation }) {
               </NavLink>
             </nav>
 
-            {/* 3. RIGHT ACTIONS (Book Consultation CTA) */}
-            <div className="hidden lg:flex items-center gap-3.5 shrink-0 whitespace-nowrap">
-              {/* Golden Consultation Button */}
+            {/* 3. RIGHT ACTIONS (Compact Golden Consultation CTA) */}
+            <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0 whitespace-nowrap">
               <button
                 onClick={() => onOpenConsultation()}
-                className="h-10 px-6 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer shrink-0 whitespace-nowrap"
+                className="h-9 px-3.5 xl:px-5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
               >
-                <BookmarkCheck className="w-4 h-4 shrink-0" />
+                <BookmarkCheck className="w-3.5 h-3.5 shrink-0" />
                 <span>Book Consultation</span>
               </button>
             </div>
 
-            {/* 4. MOBILE DRAWER HAMBURGER */}
-            <div className="flex xl:hidden items-center gap-2">
+            {/* 4. MOBILE DRAWER HAMBURGER (Only on phones < lg / < 1024px) */}
+            <div className="flex lg:hidden items-center gap-2">
               <button
                 onClick={() => setMobileOpen(true)}
-                className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-navy-900 hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
+                className="p-2 sm:p-2.5 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
                 aria-label="Open navigation menu"
               >
-                <Menu className="w-6 h-6 sm:w-7 sm:h-7" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
             </div>
 
@@ -235,69 +233,69 @@ export default function Navbar({ onOpenConsultation }) {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-[9999] xl:hidden">
+        <div className="fixed inset-0 z-[9999] lg:hidden">
           <div
             className="fixed inset-0 bg-navy-950/80 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileOpen(false)}
           ></div>
 
-          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white dark:bg-navy-900 shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+              <div className="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
                 <div className="flex items-center gap-2">
-                  <img src={siteConfig.caLogoUrl} alt="Logo" className="h-10 w-auto bg-white rounded p-1" />
+                  <img src={siteConfig.caLogoUrl} alt="Logo" className="h-9 w-auto bg-white rounded p-1" />
                   <span className="font-heading font-black text-base text-[#102c4c]">
                     {siteConfig.firmName}
                   </span>
                 </div>
                 <button
                   onClick={() => setMobileOpen(false)}
-                  className="p-2 rounded-lg text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
+                  className="p-2 rounded-lg text-slate-500 hover:text-slate-800"
                 >
-                  <X className="w-6 h-6" />
+                  <X className="w-5 h-5" />
                 </button>
               </div>
 
-              <div className="space-y-3.5 font-bold text-base">
-                <NavLink to="/" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 dark:text-slate-200 hover:text-gold-500">
+              <div className="space-y-3 font-bold text-sm">
+                <NavLink to="/" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 hover:text-gold-500">
                   Home
                 </NavLink>
-                <NavLink to="/services" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 dark:text-slate-200 hover:text-gold-500">
+                <NavLink to="/services" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 hover:text-gold-500">
                   All Services
                 </NavLink>
-                <NavLink to="/itr-filing" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 dark:text-slate-200 hover:text-gold-500">
+                <NavLink to="/itr-filing" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 hover:text-gold-500">
                   ITR Filing
                 </NavLink>
-                <NavLink to="/gst-registration" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 dark:text-slate-200 hover:text-gold-500">
+                <NavLink to="/gst-registration" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 hover:text-gold-500">
                   GST Registration &amp; Returns
                 </NavLink>
-                <NavLink to="/about" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 dark:text-slate-200 hover:text-gold-500">
+                <NavLink to="/about" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 hover:text-gold-500">
                   About Us (Partnership)
                 </NavLink>
-                <NavLink to="/careers" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 dark:text-slate-200 hover:text-gold-500">
+                <NavLink to="/careers" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 hover:text-gold-500">
                   Careers
                 </NavLink>
-                <NavLink to="/contact" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 dark:text-slate-200 hover:text-gold-500">
+                <NavLink to="/contact" onClick={() => setMobileOpen(false)} className="block py-2 text-slate-800 hover:text-gold-500">
                   Contact Office
                 </NavLink>
               </div>
             </div>
 
-            <div className="pt-6 border-t border-slate-200 dark:border-slate-800 space-y-3">
+            <div className="pt-6 border-t border-slate-200 space-y-3">
               <a
                 href={siteConfig.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 rounded-xl bg-[#25d366] text-white text-sm font-black flex items-center justify-center gap-2 shadow-md hover:brightness-105 transition-all"
+                className="w-full py-2.5 rounded-xl bg-[#25d366] text-white text-xs font-black flex items-center justify-center gap-2 shadow-md hover:brightness-105 transition-all"
               >
-                <span>💬 WhatsApp Direct Chat</span>
+                <span>💬 WhatsApp: {siteConfig.phones[0].display}</span>
               </a>
               <button
                 onClick={() => {
                   setMobileOpen(false);
                   onOpenConsultation();
                 }}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 text-navy-950 font-heading font-black text-xs uppercase tracking-wider shadow-md"
+                className="w-full py-2.5 rounded-xl bg-gradient-to-r from-gold-400 to-gold-600 text-navy-950 font-heading font-black text-xs uppercase tracking-wider shadow-md"
               >
                 Book Consultation
               </button>

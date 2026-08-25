@@ -78,15 +78,23 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    {svc.detailPath.startsWith('/') && !svc.detailPath.includes('#') && (
-                      <Link
-                        to={svc.detailPath}
-                        className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-xs text-center transition-colors border border-slate-200 flex items-center gap-1.5 shrink-0"
+                    <div className="flex items-center gap-3 w-full sm:w-auto shrink-0">
+                      <button
+                        onClick={() => onOpenConsultation(svc.title)}
+                        className="py-2.5 px-5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs uppercase tracking-wider shadow-md hover:from-gold-300 hover:to-gold-500 transition-all text-center cursor-pointer shrink-0"
                       >
-                        <span>Dedicated Page</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
-                    )}
+                        Book Appointment
+                      </button>
+                      {svc.detailPath.startsWith('/') && !svc.detailPath.includes('#') && (
+                        <Link
+                          to={svc.detailPath}
+                          className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-xs text-center transition-colors border border-slate-200 flex items-center gap-1.5 shrink-0"
+                        >
+                          <span>Dedicated Page</span>
+                          <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      )}
+                    </div>
                   </div>
 
                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed my-6">

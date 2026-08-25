@@ -1,5 +1,6 @@
 import React from 'react';
-import { ShieldCheck, MapPin, Users, Monitor, Lock, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ShieldCheck, MapPin, Users, Monitor, Lock, CheckCircle2, ArrowRight } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
 export default function OfficeShowcaseSection({ onOpenConsultation }) {
@@ -119,6 +120,17 @@ export default function OfficeShowcaseSection({ onOpenConsultation }) {
 
           </div>
 
+        </div>
+
+        {/* Read Complete Firm Profile Action Button */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2 py-3.5 px-9 rounded-xl bg-navy-950 dark:bg-gold-500 text-white dark:text-navy-950 font-heading font-black text-xs uppercase tracking-wider hover:bg-navy-900 dark:hover:bg-gold-400 hover:scale-105 transition-all shadow-xl cursor-pointer"
+          >
+            <span>Read Complete Firm Profile</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
       </div>

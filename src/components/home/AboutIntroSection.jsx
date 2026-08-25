@@ -102,17 +102,6 @@ export default function AboutIntroSection({ onOpenConsultation }) {
 
         </div>
 
-        {/* Action Button */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Link
-            to="/about"
-            className="inline-flex items-center gap-2 py-3.5 px-9 rounded-xl bg-navy-950 dark:bg-gold-500 text-white dark:text-navy-950 font-heading font-black text-xs uppercase tracking-wider hover:bg-navy-900 dark:hover:bg-gold-400 transition-all shadow-lg cursor-pointer"
-          >
-            <span>Read Complete Firm Profile</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-
       </div>
     </section>
   );

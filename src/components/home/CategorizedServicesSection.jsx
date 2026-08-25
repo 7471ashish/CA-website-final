@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Building2, 
@@ -13,206 +13,146 @@ import {
   Landmark,
   CheckCircle2,
   Scale,
-  ChevronLeft,
-  ChevronRight,
   Sparkles
 } from 'lucide-react';
 
 export default function CategorizedServicesSection({ onOpenConsultation }) {
-  // 1. Business Registrations Data
+  // 1. Business Registrations Data (CAGMC Style Clean Grid)
   const businessRegistrations = [
     {
       title: "Foreign Company Registration",
       desc: "Setting up a foreign company subsidiary, branch, or liaison office in India with 100% RBI/FDI compliance.",
       icon: Globe,
-      badge: "Global FDI",
       link: "/company-incorporation"
     },
     {
       title: "Private Limited Company",
       desc: "The most popular corporate entity for startups and enterprises with limited liability protection and equity access.",
       icon: Building2,
-      badge: "Most Popular",
       link: "/company-incorporation"
     },
     {
       title: "Public Limited Company",
       desc: "Suitable for large enterprises aiming to raise equity capital from the public and financial institutions.",
       icon: Scale,
-      badge: "Public Capital",
       link: "/company-incorporation"
     },
     {
       title: "LLP Registration",
       desc: "Ideal structure for professional firms and businesses having multiple partners with limited liability.",
       icon: Briefcase,
-      badge: "Flexible Structure",
+      link: "/company-incorporation"
+    },
+    {
+      title: "Nidhi Company Registration",
+      desc: "Promote mutual thrift and savings by collecting deposits and lending exclusively among members.",
+      icon: Landmark,
+      link: "/company-incorporation"
+    },
+    {
+      title: "Producer Company",
+      desc: "Specialized corporate entity for farmers and agricultural producers with specialized MCA compliances.",
+      icon: Award,
       link: "/company-incorporation"
     },
     {
       title: "One Person Company (OPC)",
       desc: "Corporate business entity ideal for solo entrepreneurs aiming to start a company with 100% single ownership.",
       icon: Building2,
-      badge: "Solo Founder",
       link: "/company-incorporation"
     },
     {
       title: "Partnership Registration",
       desc: "Forming a partnership firm with customized partnership deed drafting and registrar authentication.",
       icon: Briefcase,
-      badge: "Quick Setup",
       link: "/company-incorporation"
     },
     {
       title: "GST Registration (3-Day)",
       desc: "Quick 3-day express GSTIN registration under the Goods and Services Tax Act with zero hassle.",
       icon: Tags,
-      badge: "3-Day Express",
       link: "/gst-registration"
     },
     {
       title: "MSME Udyam Registration",
       desc: "Central government Udyam certification unlocking priority bank lending, subsidies, and tender exemptions.",
       icon: Award,
-      badge: "Govt Subsidies",
       link: "/services"
     },
     {
       title: "FSSAI Food License",
-      desc: "Mandatory Food Safety license for manufacturers, traders, restaurants, and cloud kitchens.",
+      desc: "Mandatory Food Safety license for manufacturers, traders, restaurants, and food cloud kitchens.",
       icon: ShieldCheck,
-      badge: "Food Safety",
       link: "/services"
     },
     {
       title: "Import Export Code (IEC)",
       desc: "10-digit DGFT license mandatory for importing/exporting commercial goods or international services.",
       icon: Globe,
-      badge: "Lifetime Valid",
       link: "/services"
     }
   ];
 
-  // 2. Audit & Tax Services Data
+  // 2. Audit & Tax Services Data (CAGMC Style Clean Grid)
   const auditTaxServices = [
     {
       title: "ITR Filing (Forms 1-7)",
       desc: "Comprehensive direct tax return filing for salaried, business, capital gains, and NRI taxpayers.",
       icon: FileText,
-      badge: "AIS/TIS Sync",
       link: "/itr-filing"
     },
     {
       title: "GST Returns & GSTR-9",
       desc: "Monthly GSTR-1, GSTR-3B filings, automatic GSTR-2B purchase input reconciliation, and annual audit.",
       icon: Tags,
-      badge: "ITC Reconciliation",
       link: "/gst-registration"
     },
     {
       title: "ROC & MCA Annual Filings",
       desc: "Filing of Form AOC-4 (Financials), MGT-7 (Annual Return), Director DIR-3 KYC, and secretarial compliance.",
       icon: Briefcase,
-      badge: "Zero Penalty",
       link: "/company-incorporation"
     },
     {
       title: "TDS / TCS Return Filings",
       desc: "Quarterly TDS return e-filing for salary (24Q), non-salary (26Q), TCS (27EQ), and Form 16/16A generation.",
       icon: ClipboardCheck,
-      badge: "Form 16/16A",
       link: "/itr-filing"
     },
     {
-      title: "Tax Audit (Sec 44AB)",
+      title: "Tax Audit (Sec 44AB Form 3CD)",
       desc: "Comprehensive Tax Audit under Section 44AB with Form 3CA/3CB and detailed Form 3CD reporting.",
       icon: CheckCircle2,
-      badge: "Form 3CD",
       link: "/audit-assurance"
     },
     {
       title: "DISA (ICAI) Systems Audit",
-      desc: "Certified Information Systems Audit conducted by DISA (ICAI) systems auditor CA. DEEPANSHI BANSAL.",
+      desc: "Certified Information Systems Audit conducted by DISA (ICAI) qualified systems auditor CA. DEEPANSHI BANSAL.",
       icon: ShieldCheck,
-      badge: "DISA Certified",
       link: "/audit-assurance"
     },
     {
       title: "Statutory Company Audit",
       desc: "Independent statutory audits for Private Limited companies, LLPs, and corporate trusts under Companies Act 2013.",
       icon: ShieldCheck,
-      badge: "ICAI Auditing",
       link: "/audit-assurance"
     },
     {
       title: "Bank & Stock Audits",
       desc: "Concurrent audits, stock verifications, and compliance monitoring for nationalized and private banks.",
       icon: Landmark,
-      badge: "Bank Panel Grade",
       link: "/audit-assurance"
     }
   ];
 
-  // Carousel 1 (Business Registration) State
-  const [bizIndex, setBizIndex] = useState(1);
-  const [bizPaused, setBizPaused] = useState(false);
-
-  // Carousel 2 (Audit & Tax) State
-  const [auditIndex, setAuditIndex] = useState(1);
-  const [auditPaused, setAuditPaused] = useState(false);
-
-  // Auto transition with active continuous auto-sliding (2.4s interval)
-  useEffect(() => {
-    if (bizPaused) return;
-    const interval = setInterval(() => {
-      setBizIndex((prev) => (prev + 1) % businessRegistrations.length);
-    }, 2400);
-    return () => clearInterval(interval);
-  }, [bizPaused, businessRegistrations.length]);
-
-  // Auto transition with active continuous auto-sliding (2.6s interval)
-  useEffect(() => {
-    if (auditPaused) return;
-    const interval = setInterval(() => {
-      setAuditIndex((prev) => (prev + 1) % auditTaxServices.length);
-    }, 2600);
-    return () => clearInterval(interval);
-  }, [auditPaused, auditTaxServices.length]);
-
-  const prevBiz = () => {
-    setBizIndex((prev) => (prev - 1 + businessRegistrations.length) % businessRegistrations.length);
-  };
-  const nextBiz = () => {
-    setBizIndex((prev) => (prev + 1) % businessRegistrations.length);
-  };
-
-  const prevAudit = () => {
-    setAuditIndex((prev) => (prev - 1 + auditTaxServices.length) % auditTaxServices.length);
-  };
-  const nextAudit = () => {
-    setAuditIndex((prev) => (prev + 1) % auditTaxServices.length);
-  };
-
-  // Helper to get 5 visible items centered around activeIndex
-  const getVisibleItems = (list, active) => {
-    const total = list.length;
-    return [-2, -1, 0, 1, 2].map((offset) => {
-      const idx = (active + offset + total) % total;
-      return { item: list[idx], offset, originalIndex: idx };
-    });
-  };
-
-  const visibleBiz = getVisibleItems(businessRegistrations, bizIndex);
-  const visibleAudit = getVisibleItems(auditTaxServices, auditIndex);
-
   return (
-    <div className="space-y-0 overflow-hidden">
+    <div className="space-y-0">
       
-      {/* SECTION 1: Business Registrations (Center Zoom Spotlight Carousel) */}
+      {/* SECTION 1: Business Registrations (Clean Simple 4-Column Grid) */}
       <section className="py-20 bg-[#f9fafb] text-slate-800 transition-colors duration-200 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-14">
             <div className="text-center sm:text-left">
               <span className="inline-block text-xs font-black uppercase tracking-widest text-[#2f8524] bg-emerald-100/80 border border-emerald-300 px-3.5 py-1 rounded-full mb-2">
                 Incorporation &amp; Licensing
@@ -220,158 +160,68 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               <h2 className="font-heading text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
                 Business Registrations
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1">
-                Fast incorporation &amp; statutory licensing across all legal structures (Active card centered &amp; zoomed)
+              <div className="w-16 h-1.5 bg-[#55b848] rounded-full mt-2 mx-auto sm:mx-0"></div>
+              <p className="text-xs sm:text-sm text-slate-600 mt-2">
+                Fast, hassle-free incorporation and statutory government licensing for all legal structures
               </p>
             </div>
 
-            {/* Left/Right Controls & See All Button */}
-            <div className="flex items-center gap-3 shrink-0">
-              <Link
-                to="/services"
-                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
-              >
-                <span>See All Services</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <div className="flex items-center gap-1.5">
-                <button
-                  onClick={prevBiz}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                  title="Previous Service"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={nextBiz}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                  title="Next Service"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs shrink-0 cursor-pointer"
+            >
+              <span>See All Services</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
-          {/* Center-Zoom Showcase Track */}
-          <div 
-            className="relative py-8 px-2 overflow-hidden"
-            onMouseEnter={() => setBizPaused(true)}
-            onMouseLeave={() => setBizPaused(false)}
-          >
-            <div className="flex items-center justify-center gap-4 sm:gap-6 min-h-[360px]">
-              {visibleBiz.map(({ item, offset, originalIndex }) => {
-                const isCenter = offset === 0;
-                const isAdjacent = Math.abs(offset) === 1;
-                const Icon = item.icon;
-
-                // Only render 3 on mobile, 5 on desktop
-                const isHiddenOnMobile = Math.abs(offset) === 2;
-
-                return (
-                  <div
-                    key={`${item.title}-${offset}`}
-                    onClick={() => setBizIndex(originalIndex)}
-                    className={`transition-all duration-700 ease-in-out transform cursor-pointer flex flex-col justify-between rounded-3xl ${
-                      isHiddenOnMobile ? 'hidden lg:flex' : 'flex'
-                    } ${
-                      isCenter
-                        ? 'w-[320px] sm:w-[380px] scale-105 sm:scale-110 z-30 bg-white border-3 border-emerald-500 shadow-2xl p-6 sm:p-7 ring-4 ring-emerald-500/15'
-                        : isAdjacent
-                        ? 'w-[260px] sm:w-[290px] scale-95 z-20 bg-white/90 border-2 border-slate-200 shadow-md p-5 opacity-75 hover:opacity-100 hover:border-emerald-300'
-                        : 'w-[230px] scale-90 z-10 bg-white/70 border border-slate-200 p-4 opacity-40 hover:opacity-75'
-                    }`}
-                  >
-                    <div>
-                      {/* Top Row */}
-                      <div className="flex items-center justify-between gap-2 mb-3.5">
-                        <div className={`rounded-2xl flex items-center justify-center transition-all ${
-                          isCenter
-                            ? 'w-14 h-14 bg-gradient-to-br from-emerald-500 to-emerald-700 text-white shadow-md'
-                            : 'w-11 h-11 bg-emerald-50 text-emerald-700 border border-emerald-200'
-                        }`}>
-                          <Icon className={isCenter ? "w-7 h-7" : "w-5 h-5"} />
-                        </div>
-                        <span className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full border ${
-                          isCenter
-                            ? 'bg-emerald-100 text-emerald-800 border-emerald-300 shadow-xs font-black'
-                            : 'bg-slate-100 text-slate-600 border-slate-200'
-                        }`}>
-                          {item.badge}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className={`font-heading font-black text-navy-950 leading-snug mb-2 transition-colors ${
-                        isCenter ? 'text-lg sm:text-xl text-[#102c4c]' : 'text-sm sm:text-base text-slate-800'
-                      }`}>
-                        {item.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className={`text-slate-600 leading-relaxed font-medium ${
-                        isCenter ? 'text-xs sm:text-sm line-clamp-3 mb-4' : 'text-xs line-clamp-2 mb-2'
-                      }`}>
-                        {item.desc}
-                      </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {businessRegistrations.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl p-6 border-2 border-slate-300 hover:border-[#55b848] shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between text-center group"
+                >
+                  <div>
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#2f8524] group-hover:bg-[#55b848] group-hover:text-white transition-all shadow-2xs">
+                      <Icon className="w-7 h-7" />
                     </div>
-
-                    {/* Actions */}
-                    <div className={`pt-3 border-t flex items-center justify-between gap-2 ${
-                      isCenter ? 'border-emerald-100' : 'border-slate-100'
-                    }`}>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenConsultation(item.title);
-                        }}
-                        className={`font-heading font-black text-xs uppercase tracking-wider transition-all cursor-pointer ${
-                          isCenter
-                            ? 'py-2 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-700 text-white shadow-md hover:brightness-110'
-                            : 'py-1 px-2.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-[11px]'
-                        }`}
-                      >
-                        Inquire
-                      </button>
-                      <Link
-                        to={item.link}
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-xs font-bold text-slate-700 hover:text-emerald-700 flex items-center gap-1 transition-colors"
-                      >
-                        <span>Details</span>
-                        <ArrowRight className="w-3 h-3" />
-                      </Link>
-                    </div>
+                    <h3 className="font-heading text-base sm:text-lg font-black text-navy-950 mb-2 group-hover:text-emerald-700 transition-colors line-clamp-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed mb-4">
+                      {item.desc}
+                    </p>
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Dot Pagination */}
-            <div className="flex items-center justify-center gap-2 mt-8">
-              {businessRegistrations.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setBizIndex(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    bizIndex === i
-                      ? 'w-8 bg-emerald-600 shadow-xs'
-                      : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                  }`}
-                  title={`Go to item ${i + 1}`}
-                />
-              ))}
-            </div>
+                  <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
+                    <button
+                      onClick={() => onOpenConsultation(item.title)}
+                      className="py-1.5 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
+                    >
+                      Inquire
+                    </button>
+                    <Link
+                      to={item.link}
+                      className="text-xs font-extrabold text-slate-700 hover:text-emerald-700 flex items-center gap-1 transition-colors"
+                    >
+                      <span>Details</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 2: Audit and Tax Management (Center Zoom Spotlight Carousel) */}
+      {/* SECTION 2: Audit and Tax Management (Clean Simple 4-Column Grid) */}
       <section className="py-20 bg-white text-slate-800 transition-colors duration-200 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-14">
             <div className="text-center sm:text-left">
               <span className="inline-block text-xs font-black uppercase tracking-widest text-[#d9630e] bg-orange-100/80 border border-orange-300 px-3.5 py-1 rounded-full mb-2">
                 Taxation &amp; Assurance
@@ -379,148 +229,58 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               <h2 className="font-heading text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
                 Audit and Tax Management
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1">
+              <div className="w-16 h-1.5 bg-[#f37920] rounded-full mt-2 mx-auto sm:mx-0"></div>
+              <p className="text-xs sm:text-sm text-slate-600 mt-2">
                 Partner-led taxation strategy, statutory audits under ICAI standards &amp; MCA compliances
               </p>
             </div>
 
-            {/* Left/Right Controls & See All Button */}
-            <div className="flex items-center gap-3 shrink-0">
-              <Link
-                to="/services"
-                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 hover:bg-orange-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
-              >
-                <span>See All Services</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-              <div className="flex items-center gap-1.5">
-                <button
-                  onClick={prevAudit}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                  title="Previous Service"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={nextAudit}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                  title="Next Service"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 hover:bg-orange-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs shrink-0 cursor-pointer"
+            >
+              <span>See All Services</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
-          {/* Center-Zoom Showcase Track */}
-          <div 
-            className="relative py-8 px-2 overflow-hidden"
-            onMouseEnter={() => setAuditPaused(true)}
-            onMouseLeave={() => setAuditPaused(false)}
-          >
-            <div className="flex items-center justify-center gap-4 sm:gap-6 min-h-[360px]">
-              {visibleAudit.map(({ item, offset, originalIndex }) => {
-                const isCenter = offset === 0;
-                const isAdjacent = Math.abs(offset) === 1;
-                const Icon = item.icon;
-
-                // Only render 3 on mobile, 5 on desktop
-                const isHiddenOnMobile = Math.abs(offset) === 2;
-
-                return (
-                  <div
-                    key={`${item.title}-${offset}`}
-                    onClick={() => setAuditIndex(originalIndex)}
-                    className={`transition-all duration-700 ease-in-out transform cursor-pointer flex flex-col justify-between rounded-3xl ${
-                      isHiddenOnMobile ? 'hidden lg:flex' : 'flex'
-                    } ${
-                      isCenter
-                        ? 'w-[320px] sm:w-[380px] scale-105 sm:scale-110 z-30 bg-white border-3 border-orange-500 shadow-2xl p-6 sm:p-7 ring-4 ring-orange-500/15'
-                        : isAdjacent
-                        ? 'w-[260px] sm:w-[290px] scale-95 z-20 bg-white/90 border-2 border-slate-200 shadow-md p-5 opacity-75 hover:opacity-100 hover:border-orange-300'
-                        : 'w-[230px] scale-90 z-10 bg-white/70 border border-slate-200 p-4 opacity-40 hover:opacity-75'
-                    }`}
-                  >
-                    <div>
-                      {/* Top Row */}
-                      <div className="flex items-center justify-between gap-2 mb-3.5">
-                        <div className={`rounded-2xl flex items-center justify-center transition-all ${
-                          isCenter
-                            ? 'w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-md'
-                            : 'w-11 h-11 bg-orange-50 text-orange-700 border border-orange-200'
-                        }`}>
-                          <Icon className={isCenter ? "w-7 h-7" : "w-5 h-5"} />
-                        </div>
-                        <span className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full border ${
-                          isCenter
-                            ? 'bg-orange-100 text-orange-800 border-orange-300 shadow-xs font-black'
-                            : 'bg-slate-100 text-slate-600 border-slate-200'
-                        }`}>
-                          {item.badge}
-                        </span>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className={`font-heading font-black text-navy-950 leading-snug mb-2 transition-colors ${
-                        isCenter ? 'text-lg sm:text-xl text-[#102c4c]' : 'text-sm sm:text-base text-slate-800'
-                      }`}>
-                        {item.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className={`text-slate-600 leading-relaxed font-medium ${
-                        isCenter ? 'text-xs sm:text-sm line-clamp-3 mb-4' : 'text-xs line-clamp-2 mb-2'
-                      }`}>
-                        {item.desc}
-                      </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {auditTaxServices.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl p-6 border-2 border-slate-300 hover:border-[#f37920] shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between text-center group"
+                >
+                  <div>
+                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center text-[#d9630e] group-hover:bg-[#f37920] group-hover:text-white transition-all shadow-2xs">
+                      <Icon className="w-7 h-7" />
                     </div>
-
-                    {/* Actions */}
-                    <div className={`pt-3 border-t flex items-center justify-between gap-2 ${
-                      isCenter ? 'border-orange-100' : 'border-slate-100'
-                    }`}>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          onOpenConsultation(item.title);
-                        }}
-                        className={`font-heading font-black text-xs uppercase tracking-wider transition-all cursor-pointer ${
-                          isCenter
-                            ? 'py-2 px-4 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 text-white shadow-md hover:brightness-110'
-                            : 'py-1 px-2.5 rounded-lg bg-orange-50 text-orange-800 border border-orange-200 text-[11px]'
-                        }`}
-                      >
-                        Inquire
-                      </button>
-                      <Link
-                        to={item.link}
-                        onClick={(e) => e.stopPropagation()}
-                        className="text-xs font-bold text-slate-700 hover:text-orange-700 flex items-center gap-1 transition-colors"
-                      >
-                        <span>Details</span>
-                        <ArrowRight className="w-3 h-3" />
-                      </Link>
-                    </div>
+                    <h3 className="font-heading text-base sm:text-lg font-black text-navy-950 mb-2 group-hover:text-[#d9630e] transition-colors line-clamp-1">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed mb-4">
+                      {item.desc}
+                    </p>
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Dot Pagination */}
-            <div className="flex items-center justify-center gap-2 mt-8">
-              {auditTaxServices.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setAuditIndex(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                    auditIndex === i
-                      ? 'w-8 bg-orange-600 shadow-xs'
-                      : 'w-2.5 bg-slate-300 hover:bg-slate-400'
-                  }`}
-                  title={`Go to item ${i + 1}`}
-                />
-              ))}
-            </div>
+                  <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
+                    <button
+                      onClick={() => onOpenConsultation(item.title)}
+                      className="py-1.5 px-3 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-black uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
+                    >
+                      Inquire
+                    </button>
+                    <Link
+                      to={item.link}
+                      className="text-xs font-extrabold text-slate-700 hover:text-orange-700 flex items-center gap-1 transition-colors"
+                    >
+                      <span>Details</span>
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
         </div>

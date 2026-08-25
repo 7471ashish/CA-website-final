@@ -161,21 +161,21 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
   const [auditIndex, setAuditIndex] = useState(1);
   const [auditPaused, setAuditPaused] = useState(false);
 
-  // Auto transition with delayed rotation for Business Registrations
+  // Auto transition with active continuous auto-sliding (2.4s interval)
   useEffect(() => {
     if (bizPaused) return;
     const interval = setInterval(() => {
       setBizIndex((prev) => (prev + 1) % businessRegistrations.length);
-    }, 3800);
+    }, 2400);
     return () => clearInterval(interval);
   }, [bizPaused, businessRegistrations.length]);
 
-  // Auto transition with delayed rotation for Audit & Tax
+  // Auto transition with active continuous auto-sliding (2.6s interval)
   useEffect(() => {
     if (auditPaused) return;
     const interval = setInterval(() => {
       setAuditIndex((prev) => (prev + 1) % auditTaxServices.length);
-    }, 4200);
+    }, 2600);
     return () => clearInterval(interval);
   }, [auditPaused, auditTaxServices.length]);
 
@@ -263,7 +263,7 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
                   <div
                     key={`${item.title}-${offset}`}
                     onClick={() => setBizIndex(originalIndex)}
-                    className={`transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between rounded-3xl ${
+                    className={`transition-all duration-700 ease-in-out transform cursor-pointer flex flex-col justify-between rounded-3xl ${
                       isHiddenOnMobile ? 'hidden lg:flex' : 'flex'
                     } ${
                       isCenter
@@ -413,7 +413,7 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
                   <div
                     key={`${item.title}-${offset}`}
                     onClick={() => setAuditIndex(originalIndex)}
-                    className={`transition-all duration-500 ease-out cursor-pointer flex flex-col justify-between rounded-3xl ${
+                    className={`transition-all duration-700 ease-in-out transform cursor-pointer flex flex-col justify-between rounded-3xl ${
                       isHiddenOnMobile ? 'hidden lg:flex' : 'flex'
                     } ${
                       isCenter

@@ -3,6 +3,7 @@ import { Link, useOutletContext } from 'react-router-dom';
 import { FileText, CheckCircle2, ArrowRight, Phone, MessageSquare, ShieldCheck, Clock, FileCheck } from 'lucide-react';
 import SEO from '../components/common/SEO';
 import { siteConfig } from '../data/siteConfig';
+import InteractiveDocumentChecklist from '../components/common/InteractiveDocumentChecklist';
 
 export default function ItrFilingPage() {
   const { onOpenConsultation } = useOutletContext();
@@ -98,39 +99,19 @@ export default function ItrFilingPage() {
                 </div>
               </div>
 
-              {/* Document Checklist */}
-              <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-                <h3 className="font-heading text-xl font-bold text-navy-900 dark:text-white mb-6">
-                  Documents Required for ITR Filing
-                </h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>PAN Card &amp; Aadhaar Card</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Form 16 (Part A &amp; B) from employer</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Bank statements for April to March</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>80C Receipts (PPF, ELSS, Insurance)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>80D Health insurance premium receipts</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Housing loan interest certificate</span>
-                  </li>
-                </ul>
-              </div>
-
+              {/* Interactive Document Checklist */}
+              <InteractiveDocumentChecklist
+                serviceTitle="Income Tax & ITR Filing"
+                documents={[
+                  "PAN Card & Aadhaar Card",
+                  "Form 16 (Part A & B) from employer",
+                  "Bank statements for April to March",
+                  "80C Receipts (PPF, ELSS, Insurance)",
+                  "80D Health insurance premium receipts",
+                  "Housing loan interest certificate & Capital Gains details"
+                ]}
+                onOpenConsultation={onOpenConsultation}
+              />
             </div>
 
             {/* Right Sticky Sidebar */}

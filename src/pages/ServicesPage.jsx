@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO';
 import { servicesData } from '../data/servicesData';
 import { siteConfig } from '../data/siteConfig';
 import TrustBanner from '../components/common/TrustBanner';
+import InteractiveDocumentChecklist from '../components/common/InteractiveDocumentChecklist';
 
 const iconMap = {
   FileText: FileText,
@@ -116,21 +117,12 @@ export default function ServicesPage() {
                       </ul>
                     </div>
 
-                    {/* Required Documents */}
-                    <div className="bg-slate-50 dark:bg-navy-950/80 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 sm:p-6">
-                      <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-navy-900 dark:text-white mb-4 flex items-center gap-2">
-                        <FileCheck className="w-4 h-4 text-gold-500" />
-                        <span>Client Document Checklist</span>
-                      </h3>
-                      <ul className="space-y-2.5">
-                        {svc.documents.map((doc, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                            <span className="text-emerald-500 font-bold mt-0.5">&check;</span>
-                            <span>{doc}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {/* Interactive Required Documents Checklist */}
+                    <InteractiveDocumentChecklist
+                      serviceTitle={svc.title}
+                      documents={svc.documents}
+                      onOpenConsultation={onOpenConsultation}
+                    />
                   </div>
                 </div>
               );

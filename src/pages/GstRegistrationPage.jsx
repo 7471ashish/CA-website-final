@@ -3,6 +3,7 @@ import { Link, useOutletContext } from 'react-router-dom';
 import { Building2, CheckCircle2, Phone, MessageSquare, ShieldCheck, Clock, FileCheck } from 'lucide-react';
 import SEO from '../components/common/SEO';
 import { siteConfig } from '../data/siteConfig';
+import InteractiveDocumentChecklist from '../components/common/InteractiveDocumentChecklist';
 
 export default function GstRegistrationPage() {
   const { onOpenConsultation } = useOutletContext();
@@ -98,39 +99,19 @@ export default function GstRegistrationPage() {
                 </div>
               </div>
 
-              {/* Document Checklist */}
-              <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm">
-                <h3 className="font-heading text-xl font-bold text-navy-900 dark:text-white mb-6">
-                  Documents Required for New GST Registration
-                </h3>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>PAN &amp; Aadhaar of Applicant / Partners</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Business Address Proof (Electricity Bill)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Rent Agreement &amp; Landlord NOC</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Cancelled Cheque / Bank Statement</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Passport Size Photographs</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                    <span>Partnership Deed / COI (if entity)</span>
-                  </li>
-                </ul>
-              </div>
-
+              {/* Interactive Document Checklist */}
+              <InteractiveDocumentChecklist
+                serviceTitle="GST Registration & Compliances"
+                documents={[
+                  "PAN & Aadhaar of Applicant / Partners",
+                  "Business Address Proof (Electricity Bill)",
+                  "Rent Agreement & Landlord NOC",
+                  "Cancelled Cheque / Bank Statement",
+                  "Passport Size Photographs",
+                  "Partnership Deed / COI (if Company or Firm)"
+                ]}
+                onOpenConsultation={onOpenConsultation}
+              />
             </div>
 
             {/* Right Sticky Sidebar */}

@@ -63,11 +63,11 @@ export default function Navbar({ onOpenConsultation }) {
                   className="h-10 sm:h-12 lg:h-14 w-auto object-contain"
                 />
               </div>
-              <div className="whitespace-nowrap">
-                <span className="block font-heading font-black text-base sm:text-xl lg:text-2xl text-navy-950 dark:text-white tracking-tight leading-tight group-hover:text-gold-600 dark:group-hover:text-gold-400 transition-colors">
+              <div className="flex flex-col items-center justify-center text-center whitespace-nowrap">
+                <span className="block font-heading font-black text-base sm:text-xl lg:text-2xl text-[#102c4c] tracking-tight leading-tight group-hover:text-gold-600 transition-colors">
                   {siteConfig.firmName}
                 </span>
-                <span className="inline-block text-[9px] sm:text-[11px] font-black text-gold-600 dark:text-gold-400 uppercase tracking-[0.18em] leading-none mt-0.5 bg-gold-50 dark:bg-gold-500/10 px-1.5 sm:px-2 py-0.5 rounded border border-gold-300/60 dark:border-gold-500/30">
+                <span className="inline-block text-[9px] sm:text-[11px] font-black text-gold-600 uppercase tracking-[0.18em] leading-none mt-1 bg-gold-50/80 px-2 py-0.5 rounded border border-gold-300/70 text-center">
                   {siteConfig.legalTitle}
                 </span>
               </div>
@@ -246,7 +246,7 @@ export default function Navbar({ onOpenConsultation }) {
               <div className="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
                 <div className="flex items-center gap-2">
                   <img src={siteConfig.caLogoUrl} alt="Logo" className="h-10 w-auto bg-white rounded p-1" />
-                  <span className="font-heading font-black text-base text-navy-950 dark:text-white">
+                  <span className="font-heading font-black text-base text-[#102c4c]">
                     {siteConfig.firmName}
                   </span>
                 </div>

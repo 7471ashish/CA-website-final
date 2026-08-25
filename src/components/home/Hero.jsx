@@ -89,22 +89,22 @@ export default function Hero({ onOpenConsultation }) {
         </div>
 
         {/* Wide Bottom Trust Badges */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl mt-6">
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">250+</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">Clients</span>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 w-full max-w-5xl mt-6">
+          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
+            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">250+</span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">Clients Served</span>
           </div>
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">100%</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">ICAI UDIN Verified</span>
+          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
+            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CA Deepanshi Bansal</span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">B.Com, ACA, DISA</span>
           </div>
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">FCA &amp; ACA</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">Senior Partners</span>
+          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
+            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CA Parul</span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">M.Com, FCA</span>
           </div>
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">{siteConfig.locationCity}</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">Budhana Gate Office</span>
+          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
+            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">Meerut</span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">Main Office</span>
           </div>
         </div>
 

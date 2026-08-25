@@ -32,17 +32,6 @@ export default function Hero({ onOpenConsultation }) {
       {/* Spacious, Open, Uncluttered Container */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center flex flex-col items-center justify-center">
         
-        {/* Top Live Availability Pill */}
-        <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-black/70 border border-gold-400/80 text-gold-300 text-xs font-bold backdrop-blur-md shadow-2xl mb-6">
-          <span className="flex h-2.5 w-2.5 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-          </span>
-          <span className="uppercase tracking-widest text-[11px] font-extrabold text-white">
-            {siteConfig.firmName} &bull; {siteConfig.legalTitle}
-          </span>
-        </div>
-
         {/* Grand Headline */}
         <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] max-w-5xl">
           Welcome to <br />

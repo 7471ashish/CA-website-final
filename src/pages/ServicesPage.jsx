@@ -49,46 +49,46 @@ export default function ServicesPage() {
           
           <TrustBanner />
 
-          {/* 8 Detailed Service Sections */}
-          <div className="space-y-12">
+          {/* 8 Detailed Service Sections - Compact & Sleek */}
+          <div className="space-y-6 sm:space-y-8">
             {servicesData.map((svc) => {
               const Icon = iconMap[svc.iconName] || FileText;
               return (
                 <div
                   key={svc.id}
                   id={svc.id}
-                  className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm hover:border-gold-400/80 dark:hover:border-gold-500/80 transition-all duration-300 scroll-mt-28"
+                  className="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-7 shadow-sm hover:border-gold-400/80 transition-all duration-300 scroll-mt-24"
                 >
-                  <div className="flex flex-col lg:flex-row items-start justify-between gap-6 pb-6 border-b border-slate-100 dark:border-slate-800">
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-14 rounded-2xl bg-navy-900 dark:bg-navy-800 text-gold-400 flex items-center justify-center shrink-0 shadow-md border border-slate-800 dark:border-slate-700">
-                        <Icon className="w-7 h-7" />
+                  <div className="flex flex-col lg:flex-row items-start justify-between gap-4 pb-4 border-b border-slate-100">
+                    <div className="flex items-center gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center shrink-0 shadow-sm border border-slate-800">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
                       <div>
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs font-extrabold text-gold-600 dark:text-gold-400 uppercase tracking-widest">
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-[11px] sm:text-xs font-extrabold text-gold-600 uppercase tracking-widest">
                             Practice {svc.num}
                           </span>
-                          <span className="text-slate-300 dark:text-slate-600">&bull;</span>
-                          <span className="text-xs font-bold text-slate-500 dark:text-slate-400">{siteConfig.locationCity} &bull; {siteConfig.locationState}</span>
+                          <span className="text-slate-300">&bull;</span>
+                          <span className="text-[11px] sm:text-xs font-bold text-slate-500">{siteConfig.locationCity} &bull; {siteConfig.locationState}</span>
                         </div>
-                        <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-navy-900 dark:text-white mt-1">
+                        <h2 className="font-heading text-lg sm:text-2xl font-extrabold text-[#102c4c] mt-0.5">
                           {svc.title}
                         </h2>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 w-full sm:w-auto shrink-0">
+                    <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0">
                       <button
                         onClick={() => onOpenConsultation(svc.title)}
-                        className="py-2.5 px-5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs uppercase tracking-wider shadow-md hover:from-gold-300 hover:to-gold-500 transition-all text-center cursor-pointer shrink-0"
+                        className="py-2 px-4 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs uppercase tracking-wider shadow-sm hover:from-gold-300 hover:to-gold-500 transition-all text-center cursor-pointer shrink-0"
                       >
                         Book Appointment
                       </button>
                       {svc.detailPath.startsWith('/') && !svc.detailPath.includes('#') && (
                         <Link
                           to={svc.detailPath}
-                          className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-xs text-center transition-colors border border-slate-200 flex items-center gap-1.5 shrink-0"
+                          className="py-2 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-xs text-center transition-colors border border-slate-200 flex items-center gap-1.5 shrink-0"
                         >
                           <span>Dedicated Page</span>
                           <ArrowRight className="w-3.5 h-3.5" />
@@ -97,25 +97,27 @@ export default function ServicesPage() {
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed my-6">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed my-4">
                     {svc.fullDesc}
                   </p>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-1">
                     {/* Deliverables */}
-                    <div className="bg-slate-50 dark:bg-navy-950/80 border border-slate-200/80 dark:border-slate-800 rounded-2xl p-5 sm:p-6">
-                      <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-navy-900 dark:text-white mb-4 flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-                        <span>Scope of Work &amp; Deliverables</span>
-                      </h3>
-                      <ul className="space-y-2.5">
-                        {svc.deliverables.map((deliv, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-                            <span className="text-gold-600 dark:text-gold-400 font-bold mt-0.5">&bull;</span>
-                            <span>{deliv}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="bg-slate-50/80 border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs flex flex-col justify-between">
+                      <div>
+                        <h3 className="font-heading text-xs sm:text-sm font-bold uppercase tracking-wider text-[#102c4c] pb-3 border-b border-slate-200/80 mb-3.5 flex items-center gap-2">
+                          <CheckCircle2 className="w-4 h-4 text-emerald-500" />
+                          <span>Scope of Work &amp; Deliverables</span>
+                        </h3>
+                        <ul className="space-y-2">
+                          {svc.deliverables.map((deliv, idx) => (
+                            <li key={idx} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-700">
+                              <span className="text-gold-600 font-bold mt-0.5">&bull;</span>
+                              <span>{deliv}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
 
                     {/* Interactive Required Documents Checklist */}

@@ -4,7 +4,7 @@ import { siteConfig } from '../../data/siteConfig';
 
 export default function IndustriesSection() {
   return (
-    <section className="py-20 bg-slate-50 dark:bg-navy-950/80 border-t border-slate-200 dark:border-slate-800 transition-colors duration-200" id="industries">
+    <section className="py-20 bg-slate-50 dark:bg-navy-950/80 transition-colors duration-200" id="industries">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-12">

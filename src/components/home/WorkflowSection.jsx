@@ -42,7 +42,7 @@ export default function WorkflowSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section className="py-20 bg-white dark:bg-navy-950 transition-colors duration-200 border-t border-b border-slate-200/60 dark:border-slate-800/80">
+    <section className="py-20 bg-white dark:bg-navy-950 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

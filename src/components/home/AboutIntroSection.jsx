@@ -12,7 +12,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
   ];
 
   return (
-    <section className="py-20 sm:py-24 bg-white dark:bg-navy-950 text-slate-800 dark:text-slate-200 transition-colors duration-200 border-b border-slate-200 dark:border-slate-800">
+    <section className="py-20 sm:py-24 bg-white dark:bg-navy-950 text-slate-800 dark:text-slate-200 transition-colors duration-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

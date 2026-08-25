@@ -208,7 +208,7 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
     <div className="space-y-0 overflow-hidden">
       
       {/* SECTION 1: Business Registrations (Center Zoom Spotlight Carousel) */}
-      <section className="py-20 bg-[#f9fafb] text-slate-800 transition-colors duration-200 border-b border-slate-200">
+      <section className="py-20 bg-[#f9fafb] text-slate-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
@@ -367,7 +367,7 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
       </section>
 
       {/* SECTION 2: Audit and Tax Management (Center Zoom Spotlight Carousel) */}
-      <section className="py-20 bg-white text-slate-800 transition-colors duration-200 border-b border-slate-200">
+      <section className="py-20 bg-white text-slate-800 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">

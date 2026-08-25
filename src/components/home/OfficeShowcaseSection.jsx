@@ -4,7 +4,7 @@ import { siteConfig } from '../../data/siteConfig';
 
 export default function OfficeShowcaseSection({ onOpenConsultation }) {
   return (
-    <section className="py-20 bg-white dark:bg-navy-950 text-slate-700 dark:text-slate-200 transition-colors duration-200 border-b border-slate-200 dark:border-slate-800">
+    <section className="py-20 bg-white dark:bg-navy-950 text-slate-700 dark:text-slate-200 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

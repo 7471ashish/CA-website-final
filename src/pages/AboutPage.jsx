@@ -170,9 +170,7 @@ export default function AboutPage() {
                     <div className="p-2 bg-white rounded-xl shadow-md inline-block">
                       <img src={siteConfig.caLogoUrl} alt="ICAI CA" className="h-10 w-auto object-contain" />
                     </div>
-                    <span className="px-3.5 py-1 rounded-full bg-gold-500/20 border border-gold-400/50 text-xs font-black text-gold-300 uppercase tracking-wider">
-                      Managing Partner
-                    </span>
+                    <span className="text-xs text-gold-300 font-bold">📍 Meerut Central Office</span>
                   </div>
 
                   <h4 className="font-heading text-2xl sm:text-3xl font-black text-white group-hover:text-gold-300 transition-colors">
@@ -180,11 +178,8 @@ export default function AboutPage() {
                   </h4>
                   
                   <div className="flex flex-wrap items-center gap-2 mt-2 mb-4">
-                    <span className="text-sm font-bold text-gold-400 uppercase tracking-wider">
-                      ACA, DISA (ICAI), B.Com
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded bg-emerald-500/20 border border-emerald-400/40 text-[10px] font-black text-emerald-300 uppercase">
-                      DISA Qualified Auditor
+                    <span className="text-sm font-black text-gold-400 uppercase tracking-wider">
+                      B.COM, ACA, DISA (ICAI)
                     </span>
                   </div>
 
@@ -197,14 +192,6 @@ export default function AboutPage() {
                     </p>
                   </div>
                 </div>
-
-                <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
-                  <span className="flex items-center gap-1.5 font-bold text-gold-300">
-                    <Clock className="w-4 h-4" />
-                    <span>2+ Years Active Practice</span>
-                  </span>
-                  <span className="text-slate-400 font-semibold">📍 Meerut Central Office</span>
-                </div>
               </div>
 
               {/* PARTNER 2: CA Parul */}
@@ -216,9 +203,7 @@ export default function AboutPage() {
                     <div className="p-2 bg-white rounded-xl shadow-md inline-block">
                       <img src={siteConfig.caLogoUrl} alt="ICAI CA" className="h-10 w-auto object-contain" />
                     </div>
-                    <span className="px-3.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/50 text-xs font-black text-emerald-300 uppercase tracking-wider">
-                      Senior Partner
-                    </span>
+                    <span className="text-xs text-gold-300 font-bold">📍 Meerut Central Office</span>
                   </div>
 
                   <h4 className="font-heading text-2xl sm:text-3xl font-black text-white group-hover:text-gold-300 transition-colors">
@@ -226,11 +211,8 @@ export default function AboutPage() {
                   </h4>
                   
                   <div className="flex flex-wrap items-center gap-2 mt-2 mb-4">
-                    <span className="text-sm font-bold text-gold-400 uppercase tracking-wider">
-                      FCA, M.Com
-                    </span>
-                    <span className="px-2.5 py-0.5 rounded bg-gold-500/20 border border-gold-400/40 text-[10px] font-black text-gold-300 uppercase">
-                      Fellow Chartered Accountant (FCA)
+                    <span className="text-sm font-black text-gold-400 uppercase tracking-wider">
+                      M.COM, FCA
                     </span>
                   </div>
 
@@ -239,17 +221,9 @@ export default function AboutPage() {
                       <strong>Core Specializations:</strong> Corporate Statutory Audits under Companies Act 2013, Tax Audits under Section 44AB, GST Strategic Auditing &amp; Litigation, Banking Project Financing (CMA Data &amp; DPRs).
                     </p>
                     <p>
-                      As an experienced <strong>Fellow Chartered Accountant (FCA)</strong>, CA. Parul leads complex corporate statutory audits, bank concurrent audits, and Section 8 / Trust tax exemptions.
+                      As a practicing Chartered Accountant, CA. Parul leads complex corporate statutory audits, bank concurrent audits, and Section 8 / Trust tax exemptions.
                     </p>
                   </div>
-                </div>
-
-                <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
-                  <span className="flex items-center gap-1.5 font-bold text-emerald-300">
-                    <Award className="w-4 h-4" />
-                    <span>Senior Partner (FCA)</span>
-                  </span>
-                  <span className="text-slate-400 font-semibold">📍 Meerut Central Office</span>
                 </div>
               </div>
 

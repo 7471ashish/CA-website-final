@@ -67,50 +67,36 @@ export default function AboutIntroSection({ onOpenConsultation }) {
           {/* Card 1: CA Deepanshi Bansal */}
           <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-full bg-gold-400/25 border border-gold-300/60 text-[10px] font-black text-gold-200 uppercase tracking-wider">
-                  Managing Partner
-                </span>
-                <span className="text-xs text-slate-100 font-bold">📍 Meerut Office</span>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs text-gold-300 font-bold">📍 Meerut Office</span>
               </div>
-              <h3 className="font-heading text-xl font-black text-white">
+              <h3 className="font-heading text-xl sm:text-2xl font-black text-white">
                 CA. Deepanshi Bansal
               </h3>
-              <p className="text-xs font-bold text-gold-300 uppercase tracking-wide mt-1">
-                ACA, DISA (ICAI), B.Com
+              <p className="text-xs sm:text-[13px] font-black text-gold-300 uppercase tracking-wider mt-1.5">
+                B.COM, ACA, DISA (ICAI)
               </p>
-              <p className="text-xs text-slate-100 leading-relaxed mt-3 pt-3 border-t border-white/15">
+              <p className="text-xs sm:text-[13px] text-slate-100 leading-relaxed mt-3 pt-3 border-t border-white/15">
                 Direct Tax Advisory, DISA Information Systems Audit, MCA Company Incorporations, and ROC Statutory Filings.
               </p>
-            </div>
-            <div className="mt-5 pt-3 border-t border-white/15 flex items-center justify-between text-xs">
-              <span className="text-gold-300 font-extrabold">DISA (ICAI) Qualified</span>
-              <span className="text-slate-100">2+ Years Active Practice</span>
             </div>
           </div>
 
           {/* Card 2: CA Parul */}
           <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-full bg-emerald-400/25 border border-emerald-300/60 text-[10px] font-black text-emerald-200 uppercase tracking-wider">
-                  Senior Partner
-                </span>
-                <span className="text-xs text-slate-100 font-bold">📍 Meerut Office</span>
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs text-gold-300 font-bold">📍 Meerut Office</span>
               </div>
-              <h3 className="font-heading text-xl font-black text-white">
+              <h3 className="font-heading text-xl sm:text-2xl font-black text-white">
                 CA. Parul
               </h3>
-              <p className="text-xs font-bold text-gold-300 uppercase tracking-wide mt-1">
-                FCA, M.Com
+              <p className="text-xs sm:text-[13px] font-black text-gold-300 uppercase tracking-wider mt-1.5">
+                M.COM, FCA
               </p>
-              <p className="text-xs text-slate-100 leading-relaxed mt-3 pt-3 border-t border-white/15">
+              <p className="text-xs sm:text-[13px] text-slate-100 leading-relaxed mt-3 pt-3 border-t border-white/15">
                 Corporate Statutory Audits, GST Strategic Planning, Banking Project Financing (CMA Data), and Tax Audit Sec 44AB.
               </p>
-            </div>
-            <div className="mt-5 pt-3 border-t border-white/15 flex items-center justify-between text-xs">
-              <span className="text-emerald-200 font-extrabold">Fellow Chartered Accountant (FCA)</span>
-              <span className="text-slate-100">ICAI Registered Partner</span>
             </div>
           </div>
 

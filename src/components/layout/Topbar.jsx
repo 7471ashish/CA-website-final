@@ -5,7 +5,7 @@ import { siteConfig } from '../../data/siteConfig';
 
 export default function Topbar() {
   return (
-    <div className="bg-gradient-to-r from-[#1c5f94] via-[#246fa8] to-[#1c5f94] text-white text-sm sm:text-[15px] py-3 sm:py-3.5 border-b-2 border-gold-400/50 relative z-50 transition-colors duration-200 w-full overflow-hidden shadow-md">
+    <div className="bg-gradient-to-r from-[#0e2744] via-[#13345a] to-[#0e2744] text-white text-sm sm:text-[15px] py-3 sm:py-3.5 border-b-2 border-gold-400/40 relative z-50 transition-colors duration-200 w-full overflow-hidden shadow-md">
       <div className="w-full max-w-[1580px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center flex-wrap gap-3">
         
         {/* Left Contact Details (Clickable Call & Email) */}

@@ -22,7 +22,7 @@ export default function ItrFilingPage() {
         canonical="https://www.drbandcompany.com/itr-filing"
       />
       {/* Page Hero */}
-      <section className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] text-white py-16 border-b-4 border-gold-500">
+      <section className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] text-white py-16 border-b-4 border-gold-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-gold-400 font-semibold mb-3">
             <Link to="/" className="hover:underline">Home</Link>

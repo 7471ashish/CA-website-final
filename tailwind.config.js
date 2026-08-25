@@ -9,25 +9,25 @@ export default {
     extend: {
       colors: {
         navy: {
-          950: '#0a192f', // Premium Night Obsidian Base
-          900: '#112240', // Night Surface Cards
-          850: '#172d50', // Night Hover State
-          800: '#1c5f94', // Official ICAI Emblem Blue (Primary Brand)
-          700: '#2474b3', // Vibrant ICAI Blue
-          600: '#348dd1', // Light Vibrant Blue
-          500: '#4ea5ec',
-          400: '#75bdf7',
-          100: '#e4f1fc',
-          50: '#f0f7fe',
+          950: '#0a1e35', // Deep Luxury Navy
+          900: '#102c4c', // User's Exact Deep Royal Navy Color
+          850: '#13345a',
+          800: '#163b65',
+          700: '#1e4c80',
+          600: '#2a63a3',
+          500: '#3e7ec7',
+          400: '#649ee8',
+          100: '#e5effa',
+          50: '#f0f6fd',
         },
         icai: {
-          900: '#112240',
-          800: '#1c5f94', // Main ICAI Logo Blue
-          700: '#2474b3',
-          600: '#348dd1',
-          500: '#4ea5ec',
-          100: '#e4f1fc',
-          50: '#f0f7fe',
+          950: '#0a1e35',
+          900: '#102c4c', // Exact Color Swatch
+          850: '#13345a',
+          800: '#163b65',
+          700: '#1e4c80',
+          100: '#e5effa',
+          50: '#f0f6fd',
         },
         gold: {
           700: '#87671d',
@@ -51,8 +51,8 @@ export default {
       boxShadow: {
         'gold': '0 10px 30px -5px rgba(197, 155, 39, 0.35)',
         'gold-sm': '0 4px 15px -2px rgba(197, 155, 39, 0.25)',
-        'premium': '0 20px 45px -15px rgba(28, 95, 148, 0.15)',
-        'card-hover': '0 20px 40px -10px rgba(28, 95, 148, 0.18)',
+        'premium': '0 20px 45px -15px rgba(16, 44, 76, 0.18)',
+        'card-hover': '0 20px 40px -10px rgba(16, 44, 76, 0.22)',
         'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
       }
     },

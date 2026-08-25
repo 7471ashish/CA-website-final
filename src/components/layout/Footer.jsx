@@ -5,7 +5,7 @@ import { siteConfig } from '../../data/siteConfig';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-[#1c5f94] via-[#174d78] to-[#123e60] text-slate-100 pt-16 pb-8 border-t-4 border-gold-400 shadow-2xl">
+    <footer className="bg-gradient-to-b from-[#102c4c] via-[#0e2744] to-[#091a2e] text-slate-100 pt-16 pb-8 border-t-4 border-gold-400 shadow-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top 4-Column Grid matching cagmc.com layout */}

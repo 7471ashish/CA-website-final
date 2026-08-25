@@ -54,7 +54,7 @@ export default function ContactPage() {
         canonical="https://www.drbandcompany.com/contact"
       />
       {/* Page Hero */}
-      <section className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] text-white py-16 border-b-4 border-gold-500">
+      <section className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] text-white py-16 border-b-4 border-gold-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-2 text-xs text-gold-400 font-semibold mb-3">
             <Link to="/" className="hover:underline">Home</Link>
@@ -182,7 +182,7 @@ export default function ContactPage() {
             {/* Right Office Coordinates & Maps */}
             <div className="lg:col-span-5 space-y-6">
               
-              <div className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gold-400/50">
+              <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-gold-400/40">
                 <h3 className="font-heading text-xl font-bold text-white mb-4 pb-3 border-b border-white/10">
                   {siteConfig.locationCity} Office Details
                 </h3>

@@ -68,7 +68,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
           
           {/* Card 1: CA Deepanshi Bansal */}
-          <div className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded-full bg-gold-400/25 border border-gold-300/60 text-[10px] font-black text-gold-200 uppercase tracking-wider">
@@ -93,7 +93,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
           </div>
 
           {/* Card 2: CA Parul */}
-          <div className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
+          <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded-full bg-emerald-400/25 border border-emerald-300/60 text-[10px] font-black text-emerald-200 uppercase tracking-wider">

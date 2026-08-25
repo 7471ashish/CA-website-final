@@ -44,7 +44,7 @@ export default function AboutPage() {
       />
       
       {/* Page Hero */}
-      <section className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] text-white py-20 border-b-4 border-gold-500 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] text-white py-20 border-b-4 border-gold-500 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold-500/10 blur-[120px] rounded-full pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
@@ -103,7 +103,7 @@ export default function AboutPage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] p-8 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 space-y-6">
+              <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-8 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 space-y-6">
                 <div className="flex items-center gap-4">
                   <img
                     src={siteConfig.caLogoUrl}
@@ -162,7 +162,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               
               {/* PARTNER 1: CA Deepanshi Bansal */}
-              <div className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] p-8 sm:p-10 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 flex flex-col justify-between relative overflow-hidden group hover:border-gold-400 transition-all">
+              <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-8 sm:p-10 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 flex flex-col justify-between relative overflow-hidden group hover:border-gold-400 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gold-500/10 blur-3xl rounded-full pointer-events-none"></div>
                 
                 <div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
               </div>
 
               {/* PARTNER 2: CA Parul */}
-              <div className="bg-gradient-to-br from-[#1c5f94] via-[#226ea9] to-[#185387] p-8 sm:p-10 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 flex flex-col justify-between relative overflow-hidden group hover:border-gold-400 transition-all">
+              <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-8 sm:p-10 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 flex flex-col justify-between relative overflow-hidden group hover:border-gold-400 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
                 
                 <div>

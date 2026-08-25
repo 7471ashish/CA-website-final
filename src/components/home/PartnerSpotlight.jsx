@@ -43,7 +43,7 @@ export default function PartnerSpotlight({ onOpenConsultation }) {
         <div className="bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12">
           
           {/* Partner Side Card */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-[#1c5f94] via-[#2474b3] to-[#184773] p-8 sm:p-12 text-white flex flex-col justify-between items-center text-center relative overflow-hidden">
+          <div className="lg:col-span-5 bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-8 sm:p-12 text-white flex flex-col justify-between items-center text-center relative overflow-hidden">
             {/* Background Glow */}
             <div className="absolute -top-20 -left-20 w-48 h-48 bg-gold-500/20 blur-3xl rounded-full pointer-events-none"></div>
 

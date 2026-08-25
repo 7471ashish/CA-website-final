@@ -10,7 +10,7 @@ export default function TrustBanner() {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-[#1c5f94] via-[#226ea9] to-[#1c5f94] border border-gold-400/50 rounded-2xl p-4 sm:p-6 mb-10 shadow-lg text-white">
+    <div className="bg-gradient-to-r from-[#102c4c] via-[#143862] to-[#102c4c] border border-gold-400/40 rounded-2xl p-4 sm:p-6 mb-10 shadow-lg text-white">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         {trustItems.map((item, idx) => {
           const Icon = item.icon;

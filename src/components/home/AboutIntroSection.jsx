@@ -102,7 +102,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
 
         </div>
 
-        {/* Action Buttons */}
+        {/* Action Button */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
             to="/about"
@@ -111,12 +111,6 @@ export default function AboutIntroSection({ onOpenConsultation }) {
             <span>Read Complete Firm Profile</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
-          <button
-            onClick={() => onOpenConsultation()}
-            className="inline-flex items-center gap-2 py-3.5 px-8 rounded-xl bg-slate-100 dark:bg-navy-900 text-navy-950 dark:text-slate-100 font-heading font-bold text-xs uppercase tracking-wider hover:bg-slate-200 dark:hover:bg-navy-800 border border-slate-300 dark:border-slate-700 transition-all cursor-pointer"
-          >
-            <span>Book Partner Consultation</span>
-          </button>
         </div>
 
       </div>

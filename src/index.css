@@ -25,14 +25,14 @@
 }
 
 .dark .glass-panel {
-  background: rgba(19, 55, 89, 0.75);
+  background: rgba(17, 34, 64, 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .glass-card-dark {
-  background: rgba(24, 71, 115, 0.8);
+  background: rgba(23, 45, 80, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(219, 177, 59, 0.25);
@@ -46,7 +46,7 @@
   background: #f1f5f9;
 }
 .dark ::-webkit-scrollbar-track {
-  background: #0d253e;
+  background: #0a192f;
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;

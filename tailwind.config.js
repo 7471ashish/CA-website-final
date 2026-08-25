@@ -9,9 +9,9 @@ export default {
     extend: {
       colors: {
         navy: {
-          950: '#0d253e', // Deep ICAI Midnight Slate (Clean Dark Mode Base)
-          900: '#133759', // Dark Mode Surface Cards
-          850: '#184773', // Dark Mode Hover Surface
+          950: '#0a192f', // Premium Night Obsidian Base
+          900: '#112240', // Night Surface Cards
+          850: '#172d50', // Night Hover State
           800: '#1c5f94', // Official ICAI Emblem Blue (Primary Brand)
           700: '#2474b3', // Vibrant ICAI Blue
           600: '#348dd1', // Light Vibrant Blue
@@ -21,7 +21,7 @@ export default {
           50: '#f0f7fe',
         },
         icai: {
-          900: '#133759',
+          900: '#112240',
           800: '#1c5f94', // Main ICAI Logo Blue
           700: '#2474b3',
           600: '#348dd1',

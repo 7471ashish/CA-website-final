@@ -34,10 +34,10 @@ export default function OfficeShowcaseSection({ onOpenConsultation }) {
               />
               
               {/* Subtle gradient vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c5f94]/85 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#102c4c]/85 via-transparent to-transparent"></div>
 
               {/* Floating Verified Badge */}
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-[#1c5f94]/95 backdrop-blur-md p-4 rounded-2xl border border-gold-400/50 text-white flex items-center justify-between shadow-2xl">
+              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-[#102c4c]/95 backdrop-blur-md p-4 rounded-2xl border border-gold-400/40 text-white flex items-center justify-between shadow-2xl">
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-emerald-400"></span>

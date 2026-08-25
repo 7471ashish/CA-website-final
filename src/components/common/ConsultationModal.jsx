@@ -50,7 +50,7 @@ export default function ConsultationModal({ isOpen, onClose, initialService = "I
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1c5f94]/75 backdrop-blur-md animate-fadeIn">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#102c4c]/80 backdrop-blur-md animate-fadeIn">
           <div className="relative w-full max-w-lg bg-white dark:bg-navy-900 rounded-2xl shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto border border-slate-200 dark:border-slate-800 transition-colors duration-200">
             
             {/* Close Button */}

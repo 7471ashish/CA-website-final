@@ -6,7 +6,7 @@ export default function ConfirmationPopup({ isOpen, onClose, personName = "Value
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1c5f94]/75 backdrop-blur-md animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#102c4c]/80 backdrop-blur-md animate-fadeIn">
       <div className="relative w-full max-w-md bg-white dark:bg-navy-900 rounded-3xl shadow-2xl p-6 sm:p-8 text-center border-2 border-gold-400 overflow-hidden transform animate-scaleUp transition-colors duration-200">
         
         {/* Top Glow Accent */}

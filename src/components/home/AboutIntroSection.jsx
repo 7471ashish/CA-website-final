@@ -34,7 +34,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
         {/* Narrative Narrative Flow */}
         <div className="space-y-6 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed max-w-4xl mx-auto font-normal">
           <p>
-            <strong>{siteConfig.firmName}</strong> is a distinguished Chartered Accountants <strong>Partnership Firm</strong> located in the historic commercial hub of <strong>{siteConfig.locationCity}</strong>. Regulated under the guidelines of the Institute of Chartered Accountants of India (ICAI), our practice is steered by two accomplished senior partners — <strong>CA. Deepanshi Bansal</strong> (ACA, DISA (ICAI), B.Com) and <strong>CA. Parul</strong> (FCA, M.Com).
+            <strong>{siteConfig.firmName}</strong> is a distinguished Chartered Accountants <strong>Partnership Firm</strong> located in the historic commercial hub of <strong>{siteConfig.locationCity}</strong>. Regulated under the guidelines of the Institute of Chartered Accountants of India (ICAI), our practice is steered by two accomplished senior partners — <strong>CA. DEEPANSHI BANSAL</strong> (B.COM, ACA, DISA (ICAI)) and <strong>CA. PARUL</strong> (M.COM, FCA).
           </p>
           <p>
             Our firm combines advanced technological proficiencies (such as certified <strong>DISA Information Systems Audits</strong> and automated GST reconciliations) with time-tested corporate auditing, direct taxation litigation, Section 8 / NGO registrations, and express <strong>Visa Networth Certifications</strong>. Every file, audit report, and representation at DRB &amp; COMPANY receives direct, meticulous partner supervision.
@@ -64,14 +64,14 @@ export default function AboutIntroSection({ onOpenConsultation }) {
         {/* TWO PARTNER CARDS EXPANDED */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
           
-          {/* Card 1: CA Deepanshi Bansal */}
+          {/* Card 1: CA DEEPANSHI BANSAL */}
           <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs text-gold-300 font-bold">📍 Meerut Office</span>
               </div>
-              <h3 className="font-heading text-xl sm:text-2xl font-black text-white">
-                CA. Deepanshi Bansal
+              <h3 className="font-heading text-xl sm:text-2xl font-black text-white tracking-wide">
+                CA. DEEPANSHI BANSAL
               </h3>
               <p className="text-xs sm:text-[13px] font-black text-gold-300 uppercase tracking-wider mt-1.5">
                 B.COM, ACA, DISA (ICAI)
@@ -82,14 +82,14 @@ export default function AboutIntroSection({ onOpenConsultation }) {
             </div>
           </div>
 
-          {/* Card 2: CA Parul */}
+          {/* Card 2: CA PARUL */}
           <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-3">
                 <span className="text-xs text-gold-300 font-bold">📍 Meerut Office</span>
               </div>
-              <h3 className="font-heading text-xl sm:text-2xl font-black text-white">
-                CA. Parul
+              <h3 className="font-heading text-xl sm:text-2xl font-black text-white tracking-wide">
+                CA. PARUL
               </h3>
               <p className="text-xs sm:text-[13px] font-black text-gold-300 uppercase tracking-wider mt-1.5">
                 M.COM, FCA

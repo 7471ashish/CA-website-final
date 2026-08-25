@@ -3,6 +3,7 @@ import { Link, useOutletContext } from 'react-router-dom';
 import { Award, CheckCircle2, Shield, UserCheck, Phone, MapPin, Users, Briefcase, GraduationCap, Clock, Compass, Target, Sparkles, Building2, Check, ArrowRight } from 'lucide-react';
 import SEO from '../components/common/SEO';
 import { siteConfig } from '../data/siteConfig';
+import OfficeShowcaseSection from '../components/home/OfficeShowcaseSection';
 
 export default function AboutPage() {
   const { onOpenConsultation } = useOutletContext();
@@ -10,7 +11,7 @@ export default function AboutPage() {
   const values = [
     {
       title: "Partnership Strength & Synergistic Expertise",
-      desc: "DRB & COMPANY unites the analytical precision of CA. Deepanshi Bansal (Systems Auditor & Tax Strategist) with the seasoned audit leadership of CA. Parul (Fellow Chartered Accountant), providing dual-partner review on complex corporate engagements."
+      desc: "DRB & COMPANY unites the analytical precision of CA. DEEPANSHI BANSAL (Systems Auditor & Tax Strategist) with the seasoned audit leadership of CA. PARUL (Fellow Chartered Accountant), providing dual-partner review on complex corporate engagements."
     },
     {
       title: "Ethical Integrity & 100% UDIN Compliance",
@@ -38,8 +39,8 @@ export default function AboutPage() {
   return (
     <div className="bg-slate-50 dark:bg-navy-950 text-slate-800 dark:text-slate-200 transition-colors duration-200">
       <SEO 
-        title="About Us | DRB & COMPANY - CA Deepanshi Bansal & CA Parul (Meerut)"
-        description="Learn about DRB & COMPANY, an ICAI-regulated Chartered Accountants Partnership Firm in Meerut led by CA Deepanshi Bansal (ACA, DISA) and CA Parul (FCA, M.Com)."
+        title="About Us | DRB & COMPANY - CA DEEPANSHI BANSAL & CA PARUL (Meerut)"
+        description="Learn about DRB & COMPANY, an ICAI-regulated Chartered Accountants Partnership Firm in Meerut led by CA DEEPANSHI BANSAL (ACA, DISA) and CA PARUL (FCA, M.Com)."
         canonical="https://www.drbandcompany.com/about"
       />
       
@@ -88,7 +89,7 @@ export default function AboutPage() {
                 <strong>{siteConfig.firmName}</strong> was established as a dynamic <strong>Chartered Accountants Partnership Firm</strong> registered under the Institute of Chartered Accountants of India (ICAI). Operating from the commercial nerve-center of <strong>Budhana Gate, Meerut</strong>, our firm serves as a strategic growth partner for enterprises, family businesses, emerging startups, and individuals.
               </p>
               <p className="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-normal">
-                Our practice is distinguished by the direct involvement of both its senior partners — <strong>CA. Deepanshi Bansal</strong> and <strong>CA. Parul</strong>. By pairing advanced Information Systems Auditing (DISA ICAI) and modern digital taxation with deep seasoned expertise in corporate statutory auditing, GST litigation, and banking finance, we provide comprehensive financial solutions backed by 100% UDIN compliance.
+                Our practice is distinguished by the direct involvement of both its senior partners — <strong>CA. DEEPANSHI BANSAL</strong> and <strong>CA. PARUL</strong>. By pairing advanced Information Systems Auditing (DISA ICAI) and modern digital taxation with deep seasoned expertise in corporate statutory auditing, GST litigation, and banking finance, we provide comprehensive financial solutions backed by 100% UDIN compliance.
               </p>
               <div className="pt-2">
                 <ul className="space-y-2.5">
@@ -161,7 +162,7 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               
-              {/* PARTNER 1: CA Deepanshi Bansal */}
+              {/* PARTNER 1: CA DEEPANSHI BANSAL */}
               <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-8 sm:p-10 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 flex flex-col justify-between relative overflow-hidden group hover:border-gold-400 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gold-500/10 blur-3xl rounded-full pointer-events-none"></div>
                 
@@ -173,8 +174,8 @@ export default function AboutPage() {
                     <span className="text-xs text-gold-300 font-bold">📍 Meerut Central Office</span>
                   </div>
 
-                  <h4 className="font-heading text-2xl sm:text-3xl font-black text-white group-hover:text-gold-300 transition-colors">
-                    CA. Deepanshi Bansal
+                  <h4 className="font-heading text-2xl sm:text-3xl font-black text-white group-hover:text-gold-300 transition-colors tracking-wide">
+                    CA. DEEPANSHI BANSAL
                   </h4>
                   
                   <div className="flex flex-wrap items-center gap-2 mt-2 mb-4">
@@ -188,13 +189,13 @@ export default function AboutPage() {
                       <strong>Core Specializations:</strong> Direct &amp; International Taxation, Corporate Tax Planning, MCA Company Law Compliances, and ICAI UDIN Verified <strong>Visa Networth Statements</strong> for embassies worldwide.
                     </p>
                     <p>
-                      As a <strong>DISA (ICAI) Qualified Systems Auditor</strong>, CA. Deepanshi Bansal conducts certified Information Systems audits, IT risk assessments, ERP controls evaluations, and data integrity audits for modern enterprises.
+                      As a <strong>DISA (ICAI) Qualified Systems Auditor</strong>, CA. DEEPANSHI BANSAL conducts certified Information Systems audits, IT risk assessments, ERP controls evaluations, and data integrity audits for modern enterprises.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* PARTNER 2: CA Parul */}
+              {/* PARTNER 2: CA PARUL */}
               <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-8 sm:p-10 rounded-3xl text-white shadow-2xl border-2 border-gold-500/40 flex flex-col justify-between relative overflow-hidden group hover:border-gold-400 transition-all">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none"></div>
                 
@@ -206,8 +207,8 @@ export default function AboutPage() {
                     <span className="text-xs text-gold-300 font-bold">📍 Meerut Central Office</span>
                   </div>
 
-                  <h4 className="font-heading text-2xl sm:text-3xl font-black text-white group-hover:text-gold-300 transition-colors">
-                    CA. Parul
+                  <h4 className="font-heading text-2xl sm:text-3xl font-black text-white group-hover:text-gold-300 transition-colors tracking-wide">
+                    CA. PARUL
                   </h4>
                   
                   <div className="flex flex-wrap items-center gap-2 mt-2 mb-4">
@@ -221,7 +222,7 @@ export default function AboutPage() {
                       <strong>Core Specializations:</strong> Corporate Statutory Audits under Companies Act 2013, Tax Audits under Section 44AB, GST Strategic Auditing &amp; Litigation, Banking Project Financing (CMA Data &amp; DPRs).
                     </p>
                     <p>
-                      As a practicing Chartered Accountant, CA. Parul leads complex corporate statutory audits, bank concurrent audits, and Section 8 / Trust tax exemptions.
+                      As a practicing Chartered Accountant, CA. PARUL leads complex corporate statutory audits, bank concurrent audits, and Section 8 / Trust tax exemptions.
                     </p>
                   </div>
                 </div>
@@ -230,9 +231,19 @@ export default function AboutPage() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Office & Infrastructure Showcase Section (Photo with Floating Location Card) */}
+      <OfficeShowcaseSection onOpenConsultation={onOpenConsultation} />
+
+      {/* Vision & Mission Cards and Core Commitments */}
+      <section className="py-20 bg-slate-50 dark:bg-navy-950 transition-colors duration-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
           {/* Vision & Mission Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 max-w-5xl mx-auto">
-            <div className="bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm">
+            <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm">
               <div className="w-12 h-12 rounded-2xl bg-gold-500/15 text-gold-600 dark:text-gold-400 flex items-center justify-center mb-4">
                 <Compass className="w-6 h-6" />
               </div>
@@ -244,7 +255,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm">
+            <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 shadow-sm">
               <div className="w-12 h-12 rounded-2xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
                 <Target className="w-6 h-6" />
               </div>
@@ -269,7 +280,7 @@ export default function AboutPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {values.map((v, i) => (
-                <div key={i} className="bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-sm">
+                <div key={i} className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-7 shadow-sm">
                   <h4 className="font-heading text-base font-bold text-navy-950 dark:text-white mb-2 flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0" />
                     <span>{v.title}</span>

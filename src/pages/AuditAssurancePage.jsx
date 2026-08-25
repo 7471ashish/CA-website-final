@@ -10,7 +10,7 @@ export default function AuditAssurancePage() {
 
   const auditTypes = [
     { title: "Tax Audit (Sec 44AB Form 3CD)", desc: "Mandatory for business turnover exceeding ₹1 Cr (₹10 Cr for 95% digital transactions) or professionals over ₹50 Lakhs." },
-    { title: "DISA (ICAI) Systems Audit", desc: "Information Systems security, ERP data integrity & cybersecurity controls audit conducted by certified DISA auditor CA Deepanshi Bansal." },
+    { title: "DISA (ICAI) Systems Audit", desc: "Information Systems security, ERP data integrity & cybersecurity controls audit conducted by certified DISA auditor CA. DEEPANSHI BANSAL." },
     { title: "Statutory Company Audit", desc: "Independent statutory audit for Private Limited Companies and LLPs as required under Companies Act 2013." },
     { title: "Bank & Stock Concurrent Audit", desc: "Borrower inventory verification, drawing power determination, and concurrent audit for commercial banks." }
   ];

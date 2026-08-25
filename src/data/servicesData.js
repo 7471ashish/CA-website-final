@@ -203,7 +203,7 @@ export const servicesCategories = [
       {
         id: "disa-audit",
         title: "DISA (ICAI) Systems Audit",
-        shortDesc: "Specialized Information Systems Security Audit conducted by certified DISA (ICAI) systems auditor CA Deepanshi Bansal.",
+        shortDesc: "Specialized Information Systems Security Audit conducted by certified DISA (ICAI) systems auditor CA. DEEPANSHI BANSAL.",
         icon: "ShieldCheck",
         link: "/audit-assurance",
         highlight: "DISA (ICAI) Certified"

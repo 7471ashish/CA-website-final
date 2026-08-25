@@ -2,21 +2,21 @@ export const siteConfig = {
   firmName: "DRB & COMPANY",
   legalTitle: "CHARTERED ACCOUNTANTS",
   firmType: "Partnership Firm",
-  principal: "CA. Deepanshi Bansal",
-  qualifications: "ACA, DISA (ICAI), B.Com",
+  principal: "CA. DEEPANSHI BANSAL",
+  qualifications: "B.COM, ACA, DISA (ICAI)",
   partners: [
     {
-      name: "CA. Deepanshi Bansal",
-      designation: "Managing Partner",
-      qualifications: "ACA, DISA (ICAI), B.Com",
-      experience: "2+ Years",
+      name: "CA. DEEPANSHI BANSAL",
+      designation: "Partner",
+      qualifications: "B.COM, ACA, DISA (ICAI)",
+      experience: "Active Practice",
       specialization: "DISA (ICAI) Systems Audit, Direct Taxation, MCA ROC Filings & Corporate Compliances",
       badge: "DISA (ICAI) Qualified"
     },
     {
-      name: "CA. Parul",
-      designation: "Senior Partner",
-      qualifications: "FCA, M.Com",
+      name: "CA. PARUL",
+      designation: "Partner",
+      qualifications: "M.COM, FCA",
       specialization: "Corporate Statutory Audits, GST Strategic Planning & Litigation, Banking Project Financing (CMA Data)",
       badge: "Fellow Chartered Accountant (FCA)"
     }
@@ -39,7 +39,6 @@ export const siteConfig = {
   caLogoUrl: "https://image2url.com/r2/default/images/1772174301055-15470431-39a8-47c7-b7be-51c4e641ec2f.png",
   googleMapsEmbed: "https://maps.google.com/maps?q=28.981012,77.703935&hl=en&z=17&output=embed",
   googleMapsDirect: "https://maps.google.com/?q=28.981012,77.703935",
-  whatsappUrl: "https://wa.me/919149056549?text=Hello%20DRB%20%26%20COMPANY,%20I%20would%20like%20to%20know%20more%20about%20your%20services.",
   officeImageUrl: "/images/drb-office.jpg",
   // Google Apps Script Web App URL for storing leads into Google Sheets
   googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbwg2CSuiyZWF_-wQ5SeENNrxrbISqUCwLbHJbY41lOkS9d4RuxQwplicTDAM00zVOzA/exec"

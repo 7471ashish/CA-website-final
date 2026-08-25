@@ -44,19 +44,19 @@ export default function AboutIntroSection({ onOpenConsultation }) {
           </p>
         </div>
 
-        {/* 4 Value Pillars Bar */}
+        {/* 4 Value Pillars Bar - Deep Navy Blue Background with White Text */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto my-10">
           {highlights.map((h, i) => {
             const Icon = h.icon;
             return (
-              <div key={i} className="bg-slate-50 dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-center shadow-sm">
-                <div className="w-10 h-10 mx-auto mb-2 rounded-xl bg-gold-500/15 text-gold-600 dark:text-gold-400 flex items-center justify-center">
+              <div key={i} className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] border border-gold-400/40 rounded-2xl p-4 text-center shadow-md hover:border-gold-400 transition-colors">
+                <div className="w-10 h-10 mx-auto mb-2.5 rounded-xl bg-gold-500/20 text-gold-400 border border-gold-400/30 flex items-center justify-center shadow-xs">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h4 className="font-heading text-xs sm:text-sm font-black text-navy-950 dark:text-white leading-tight">
+                <h4 className="font-heading text-xs sm:text-sm font-black text-white leading-tight">
                   {h.title}
                 </h4>
-                <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1">
+                <p className="text-[11px] font-medium text-slate-200 mt-1">
                   {h.desc}
                 </p>
               </div>

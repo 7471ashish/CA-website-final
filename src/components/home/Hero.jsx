@@ -90,19 +90,42 @@ export default function Hero({ onOpenConsultation }) {
 
         {/* Wide Bottom Trust Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 w-full max-w-5xl mt-6">
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
+          {/* 1st Block: Static */}
+          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
             <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">250+</span>
             <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">CLIENTS SERVED</span>
           </div>
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
-            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CA DEEPANSHI BANSAL</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">B.COM, ACA, DISA</span>
-          </div>
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
-            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CA PARUL</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">M.COM, FCA</span>
-          </div>
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 transition-colors flex flex-col justify-center items-center">
+
+          {/* 2nd Block: Clickable Link to About Us with Hover Effect */}
+          <Link
+            to="/about"
+            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
+            title="View CA Deepanshi Bansal Profile"
+          >
+            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
+              CA DEEPANSHI BANSAL
+            </span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">
+              B.COM, ACA, DISA
+            </span>
+          </Link>
+
+          {/* 3rd Block: Clickable Link to About Us with Hover Effect */}
+          <Link
+            to="/about"
+            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
+            title="View CA Parul Profile"
+          >
+            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
+              CA PARUL
+            </span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">
+              M.COM, FCA
+            </span>
+          </Link>
+
+          {/* 4th Block: Static */}
+          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
             <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CLIENT FOCUSED</span>
             <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">APPROACH</span>
           </div>

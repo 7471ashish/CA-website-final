@@ -78,22 +78,15 @@ export default function ServicesPage() {
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-3 w-full sm:w-auto">
-                      <button
-                        onClick={() => onOpenConsultation(svc.title)}
-                        className="w-full sm:w-auto py-2.5 px-5 rounded-lg bg-gradient-to-r from-gold-400 to-gold-600 text-navy-950 font-heading font-bold text-xs uppercase tracking-wider shadow-gold text-center cursor-pointer"
+                    {svc.detailPath.startsWith('/') && !svc.detailPath.includes('#') && (
+                      <Link
+                        to={svc.detailPath}
+                        className="py-2.5 px-5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-xs text-center transition-colors border border-slate-200 flex items-center gap-1.5 shrink-0"
                       >
-                        Book Appointment
-                      </button>
-                      {svc.detailPath.startsWith('/') && !svc.detailPath.includes('#') && (
-                        <Link
-                          to={svc.detailPath}
-                          className="w-full sm:w-auto py-2.5 px-5 rounded-lg bg-slate-100 dark:bg-navy-800 hover:bg-slate-200 dark:hover:bg-navy-750 text-slate-800 dark:text-slate-100 font-heading font-bold text-xs text-center transition-colors border border-slate-200 dark:border-slate-700"
-                        >
-                          Dedicated Page &rarr;
-                        </Link>
-                      )}
-                    </div>
+                        <span>Dedicated Page</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
                   </div>
 
                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed my-6">

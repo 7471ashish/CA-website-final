@@ -38,6 +38,20 @@ export default function Topbar() {
               {siteConfig.email}
             </span>
           </a>
+
+          {/* 3. Managing Partner Credentials Badge (Clickable -> Links to /about) */}
+          <Link
+            to="/about"
+            className="hidden xl:flex flex-col text-left group cursor-pointer border-l border-white/20 pl-6 py-0.5"
+            title="Managing Partner: CA. Deepanshi Bansal"
+          >
+            <span className="text-white text-xs sm:text-[13px] font-black leading-tight group-hover:text-gold-300 transition-colors">
+              CA. Deepanshi Bansal
+            </span>
+            <span className="text-gold-400 text-[10px] font-black uppercase tracking-wider leading-tight mt-0.5">
+              ACA, DISA (ICAI), B.COM
+            </span>
+          </Link>
         </div>
 
         {/* Right Accreditations & Hours (Clickable Links) */}

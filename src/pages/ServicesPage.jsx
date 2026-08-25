@@ -106,14 +106,14 @@ export default function ServicesPage() {
                     {/* Deliverables (Compact 2-Column Grid) */}
                     <div className="bg-slate-50/70 border border-slate-200/80 rounded-xl p-3 sm:p-4 shadow-2xs flex flex-col justify-between">
                       <div>
-                        <h3 className="font-heading text-xs font-bold uppercase tracking-wider text-[#102c4c] pb-2 border-b border-slate-200/70 mb-2.5 flex items-center gap-1.5">
+                        <h3 className="font-heading text-xs sm:text-[13px] font-black uppercase tracking-wider text-gold-600 pb-2 border-b border-gold-200/70 mb-2.5 flex items-center gap-1.5">
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
                           <span>Scope of Work &amp; Deliverables</span>
                         </h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                           {svc.deliverables.map((deliv, idx) => (
-                            <div key={idx} className="flex items-center gap-1.5 text-[11px] sm:text-xs text-slate-700 p-1 px-2 rounded bg-white border border-slate-200/70">
-                              <span className="text-gold-600 font-bold text-xs">&bull;</span>
+                            <div key={idx} className="flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-slate-800 p-1.5 px-2.5 rounded-lg bg-white border border-slate-200/80 shadow-2xs hover:border-gold-300 transition-colors">
+                              <span className="text-gold-600 font-black text-xs">&bull;</span>
                               <span className="truncate" title={deliv}>{deliv}</span>
                             </div>
                           ))}

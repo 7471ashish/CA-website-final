@@ -413,7 +413,7 @@ export const servicesData = [
     shortDesc: "Statutory audits, tax audits (Sec 44AB), internal audits and DISA (ICAI) Information Systems Audits.",
     iconName: "ShieldCheck",
     chips: ["Sec 44AB Form 3CD", "DISA (ICAI) Audit", "Statutory Audits"],
-    detailPath: "/services#audit",
+    detailPath: "/audit-assurance",
     fullDesc: "Independent statutory, tax, and DISA (ICAI) certified Information Systems audits ensuring complete regulatory compliance with the Companies Act, Income Tax Act, and data governance standards.",
     deliverables: [
       "Tax Audit under Section 44AB (Form 3CA/3CB and Form 3CD)",
@@ -440,7 +440,7 @@ export const servicesData = [
     shortDesc: "Pvt Ltd, LLP, OPC, Partnership registration, ROC compliance and secretarial services.",
     iconName: "Briefcase",
     chips: ["SPICe+ Incorporation", "AOC-4 & MGT-7", "Director KYC"],
-    detailPath: "/services#company-law",
+    detailPath: "/company-incorporation",
     fullDesc: "Complete corporate legal and compliance lifecycle management from company incorporation on MCA SPICe+ portal to annual return filings and board resolution maintenance.",
     deliverables: [
       "Private Limited Company & OPC registration (SPICe+)",
@@ -464,7 +464,7 @@ export const servicesData = [
     shortDesc: "Trust deed registration, Section 8 Company formation, Society registration, 12A/80G approvals and CSR-1.",
     iconName: "Heart",
     chips: ["Trust Deed", "80G 12A Exemption", "Section 8 NPO"],
-    detailPath: "/services#ngo-trust",
+    detailPath: "/ngo-trust-registration",
     fullDesc: "Comprehensive advisory and registration for non-profit organizations, NGOs, charitable trusts, and societies with tax exemptions and FCRA clearances.",
     deliverables: [
       "Public Charitable Trust Deed registration",
@@ -488,7 +488,7 @@ export const servicesData = [
     shortDesc: "Trademark registration, brand name protection, copyright, design rights and patent advisory.",
     iconName: "Award",
     chips: ["Brand Registration", "Copyright", "Design Rights"],
-    detailPath: "/services#trademark",
+    detailPath: "/trademark-registration",
     fullDesc: "Protect your brand, proprietary technology, and creative assets from infringement with strategic IP filing and registrar objection defense.",
     deliverables: [
       "Trademark Search & NICE Classification mapping",
@@ -536,7 +536,7 @@ export const servicesData = [
     shortDesc: "NRI income tax returns, Form 15CA/CB, Lower TDS Section 197, and repatriation advisory.",
     iconName: "Globe",
     chips: ["Form 15CA/CB", "Lower TDS Sec 197", "DTAA Relief"],
-    detailPath: "/services#nri-tax",
+    detailPath: "/nri-taxation",
     fullDesc: "Specialized cross-border taxation for Non-Resident Indians (NRIs) with property sale repatriation, lower TDS certificates, and DTAA benefits.",
     deliverables: [
       "NRI Income Tax Return filing in India",
@@ -559,7 +559,7 @@ export const servicesData = [
     shortDesc: "CMA data, detailed project reports (DPR), and financial projections for bank loans and business funding.",
     iconName: "PieChart",
     chips: ["Bank CMA Data", "DPR Reports", "Mudra / PMEGP"],
-    detailPath: "/services#loan-project",
+    detailPath: "/project-financing-cma",
     fullDesc: "Preparation of detailed project reports (DPR), Credit Monitoring Arrangement (CMA) data, and financial feasibility models for business expansion and bank finance.",
     deliverables: [
       "CMA Data for Working Capital limits (Cash Credit / Overdraft)",

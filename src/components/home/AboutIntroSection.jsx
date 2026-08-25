@@ -37,7 +37,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
             Chartered Accountants play an indispensable role in steering India’s rapidly growing economic landscape. Beyond basic accounting, professional CAs serve as trusted strategic advisors, ensuring enterprise longevity, statutory compliance, tax optimization, and rigorous governance for businesses, institutions, and individual taxpayers.
           </p>
           <p>
-            <strong>{siteConfig.firmName}</strong> is a distinguished Chartered Accountants <strong>Partnership Firm</strong> located in the historic commercial hub of <strong>{siteConfig.locationCity}</strong>. Regulated under the guidelines of the Institute of Chartered Accountants of India (ICAI), our practice is steered by two accomplished senior partners — <strong>CA. Deepanshi Bansal</strong> (ACA, DISA (ICAI), B.Com) and <strong>CA. Parul</strong> (FCA, M.Com with 5+ years of extensive audit experience).
+            <strong>{siteConfig.firmName}</strong> is a distinguished Chartered Accountants <strong>Partnership Firm</strong> located in the historic commercial hub of <strong>{siteConfig.locationCity}</strong>. Regulated under the guidelines of the Institute of Chartered Accountants of India (ICAI), our practice is steered by two accomplished senior partners — <strong>CA. Deepanshi Bansal</strong> (ACA, DISA (ICAI), B.Com) and <strong>CA. Parul</strong> (FCA, M.Com).
           </p>
           <p>
             Our firm combines advanced technological proficiencies (such as certified <strong>DISA Information Systems Audits</strong> and automated GST reconciliations) with time-tested corporate auditing, direct taxation litigation, Section 8 / NGO registrations, and express <strong>Visa Networth Certifications</strong>. Every file, audit report, and representation at DRB &amp; COMPANY receives direct, meticulous partner supervision.
@@ -105,7 +105,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
                 CA. Parul
               </h3>
               <p className="text-xs font-bold text-gold-300 uppercase tracking-wide mt-1">
-                FCA, M.Com (5+ Years Experience)
+                FCA, M.Com
               </p>
               <p className="text-xs text-slate-100 leading-relaxed mt-3 pt-3 border-t border-white/15">
                 Corporate Statutory Audits, GST Strategic Planning, Banking Project Financing (CMA Data), and Tax Audit Sec 44AB.
@@ -113,7 +113,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
             </div>
             <div className="mt-5 pt-3 border-t border-white/15 flex items-center justify-between text-xs">
               <span className="text-emerald-200 font-extrabold">Fellow Chartered Accountant (FCA)</span>
-              <span className="text-slate-100">5+ Years Seasoned Practice</span>
+              <span className="text-slate-100">ICAI Registered Partner</span>
             </div>
           </div>
 

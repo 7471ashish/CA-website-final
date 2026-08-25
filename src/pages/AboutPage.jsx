@@ -10,7 +10,7 @@ export default function AboutPage() {
   const values = [
     {
       title: "Partnership Strength & Synergistic Expertise",
-      desc: "DRB & COMPANY unites the analytical precision of CA. Deepanshi Bansal (Systems Auditor & Tax Strategist) with the seasoned audit leadership of CA. Parul (FCA with 5+ years experience), providing dual-partner review on complex corporate engagements."
+      desc: "DRB & COMPANY unites the analytical precision of CA. Deepanshi Bansal (Systems Auditor & Tax Strategist) with the seasoned audit leadership of CA. Parul (Fellow Chartered Accountant), providing dual-partner review on complex corporate engagements."
     },
     {
       title: "Ethical Integrity & 100% UDIN Compliance",
@@ -29,7 +29,7 @@ export default function AboutPage() {
   const firmStrengths = [
     "ICAI-Regulated Partnership Firm with multi-disciplinary partner leadership",
     "Certified Information Systems Auditor on board (DISA qualified by ICAI)",
-    "Senior Partner with 5+ years of Corporate Statutory & Bank Audit track record",
+    "Senior Partner with extensive Corporate Statutory & Bank Audit track record",
     "Complete statutory coverage: Income Tax, GST, MCA Corporate Law, Statutory Audits & DISA Systems Audit",
     "Strategic central office in Budhana Gate, Meerut with in-person & virtual consultation",
     "Transparent engagement models with zero hidden costs or compliance delays"
@@ -39,7 +39,7 @@ export default function AboutPage() {
     <div className="bg-slate-50 dark:bg-navy-950 text-slate-800 dark:text-slate-200 transition-colors duration-200">
       <SEO 
         title="About Us | DRB & COMPANY - CA Deepanshi Bansal & CA Parul (Meerut)"
-        description="Learn about DRB & COMPANY, an ICAI-regulated Chartered Accountants Partnership Firm in Meerut led by CA Deepanshi Bansal (ACA, DISA) and CA Parul (FCA, M.Com, 5+ yrs exp)."
+        description="Learn about DRB & COMPANY, an ICAI-regulated Chartered Accountants Partnership Firm in Meerut led by CA Deepanshi Bansal (ACA, DISA) and CA Parul (FCA, M.Com)."
         canonical="https://www.drbandcompany.com/about"
       />
       
@@ -239,7 +239,7 @@ export default function AboutPage() {
                       <strong>Core Specializations:</strong> Corporate Statutory Audits under Companies Act 2013, Tax Audits under Section 44AB, GST Strategic Auditing &amp; Litigation, Banking Project Financing (CMA Data &amp; DPRs).
                     </p>
                     <p>
-                      With <strong>5+ years of seasoned professional expertise</strong> as a Fellow Chartered Accountant (FCA), CA. Parul leads complex corporate audits, bank concurrent audits, and NGO/Trust 12A &amp; 80G tax exemptions across North India.
+                      As an experienced <strong>Fellow Chartered Accountant (FCA)</strong>, CA. Parul leads complex corporate statutory audits, bank concurrent audits, and Section 8 / Trust tax exemptions.
                     </p>
                   </div>
                 </div>
@@ -247,7 +247,7 @@ export default function AboutPage() {
                 <div className="mt-8 pt-5 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
                   <span className="flex items-center gap-1.5 font-bold text-emerald-300">
                     <Award className="w-4 h-4" />
-                    <span>5+ Years Experience (FCA)</span>
+                    <span>Senior Partner (FCA)</span>
                   </span>
                   <span className="text-slate-400 font-semibold">📍 Meerut Central Office</span>
                 </div>

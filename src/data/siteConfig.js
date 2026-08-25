@@ -17,12 +17,10 @@ export const siteConfig = {
       name: "CA. Parul",
       designation: "Senior Partner",
       qualifications: "FCA, M.Com",
-      experience: "5+ Years",
       specialization: "Corporate Statutory Audits, GST Strategic Planning & Litigation, Banking Project Financing (CMA Data)",
-      badge: "FCA (Fellow CA) &bull; 5+ Yrs Exp"
+      badge: "Fellow Chartered Accountant (FCA)"
     }
   ],
-  experienceYears: "5+",
   establishedYear: 2025,
   locationCity: "Meerut",
   locationArea: "Budhana Gate",

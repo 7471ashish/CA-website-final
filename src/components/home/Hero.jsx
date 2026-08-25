@@ -110,8 +110,8 @@ export default function Hero({ onOpenConsultation }) {
             <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">ICAI UDIN Verified</span>
           </div>
           <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">5+ Years</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">FCA Senior Partner</span>
+            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">FCA &amp; ACA</span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">Senior Partners</span>
           </div>
           <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
             <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">{siteConfig.locationCity}</span>

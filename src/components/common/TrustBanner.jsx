@@ -4,7 +4,7 @@ import { ShieldCheck, Clock, Award, CheckCircle } from 'lucide-react';
 export default function TrustBanner() {
   const trustItems = [
     { icon: ShieldCheck, text: "ICAI Regulated Practice" },
-    { icon: Clock, text: "5+ Years FCA Experience" },
+    { icon: Clock, text: "FCA & ACA Dual Partners" },
     { icon: Award, text: "Official UDIN Verification" },
     { icon: CheckCircle, text: "100% Legal Compliance" },
   ];

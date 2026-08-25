@@ -31,11 +31,8 @@ export default function AboutIntroSection({ onOpenConsultation }) {
           <div className="w-20 h-1.5 bg-gold-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        {/* Rich Narrative 3-Paragraph Flow matching cagmc.com */}
+        {/* Narrative Narrative Flow */}
         <div className="space-y-6 text-sm sm:text-base text-slate-700 dark:text-slate-200 leading-relaxed max-w-4xl mx-auto font-normal">
-          <p>
-            Chartered Accountants play an indispensable role in steering India’s rapidly growing economic landscape. Beyond basic accounting, professional CAs serve as trusted strategic advisors, ensuring enterprise longevity, statutory compliance, tax optimization, and rigorous governance for businesses, institutions, and individual taxpayers.
-          </p>
           <p>
             <strong>{siteConfig.firmName}</strong> is a distinguished Chartered Accountants <strong>Partnership Firm</strong> located in the historic commercial hub of <strong>{siteConfig.locationCity}</strong>. Regulated under the guidelines of the Institute of Chartered Accountants of India (ICAI), our practice is steered by two accomplished senior partners — <strong>CA. Deepanshi Bansal</strong> (ACA, DISA (ICAI), B.Com) and <strong>CA. Parul</strong> (FCA, M.Com).
           </p>

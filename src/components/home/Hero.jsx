@@ -92,7 +92,7 @@ export default function Hero({ onOpenConsultation }) {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl mt-6">
           <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
             <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">250+</span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">ITRs &amp; GST Filings</span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">Clients</span>
           </div>
           <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 text-center shadow-2xl hover:border-gold-400 transition-colors">
             <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-1">100%</span>

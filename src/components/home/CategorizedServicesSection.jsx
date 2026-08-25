@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Building2, 
@@ -13,11 +13,23 @@ import {
   Landmark,
   CheckCircle2,
   Scale,
+  ChevronLeft,
+  ChevronRight,
   Sparkles
 } from 'lucide-react';
 
 export default function CategorizedServicesSection({ onOpenConsultation }) {
-  // 1. Business Registrations Data (CAGMC Style Clean Grid)
+  const scrollRef1 = useRef(null);
+  const scrollRef2 = useRef(null);
+
+  const scroll = (ref, direction) => {
+    if (ref.current) {
+      const scrollAmount = direction === 'left' ? -340 : 340;
+      ref.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  // 1. Business Registrations & Company Incorporation (CAGMC Style)
   const businessRegistrations = [
     {
       title: "Foreign Company Registration",
@@ -93,7 +105,7 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
     }
   ];
 
-  // 2. Audit & Tax Services Data (CAGMC Style Clean Grid)
+  // 2. Audit, Taxation & Corporate Compliances (CAGMC Style)
   const auditTaxServices = [
     {
       title: "ITR Filing (Forms 1-7)",
@@ -127,7 +139,7 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
     },
     {
       title: "DISA (ICAI) Systems Audit",
-      desc: "Certified Information Systems Audit conducted by DISA (ICAI) qualified systems auditor CA. DEEPANSHI BANSAL.",
+      desc: "Certified Information Systems Audit conducted by DISA (ICAI) systems auditor CA. DEEPANSHI BANSAL.",
       icon: ShieldCheck,
       link: "/audit-assurance"
     },
@@ -146,13 +158,13 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
   ];
 
   return (
-    <div className="space-y-0">
+    <div className="space-y-0 overflow-hidden">
       
-      {/* SECTION 1: Business Registrations (Clean Simple 4-Column Grid) */}
+      {/* SECTION 1: Business Registrations (Horizontal Infinite Animated Carousel) */}
       <section className="py-20 bg-[#f9fafb] text-slate-800 transition-colors duration-200 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-14">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
             <div className="text-center sm:text-left">
               <span className="inline-block text-xs font-black uppercase tracking-widest text-[#2f8524] bg-emerald-100/80 border border-emerald-300 px-3.5 py-1 rounded-full mb-2">
                 Incorporation &amp; Licensing
@@ -160,68 +172,92 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               <h2 className="font-heading text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
                 Business Registrations
               </h2>
-              <div className="w-16 h-1.5 bg-[#55b848] rounded-full mt-2 mx-auto sm:mx-0"></div>
-              <p className="text-xs sm:text-sm text-slate-600 mt-2">
-                Fast, hassle-free incorporation and statutory government licensing for all legal structures
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                Fast, hassle-free incorporation and statutory government licensing for all entity types (Hover to pause)
               </p>
             </div>
 
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs shrink-0 cursor-pointer"
-            >
-              <span>See All Services</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            {/* Left/Right Controls & See All Button */}
+            <div className="flex items-center gap-3 shrink-0">
+              <Link
+                to="/services"
+                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+              >
+                <span>See All Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={() => scroll(scrollRef1, 'left')}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-[#55b848] text-slate-700 hover:text-emerald-700 shadow-sm flex items-center justify-center transition-all cursor-pointer hover:scale-105"
+                  title="Scroll Left"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => scroll(scrollRef1, 'right')}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-[#55b848] text-slate-700 hover:text-emerald-700 shadow-sm flex items-center justify-center transition-all cursor-pointer hover:scale-105"
+                  title="Scroll Right"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {businessRegistrations.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-2xl p-6 border-2 border-slate-300 hover:border-[#55b848] shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between text-center group"
-                >
-                  <div>
-                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#2f8524] group-hover:bg-[#55b848] group-hover:text-white transition-all shadow-2xs">
-                      <Icon className="w-7 h-7" />
+          {/* Seamless Infinite Horizontal Animated Marquee */}
+          <div
+            ref={scrollRef1}
+            className="overflow-x-auto no-scrollbar py-2"
+          >
+            <div className="animate-marquee-infinite flex gap-5 py-2">
+              {[...businessRegistrations, ...businessRegistrations].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="w-[280px] sm:w-[310px] bg-white rounded-2xl p-5 border-2 border-slate-300 hover:border-[#55b848] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-center group shrink-0"
+                  >
+                    <div>
+                      <div className="w-13 h-13 mx-auto mb-3.5 rounded-2xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-[#2f8524] group-hover:scale-110 group-hover:bg-[#55b848] group-hover:text-white transition-all shadow-2xs">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-heading text-base font-black text-navy-950 mb-2 group-hover:text-emerald-700 transition-colors line-clamp-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-slate-700 font-medium leading-relaxed mb-4 line-clamp-3">
+                        {item.desc}
+                      </p>
                     </div>
-                    <h3 className="font-heading text-base sm:text-lg font-black text-navy-950 mb-2 group-hover:text-emerald-700 transition-colors line-clamp-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
+                    <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
+                      <button
+                        onClick={() => onOpenConsultation(item.title)}
+                        className="py-1.5 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
+                      >
+                        Inquire
+                      </button>
+                      <Link
+                        to={item.link}
+                        className="text-xs font-extrabold text-slate-700 hover:text-emerald-700 flex items-center gap-1 transition-colors"
+                      >
+                        <span>Details</span>
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-                  <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
-                    <button
-                      onClick={() => onOpenConsultation(item.title)}
-                      className="py-1.5 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
-                    >
-                      Inquire
-                    </button>
-                    <Link
-                      to={item.link}
-                      className="text-xs font-extrabold text-slate-700 hover:text-emerald-700 flex items-center gap-1 transition-colors"
-                    >
-                      <span>Details</span>
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 2: Audit and Tax Management (Clean Simple 4-Column Grid) */}
+      {/* SECTION 2: Audit and Tax Management (Horizontal Infinite Animated Carousel) */}
       <section className="py-20 bg-white text-slate-800 transition-colors duration-200 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-14">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10">
             <div className="text-center sm:text-left">
               <span className="inline-block text-xs font-black uppercase tracking-widest text-[#d9630e] bg-orange-100/80 border border-orange-300 px-3.5 py-1 rounded-full mb-2">
                 Taxation &amp; Assurance
@@ -229,58 +265,82 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               <h2 className="font-heading text-3xl sm:text-4xl font-black text-navy-950 tracking-tight">
                 Audit and Tax Management
               </h2>
-              <div className="w-16 h-1.5 bg-[#f37920] rounded-full mt-2 mx-auto sm:mx-0"></div>
-              <p className="text-xs sm:text-sm text-slate-600 mt-2">
+              <p className="text-xs sm:text-sm text-slate-600 mt-1">
                 Partner-led taxation strategy, statutory audits under ICAI standards &amp; MCA compliances
               </p>
             </div>
 
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 hover:bg-orange-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs shrink-0 cursor-pointer"
-            >
-              <span>See All Services</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+            {/* Left/Right Controls & See All Button */}
+            <div className="flex items-center gap-3 shrink-0">
+              <Link
+                to="/services"
+                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 hover:bg-orange-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+              >
+                <span>See All Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={() => scroll(scrollRef2, 'left')}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-[#f37920] text-slate-700 hover:text-orange-700 shadow-sm flex items-center justify-center transition-all cursor-pointer hover:scale-105"
+                  title="Scroll Left"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={() => scroll(scrollRef2, 'right')}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-[#f37920] text-slate-700 hover:text-orange-700 shadow-sm flex items-center justify-center transition-all cursor-pointer hover:scale-105"
+                  title="Scroll Right"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {auditTaxServices.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="bg-white rounded-2xl p-6 border-2 border-slate-300 hover:border-[#f37920] shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex flex-col justify-between text-center group"
-                >
-                  <div>
-                    <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center text-[#d9630e] group-hover:bg-[#f37920] group-hover:text-white transition-all shadow-2xs">
-                      <Icon className="w-7 h-7" />
+          {/* Seamless Infinite Horizontal Animated Marquee (Reverse Glide) */}
+          <div
+            ref={scrollRef2}
+            className="overflow-x-auto no-scrollbar py-2"
+          >
+            <div className="animate-marquee-reverse flex gap-5 py-2">
+              {[...auditTaxServices, ...auditTaxServices].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={idx}
+                    className="w-[280px] sm:w-[310px] bg-white rounded-2xl p-5 border-2 border-slate-300 hover:border-[#f37920] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-center group shrink-0"
+                  >
+                    <div>
+                      <div className="w-13 h-13 mx-auto mb-3.5 rounded-2xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#d9630e] group-hover:scale-110 group-hover:bg-[#f37920] group-hover:text-white transition-all shadow-2xs">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-heading text-base font-black text-navy-950 mb-2 group-hover:text-[#d9630e] transition-colors line-clamp-1">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-slate-700 font-medium leading-relaxed mb-4 line-clamp-3">
+                        {item.desc}
+                      </p>
                     </div>
-                    <h3 className="font-heading text-base sm:text-lg font-black text-navy-950 mb-2 group-hover:text-[#d9630e] transition-colors line-clamp-1">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-[13px] text-slate-700 font-medium leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
+                    <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
+                      <button
+                        onClick={() => onOpenConsultation(item.title)}
+                        className="py-1.5 px-3 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-black uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
+                      >
+                        Inquire
+                      </button>
+                      <Link
+                        to={item.link}
+                        className="text-xs font-extrabold text-slate-700 hover:text-orange-700 flex items-center gap-1 transition-colors"
+                      >
+                        <span>Details</span>
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-                  <div className="pt-3 border-t border-slate-200 flex items-center justify-between gap-2">
-                    <button
-                      onClick={() => onOpenConsultation(item.title)}
-                      className="py-1.5 px-3 rounded-lg bg-orange-600 hover:bg-orange-700 text-white text-xs font-black uppercase tracking-wider transition-colors cursor-pointer shadow-2xs"
-                    >
-                      Inquire
-                    </button>
-                    <Link
-                      to={item.link}
-                      className="text-xs font-extrabold text-slate-700 hover:text-orange-700 flex items-center gap-1 transition-colors"
-                    >
-                      <span>Details</span>
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
 
         </div>

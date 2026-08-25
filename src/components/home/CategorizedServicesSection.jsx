@@ -225,22 +225,31 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               </p>
             </div>
 
-            {/* Left/Right Controls */}
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                onClick={prevBiz}
-                className="w-11 h-11 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                title="Previous Service"
+            {/* Left/Right Controls & See All Button */}
+            <div className="flex items-center gap-3 shrink-0">
+              <Link
+                to="/services"
+                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
               >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextBiz}
-                className="w-11 h-11 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                title="Next Service"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+                <span>See All Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={prevBiz}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  title="Previous Service"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextBiz}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  title="Next Service"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -375,22 +384,31 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               </p>
             </div>
 
-            {/* Left/Right Controls */}
-            <div className="flex items-center gap-2 shrink-0">
-              <button
-                onClick={prevAudit}
-                className="w-11 h-11 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                title="Previous Service"
+            {/* Left/Right Controls & See All Button */}
+            <div className="flex items-center gap-3 shrink-0">
+              <Link
+                to="/services"
+                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 hover:bg-orange-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
               >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextAudit}
-                className="w-11 h-11 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
-                title="Next Service"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
+                <span>See All Services</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={prevAudit}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  title="Previous Service"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={nextAudit}
+                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  title="Next Service"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -505,6 +523,32 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* GRAND "SEE ALL SERVICES" ACTION BAR */}
+      <section className="py-12 bg-gradient-to-r from-[#102c4c] via-[#143862] to-[#0e2744] text-white border-b-4 border-gold-500 text-center">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="text-center sm:text-left">
+            <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-gold-300 bg-gold-500/20 border border-gold-500/30 px-3.5 py-1 rounded-full mb-2">
+              <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+              <span>Full Practice Scope</span>
+            </span>
+            <h3 className="font-heading text-2xl sm:text-3xl font-black text-white">
+              Looking for a Specific Specialized Service?
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 mt-1">
+              Explore our complete categorized directory of all 38+ Chartered Accountancy services &amp; filings
+            </p>
+          </div>
+
+          <Link
+            to="/services"
+            className="py-3.5 px-8 rounded-2xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs sm:text-sm uppercase tracking-wider shadow-2xl hover:from-gold-300 hover:to-gold-500 hover:scale-105 transition-all flex items-center gap-2 shrink-0 cursor-pointer"
+          >
+            <span>See All Services</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 

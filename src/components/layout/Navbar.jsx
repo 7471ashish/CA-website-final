@@ -90,42 +90,52 @@ export default function Navbar({ onOpenConsultation }) {
                 </button>
 
                 {activeDropdown === 'business' && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[480px] xl:w-[540px] bg-white border-2 border-slate-200 rounded-2xl shadow-2xl p-5 animate-fadeIn z-50 grid grid-cols-2 gap-4">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] xl:w-[680px] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-6 sm:p-7 animate-fadeIn z-50 grid grid-cols-2 gap-6">
                     <div>
-                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
-                        Company Incorporation
+                      <div className="px-3 py-1.5 text-xs sm:text-[13px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3.5 flex items-center gap-2">
+                        <Building2 className="w-4 h-4 text-gold-600 shrink-0" />
+                        <span>Company Incorporation</span>
                       </div>
-                      <div className="space-y-1">
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • Private Limited Company
+                      <div className="space-y-1.5">
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>Private Limited Company</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • LLP Registration
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>LLP Registration</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • One Person Company (OPC)
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>One Person Company (OPC)</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • Partnership Registration
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>Partnership Registration</span>
                         </Link>
                       </div>
                     </div>
                     <div>
-                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
-                        Licenses &amp; Registrations
+                      <div className="px-3 py-1.5 text-xs sm:text-[13px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3.5 flex items-center gap-2">
+                        <FileCheck className="w-4 h-4 text-gold-600 shrink-0" />
+                        <span>Licenses &amp; Registrations</span>
                       </div>
-                      <div className="space-y-1">
-                        <Link to="/gst-registration" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • GST Registration (3-Day)
+                      <div className="space-y-1.5">
+                        <Link to="/gst-registration" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                          <span>GST Registration (3-Day)</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • MSME Udyam Certificate
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>MSME Udyam Certificate</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • FSSAI Food License
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>FSSAI Food License</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • Import Export Code (IEC)
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>Import Export Code (IEC)</span>
                         </Link>
                       </div>
                     </div>
@@ -145,42 +155,52 @@ export default function Navbar({ onOpenConsultation }) {
                 </button>
 
                 {activeDropdown === 'compliance' && (
-                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[480px] xl:w-[540px] bg-white border-2 border-slate-200 rounded-2xl shadow-2xl p-5 animate-fadeIn z-50 grid grid-cols-2 gap-4">
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 w-[600px] xl:w-[680px] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-6 sm:p-7 animate-fadeIn z-50 grid grid-cols-2 gap-6">
                     <div>
-                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
-                        Filing &amp; Returns
+                      <div className="px-3 py-1.5 text-xs sm:text-[13px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3.5 flex items-center gap-2">
+                        <FileText className="w-4 h-4 text-gold-600 shrink-0" />
+                        <span>Filing &amp; Returns</span>
                       </div>
-                      <div className="space-y-1">
-                        <Link to="/itr-filing" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • ITR Filing (Forms 1-7)
+                      <div className="space-y-1.5">
+                        <Link to="/itr-filing" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>ITR Filing (Forms 1-7)</span>
                         </Link>
-                        <Link to="/gst-registration" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • GST Returns (GSTR-1, 3B)
+                        <Link to="/gst-registration" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>GST Returns (GSTR-1, 3B)</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • ROC &amp; Annual MCA Filing
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>ROC &amp; Annual MCA Filing</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • TDS Returns (24Q/26Q)
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>TDS Returns (24Q/26Q)</span>
                         </Link>
                       </div>
                     </div>
                     <div>
-                      <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-slate-100 mb-2">
-                        Audit &amp; Assurance
+                      <div className="px-3 py-1.5 text-xs sm:text-[13px] font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3.5 flex items-center gap-2">
+                        <ShieldCheck className="w-4 h-4 text-gold-600 shrink-0" />
+                        <span>Audit &amp; Assurance</span>
                       </div>
-                      <div className="space-y-1">
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • Tax Audit (Sec 44AB Form 3CD)
+                      <div className="space-y-1.5">
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+                          <span>Tax Audit (Sec 44AB Form 3CD)</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • DISA (ICAI) Systems Audit
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>DISA (ICAI) Systems Audit</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • Statutory Company Audit
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>Statutory Company Audit</span>
                         </Link>
-                        <Link to="/services" className="block px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-gold-600 hover:bg-slate-50 rounded-lg whitespace-nowrap transition-colors">
-                          • Bank &amp; Stock Audit
+                        <Link to="/services" className="flex items-center gap-2.5 px-3.5 py-2.5 text-sm sm:text-[15px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-xl whitespace-nowrap transition-all">
+                          <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
+                          <span>Bank &amp; Stock Audit</span>
                         </Link>
                       </div>
                     </div>

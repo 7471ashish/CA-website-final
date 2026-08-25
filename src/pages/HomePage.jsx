@@ -21,8 +21,8 @@ export default function HomePage() {
       />
       <Hero onOpenConsultation={onOpenConsultation} />
       <AboutIntroSection onOpenConsultation={onOpenConsultation} />
-      <CategorizedServicesSection onOpenConsultation={onOpenConsultation} />
       <OfficeShowcaseSection onOpenConsultation={onOpenConsultation} />
+      <CategorizedServicesSection onOpenConsultation={onOpenConsultation} />
       <WhyChooseUsSection onOpenConsultation={onOpenConsultation} />
       <IndustriesSection />
       <FAQSection />

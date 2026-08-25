@@ -206,15 +206,12 @@ export default function Navbar({ onOpenConsultation }) {
               </NavLink>
             </nav>
 
-            {/* 3. RIGHT ACTIONS (Theme Toggle + Book Consultation CTA) */}
+            {/* 3. RIGHT ACTIONS (Book Consultation CTA) */}
             <div className="hidden lg:flex items-center gap-3.5 shrink-0 whitespace-nowrap">
-              {/* Day/Night Theme Toggle */}
-              <ThemeToggle />
-
               {/* Golden Consultation Button */}
               <button
                 onClick={() => onOpenConsultation()}
-                className="h-10 px-5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
+                className="h-10 px-6 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer shrink-0 whitespace-nowrap"
               >
                 <BookmarkCheck className="w-4 h-4 shrink-0" />
                 <span>Book Consultation</span>
@@ -223,10 +220,9 @@ export default function Navbar({ onOpenConsultation }) {
 
             {/* 4. MOBILE DRAWER HAMBURGER */}
             <div className="flex xl:hidden items-center gap-2">
-              <ThemeToggle />
               <button
                 onClick={() => setMobileOpen(true)}
-                className="p-2.5 sm:p-3 rounded-xl bg-slate-100 dark:bg-navy-900 text-navy-900 dark:text-slate-100 hover:bg-slate-200 dark:hover:bg-navy-850 active:scale-95 transition-all cursor-pointer border border-slate-200 dark:border-slate-800"
+                className="p-2.5 sm:p-3 rounded-xl bg-slate-100 text-navy-900 hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
                 aria-label="Open navigation menu"
               >
                 <Menu className="w-6 h-6 sm:w-7 sm:h-7" />

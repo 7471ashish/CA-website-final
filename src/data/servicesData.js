@@ -4,53 +4,54 @@ export const servicesCategories = [
     categoryTitle: "Business Registration",
     categorySubtitle: "Start your venture with the right legal structure and 100% MCA/Govt compliance.",
     badge: "Startup & Corporate",
+    iconName: "Building2",
     services: [
       {
         id: "private-limited",
         title: "Private Limited Company",
         shortDesc: "The most popular corporate entity for startups and scalable businesses in India with limited liability protection.",
         icon: "Briefcase",
-        link: "/services#private-limited",
+        link: "/company-incorporation",
         highlight: "SPICe+ Instant Filing"
       },
       {
         id: "llp-registration",
         title: "LLP Registration",
         shortDesc: "Ideal legal structure for professionals and small-to-medium businesses desiring partnership flexibility with limited liability.",
-        icon: "Lightbulb",
-        link: "/services#llp-registration",
+        icon: "Briefcase",
+        link: "/company-incorporation",
         highlight: "Low Compliance Burden"
       },
       {
         id: "one-person-company",
         title: "One Person Company (OPC)",
         shortDesc: "Enables solo entrepreneurs to operate a registered corporate entity with single-shareholder ownership.",
-        icon: "User",
-        link: "/services#one-person-company",
+        icon: "Briefcase",
+        link: "/company-incorporation",
         highlight: "100% Solo Ownership"
       },
       {
         id: "partnership-registration",
         title: "Partnership Registration",
         shortDesc: "Traditional multi-partner business structure with customized Partnership Deed drafting and registrar notarization.",
-        icon: "Users",
-        link: "/services#partnership-registration",
+        icon: "Briefcase",
+        link: "/company-incorporation",
         highlight: "Quick & Cost-Effective"
       },
       {
         id: "sole-proprietorship",
         title: "Sole Proprietorship",
         shortDesc: "Simple business setup for single proprietors with MSME Udyam, GST, and trade licensing.",
-        icon: "Building",
-        link: "/services#sole-proprietorship",
+        icon: "Building2",
+        link: "/company-incorporation",
         highlight: "Immediate Setup"
       },
       {
         id: "public-company",
         title: "Public Limited Company",
         shortDesc: "Structured for large scale enterprises aiming to raise capital from the general public and list on stock exchanges.",
-        icon: "Handshake",
-        link: "/services#public-company",
+        icon: "Building2",
+        link: "/company-incorporation",
         highlight: "Public Capital Access"
       },
       {
@@ -58,15 +59,15 @@ export const servicesCategories = [
         title: "Foreign Company Subsidiary",
         shortDesc: "Assistance for international enterprises establishing wholly-owned subsidiaries, branch offices, or liaison offices in India.",
         icon: "Globe",
-        link: "/services#foreign-company",
+        link: "/company-incorporation",
         highlight: "FDI & RBI Compliant"
       },
       {
         id: "nidhi-company",
         title: "Nidhi / Producer Company",
         shortDesc: "Specialized mutual benefit and farmer/agricultural producer entities with specialized MCA compliances.",
-        icon: "PiggyBank",
-        link: "/services#nidhi-company",
+        icon: "Building2",
+        link: "/company-incorporation",
         highlight: "Agri & Member Benefit"
       }
     ]
@@ -76,12 +77,13 @@ export const servicesCategories = [
     categoryTitle: "Licenses & Government Registrations",
     categorySubtitle: "Mandatory statutory licenses and certifications for lawful business operations across India.",
     badge: "Statutory Approvals",
+    iconName: "FileCheck",
     services: [
       {
         id: "gst-registration",
         title: "GST Registration",
         shortDesc: "Express 3 to 7 working days GSTIN procurement for goods and services suppliers with zero documentation hassle.",
-        icon: "Scale",
+        icon: "FileCheck",
         link: "/gst-registration",
         highlight: "3-7 Days Turnaround"
       },
@@ -89,8 +91,8 @@ export const servicesCategories = [
         id: "fssai-license",
         title: "FSSAI Food License",
         shortDesc: "Basic, State, or Central Food Safety and Standards Authority licenses for restaurants, cloud kitchens, and food manufacturers.",
-        icon: "Utensils",
-        link: "/services#fssai-license",
+        icon: "FileCheck",
+        link: "/gst-registration",
         highlight: "Hygiene Compliance"
       },
       {
@@ -98,15 +100,15 @@ export const servicesCategories = [
         title: "MSME Udyam Registration",
         shortDesc: "Unlock priority sector lending, collateral-free bank loans, and government tender exemptions with Udyam Certificate.",
         icon: "Award",
-        link: "/services#msme-udyam",
+        link: "/company-incorporation",
         highlight: "Govt Subsidies"
       },
       {
         id: "iec-code",
         title: "Import Export Code (IEC)",
         shortDesc: "Mandatory 10-digit DGFT license for businesses planning cross-border international trade of goods and services.",
-        icon: "Truck",
-        link: "/services#iec-code",
+        icon: "Globe",
+        link: "/company-incorporation",
         highlight: "Lifetime Validity"
       },
       {
@@ -114,31 +116,31 @@ export const servicesCategories = [
         title: "ISO Certification",
         shortDesc: "ISO 9001, 14001, 27001, and 45001 certification advisory to establish international quality assurance and trust.",
         icon: "ShieldCheck",
-        link: "/services#iso-certification",
+        link: "/audit-assurance",
         highlight: "Global Benchmark"
       },
       {
         id: "rera-registration",
         title: "RERA Registration",
         shortDesc: "Mandatory statutory registration for real estate builders, developers, and real estate marketing agents.",
-        icon: "Landmark",
-        link: "/services#rera-registration",
+        icon: "Building2",
+        link: "/company-incorporation",
         highlight: "Real Estate Compliance"
       },
       {
         id: "startup-india",
         title: "Startup India DPIIT Recognition",
         shortDesc: "DPIIT registration under Startup India scheme to claim Section 80-IAC 3-year income tax holiday and angel tax exemptions.",
-        icon: "Zap",
-        link: "/services#startup-india",
+        icon: "Award",
+        link: "/company-incorporation",
         highlight: "Tax Holiday (80-IAC)"
       },
       {
         id: "shop-act",
         title: "Shop & Commercial Establishment",
         shortDesc: "State Labour Department registration and municipal trade licensing for commercial shops, offices, and warehouses.",
-        icon: "Store",
-        link: "/services#shop-act",
+        icon: "Building2",
+        link: "/company-incorporation",
         highlight: "Local Municipal Sync"
       }
     ]
@@ -148,6 +150,7 @@ export const servicesCategories = [
     categoryTitle: "Audit, Taxation & Compliances",
     categorySubtitle: "Senior partner-led tax planning, return filings, and ICAI statutory audits for individuals and corporates.",
     badge: "Direct & Indirect Tax",
+    iconName: "FileText",
     services: [
       {
         id: "itr-filing",
@@ -161,7 +164,7 @@ export const servicesCategories = [
         id: "gst-returns",
         title: "GST Returns & GSTR-9",
         shortDesc: "Monthly & quarterly GSTR-1, GSTR-3B filings, automatic GSTR-2B purchase input reconciliation, and annual GSTR-9 audit.",
-        icon: "Tags",
+        icon: "FileCheck",
         link: "/gst-registration",
         highlight: "ITC Mismatch Defense"
       },
@@ -170,39 +173,39 @@ export const servicesCategories = [
         title: "ROC & MCA Annual Filings",
         shortDesc: "Filing of Form AOC-4 (Financials), MGT-7 (Annual Return), Director DIR-3 KYC, and secretarial compliance.",
         icon: "Briefcase",
-        link: "/services#roc-filing",
+        link: "/company-incorporation",
         highlight: "Zero Penalty Assurance"
       },
       {
         id: "tds-returns",
         title: "TDS / TCS Return Filings",
         shortDesc: "Quarterly TDS return e-filing for salary (24Q), non-salary payments (26Q), TCS (27EQ), and Form 16/16A generation.",
-        icon: "ClipboardCheck",
-        link: "/services#tds-returns",
+        icon: "FileText",
+        link: "/itr-filing",
         highlight: "Form 16/16A Issuance"
       },
       {
         id: "tax-audit",
         title: "Tax Audit (Section 44AB)",
         shortDesc: "Comprehensive tax audit under Section 44AB of the Income Tax Act with Form 3CA/3CB and detailed Form 3CD reporting.",
-        icon: "CheckCircle2",
-        link: "/services#tax-audit",
+        icon: "ShieldCheck",
+        link: "/audit-assurance",
         highlight: "Sec 44AB Form 3CD"
       },
       {
         id: "statutory-audit",
         title: "Statutory & Company Audit",
         shortDesc: "Independent statutory audits for Private Limited companies, LLPs, and corporate trusts under Companies Act 2013.",
-        icon: "Shield",
-        link: "/services#statutory-audit",
+        icon: "ShieldCheck",
+        link: "/audit-assurance",
         highlight: "ICAI Auditing Standards"
       },
       {
         id: "disa-audit",
         title: "DISA (ICAI) Systems Audit",
         shortDesc: "Specialized Information Systems Security Audit conducted by certified DISA (ICAI) systems auditor CA Deepanshi Bansal.",
-        icon: "Server",
-        link: "/services#disa-audit",
+        icon: "ShieldCheck",
+        link: "/audit-assurance",
         highlight: "DISA (ICAI) Certified"
       },
       {
@@ -210,7 +213,7 @@ export const servicesCategories = [
         title: "Bank & Stock Audit",
         shortDesc: "Concurrent audit, stock physical verification, and borrower CMA health check for nationalized & private banks.",
         icon: "Building2",
-        link: "/services#bank-stock-audit",
+        link: "/audit-assurance",
         highlight: "Lender Panel Grade"
       }
     ]
@@ -220,29 +223,30 @@ export const servicesCategories = [
     categoryTitle: "NGO, Trust & Society Registrations",
     categorySubtitle: "Empowering non-profit organizations with legal structuring, 12A/80G tax exemptions, and FCRA compliances.",
     badge: "Non-Profit & CSR",
+    iconName: "Heart",
     services: [
       {
         id: "trust-registration",
         title: "Trust Registration",
         shortDesc: "Drafting of Public Charitable Trust Deed and registration with the Sub-Registrar of Assurances.",
         icon: "Heart",
-        link: "/services#trust-registration",
+        link: "/ngo-trust-registration",
         highlight: "Charitable Purpose"
       },
       {
         id: "society-registration",
         title: "Society Registration",
         shortDesc: "Formation of registered Societies under the Societies Registration Act for education, culture, and social welfare.",
-        icon: "Users",
-        link: "/services#society-registration",
+        icon: "Heart",
+        link: "/ngo-trust-registration",
         highlight: "Community Welfare"
       },
       {
         id: "section-8-npo",
         title: "Section 8 Company (NPO)",
         shortDesc: "Prestigious non-profit corporate entity formed under the Companies Act 2013 with nationwide operational authority.",
-        icon: "Building",
-        link: "/services#section-8-npo",
+        icon: "Building2",
+        link: "/ngo-trust-registration",
         highlight: "Corporate NPO Status"
       },
       {
@@ -250,15 +254,15 @@ export const servicesCategories = [
         title: "12A & 80G Tax Exemption",
         shortDesc: "Procurement of Section 12AB lifetime income tax exemption and Section 80G 50% tax rebate eligibility for donors.",
         icon: "FileCheck",
-        link: "/services#12a-80g",
+        link: "/ngo-trust-registration",
         highlight: "Tax-Free Donations"
       },
       {
         id: "ngo-darpan",
         title: "NGO Darpan & CSR-1",
         shortDesc: "NITI Aayog NGO Darpan unique ID registration and Form CSR-1 filing for eligible Corporate Social Responsibility grants.",
-        icon: "BookmarkCheck",
-        link: "/services#ngo-darpan",
+        icon: "Award",
+        link: "/ngo-trust-registration",
         highlight: "CSR Funding Ready"
       },
       {
@@ -266,7 +270,7 @@ export const servicesCategories = [
         title: "FCRA Registration",
         shortDesc: "Ministry of Home Affairs (MHA) foreign contribution license for NGOs receiving overseas philanthropic grants.",
         icon: "Globe",
-        link: "/services#fcra-registration",
+        link: "/ngo-trust-registration",
         highlight: "Foreign Fund Inflow"
       }
     ]
@@ -276,37 +280,38 @@ export const servicesCategories = [
     categoryTitle: "Trademark & Intellectual Property",
     categorySubtitle: "Protect your brand name, logo, proprietary designs, and innovations across India.",
     badge: "Brand Protection",
+    iconName: "Award",
     services: [
       {
         id: "trademark-registration",
         title: "Trademark Registration",
         shortDesc: "Search report, TM application filing under correct NICE classes, and objection defense to protect your brand identity.",
-        icon: "Trademark",
-        link: "/services#trademark",
+        icon: "Award",
+        link: "/trademark-registration",
         highlight: "® Brand Ownership"
       },
       {
         id: "copyright-registration",
         title: "Copyright Registration",
         shortDesc: "Legal copyright protection for literary works, software codes, music, artwork, books, and website content.",
-        icon: "Copyright",
-        link: "/services#copyright",
+        icon: "Award",
+        link: "/trademark-registration",
         highlight: "Original Creative Works"
       },
       {
         id: "design-registration",
         title: "Industrial Design Registration",
         shortDesc: "Protection for unique aesthetic shapes, patterns, geometric ornamentation, and product configurations.",
-        icon: "Compass",
-        link: "/services#design",
+        icon: "Award",
+        link: "/trademark-registration",
         highlight: "Visual Design Rights"
       },
       {
         id: "patent-registration",
         title: "Patent Advisory",
         shortDesc: "Patentability search and provisional specification drafting for novel scientific and technological inventions.",
-        icon: "Lightbulb",
-        link: "/services#patent",
+        icon: "Award",
+        link: "/trademark-registration",
         highlight: "Invention Monopoly"
       }
     ]
@@ -316,12 +321,13 @@ export const servicesCategories = [
     categoryTitle: "Advisory, Visa Networth & Global Taxation",
     categorySubtitle: "Specialized financial engineering, embassy visa wealth certifications, and cross-border advisory.",
     badge: "Global & Strategic",
+    iconName: "Globe",
     services: [
       {
         id: "networth-certificate",
         title: "Visa Networth Certificate (with UDIN)",
         shortDesc: "Fast-track 24-48h CA-certified Statement of Net Worth for Canada, USA, UK, Australia, Schengen student & visitor visas.",
-        icon: "Award",
+        icon: "FileCheck",
         link: "/networth-certificate",
         highlight: "100% Embassy Acceptance"
       },
@@ -330,7 +336,7 @@ export const servicesCategories = [
         title: "NRI Taxation & 15CA/15CB",
         shortDesc: "Form 15CA/15CB foreign remittance certification, Lower TDS certificates u/s 197 for property sale, and DTAA relief.",
         icon: "Globe",
-        link: "/services#nri-tax",
+        link: "/nri-taxation",
         highlight: "Cross-Border Wealth"
       },
       {
@@ -338,15 +344,15 @@ export const servicesCategories = [
         title: "Project Financing & CMA Reports",
         shortDesc: "Detailed Project Reports (DPR) and bank CMA data for term loans, working capital CC/OD limits, and Mudra/PMEGP.",
         icon: "PieChart",
-        link: "/services#loan-project",
+        link: "/project-financing-cma",
         highlight: "Bank Loan Approval"
       },
       {
         id: "uae-corporate-tax",
         title: "UAE Corporate Tax & VAT (5%)",
         shortDesc: "Specialized FTA corporate tax registration (9%), Freezone qualifying revenue assessment, and periodic VAT compliance.",
-        icon: "ShieldAlert",
-        link: "/services#uae-taxation",
+        icon: "Globe",
+        link: "/nri-taxation",
         highlight: "UAE FTA Compliance"
       }
     ]

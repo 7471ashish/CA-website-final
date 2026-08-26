@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { 
   Menu, 
@@ -22,7 +22,26 @@ import { siteConfig } from '../../data/siteConfig';
 export default function Navbar({ onOpenConsultation, onOpenSearch }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const timeoutRef = useRef(null);
+  const navContainerRef = useRef(null);
   const location = useLocation();
+
+  const handleDropdownEnter = (type) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveDropdown(type);
+  };
+
+  const handleDropdownLeave = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 300);
+  };
+
+  const handleDropdownToggle = (type) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setActiveDropdown((prev) => (prev === type ? null : type));
+  };
 
   // Global keyboard shortcut (Ctrl+K or Cmd+K)
   useEffect(() => {
@@ -35,6 +54,17 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [onOpenSearch]);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navContainerRef.current && !navContainerRef.current.contains(e.target)) {
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // Close mobile nav and dropdowns on route change
   useEffect(() => {
@@ -63,7 +93,10 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 shadow-sm transition-colors duration-200 w-full relative">
+      <header 
+        ref={navContainerRef}
+        className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 shadow-sm transition-colors duration-200 w-full relative"
+      >
         <div className="w-full max-w-[1600px] mx-auto px-2 sm:px-3 lg:px-4 xl:px-6">
           <div className="flex items-center justify-between h-14 sm:h-16 lg:h-17 xl:h-19 w-full gap-1 sm:gap-2 lg:gap-2.5 xl:gap-5">
             
@@ -94,11 +127,14 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
 
               {/* Start Business Mega Dropdown Trigger */}
               <div
-                className="py-1"
-                onMouseEnter={() => setActiveDropdown('business')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                className="relative py-1"
+                onMouseEnter={() => handleDropdownEnter('business')}
+                onMouseLeave={handleDropdownLeave}
               >
-                <button className="text-[11px] lg:text-[11.5px] xl:text-[13.5px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5">
+                <button 
+                  onClick={() => handleDropdownToggle('business')}
+                  className={`text-[11px] lg:text-[11.5px] xl:text-[13.5px] 2xl:text-[15px] font-extrabold transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5 py-1 ${activeDropdown === 'business' ? 'text-gold-600 font-black' : 'text-slate-700 hover:text-[#102c4c]'}`}
+                >
                   <span>Start Business</span>
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
@@ -106,11 +142,14 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
 
               {/* Compliances & Audit Mega Dropdown Trigger */}
               <div
-                className="py-1"
-                onMouseEnter={() => setActiveDropdown('audit')}
-                onMouseLeave={() => setActiveDropdown(null)}
+                className="relative py-1"
+                onMouseEnter={() => handleDropdownEnter('audit')}
+                onMouseLeave={handleDropdownLeave}
               >
-                <button className="text-[11px] lg:text-[11.5px] xl:text-[13.5px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5">
+                <button 
+                  onClick={() => handleDropdownToggle('audit')}
+                  className={`text-[11px] lg:text-[11.5px] xl:text-[13.5px] 2xl:text-[15px] font-extrabold transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5 py-1 ${activeDropdown === 'audit' ? 'text-gold-600 font-black' : 'text-slate-700 hover:text-[#102c4c]'}`}
+                >
                   <span>Compliances &amp; Audit</span>
                   <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
@@ -165,12 +204,12 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
           </div>
         </div>
 
-        {/* 🌟 MEGA DROPDOWN (Responsive: Vertical 2-Column on small laptops, 3-Column on wide desktops) */}
+        {/* 🌟 MEGA DROPDOWN - START BUSINESS (With Hover Bridge & Grace Period) */}
         {activeDropdown === 'business' && (
           <div 
-            className="absolute top-full left-1/2 -translate-x-1/2 w-[560px] lg:w-[620px] xl:w-[840px] max-w-[calc(100vw-2rem)] max-h-[80vh] overflow-y-auto bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-6 animate-fadeIn z-50 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5"
-            onMouseEnter={() => setActiveDropdown('business')}
-            onMouseLeave={() => setActiveDropdown(null)}
+            className="absolute top-full left-1/2 -translate-x-1/2 w-[560px] lg:w-[620px] xl:w-[840px] max-w-[calc(100vw-2rem)] max-h-[80vh] overflow-y-auto bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-6 animate-fadeIn z-50 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-4"
+            onMouseEnter={() => handleDropdownEnter('business')}
+            onMouseLeave={handleDropdownLeave}
           >
             {/* Section 1 */}
             <div className="border-b lg:border-b-0 lg:border-r border-slate-100 pb-3 lg:pb-0 lg:pr-4">
@@ -179,23 +218,23 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 <span>Company Formation</span>
               </div>
               <div className="space-y-1">
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Private Limited Company</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>LLP Registration</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>One Person Company (OPC)</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Public Limited Company</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Foreign Subsidiary Setup</span>
                 </Link>
@@ -209,23 +248,23 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 <span>Statutory Licenses</span>
               </div>
               <div className="space-y-1">
-                <Link to="/gst-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/gst-registration" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
                   <span>GST Registration (3-Day)</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>MSME Udyam Certificate</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>FSSAI Food License</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Import Export Code (IEC)</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Shop &amp; Establishment</span>
                 </Link>
@@ -239,26 +278,26 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 <span>Specialized Entities</span>
               </div>
               <div className="space-y-1">
-                <Link to="/ngo-trust-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/ngo-trust-registration" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Section 8 NGO Company</span>
                 </Link>
-                <Link to="/ngo-trust-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/ngo-trust-registration" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Charitable Trust / Society</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Partnership Firm (RoF)</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Producer Company Setup</span>
                 </Link>
               </div>
 
               <div className="mt-3 pt-2.5 border-t border-slate-100 text-center">
-                <Link to="/services" className="text-xs font-black text-gold-600 hover:text-navy-950 flex items-center justify-center gap-1">
+                <Link to="/services" onClick={() => setActiveDropdown(null)} className="text-xs font-black text-gold-600 hover:text-navy-950 flex items-center justify-center gap-1 cursor-pointer">
                   <span>View All 38+ Services &rarr;</span>
                 </Link>
               </div>
@@ -266,11 +305,12 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
           </div>
         )}
 
+        {/* 🌟 MEGA DROPDOWN - COMPLIANCES & AUDIT (With Hover Bridge & Grace Period) */}
         {activeDropdown === 'audit' && (
           <div 
-            className="absolute top-full left-1/2 -translate-x-1/2 w-[560px] lg:w-[620px] xl:w-[840px] max-w-[calc(100vw-2rem)] max-h-[80vh] overflow-y-auto bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-6 animate-fadeIn z-50 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5"
-            onMouseEnter={() => setActiveDropdown('audit')}
-            onMouseLeave={() => setActiveDropdown(null)}
+            className="absolute top-full left-1/2 -translate-x-1/2 w-[560px] lg:w-[620px] xl:w-[840px] max-w-[calc(100vw-2rem)] max-h-[80vh] overflow-y-auto bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-6 animate-fadeIn z-50 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 before:content-[''] before:absolute before:-top-4 before:left-0 before:right-0 before:h-4"
+            onMouseEnter={() => handleDropdownEnter('audit')}
+            onMouseLeave={handleDropdownLeave}
           >
             {/* Section 1 */}
             <div className="border-b lg:border-b-0 lg:border-r border-slate-100 pb-3 lg:pb-0 lg:pr-4">
@@ -279,23 +319,23 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 <span>Direct &amp; Indirect Tax</span>
               </div>
               <div className="space-y-1">
-                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/itr-filing" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>ITR Filing (Forms 1-7)</span>
                 </Link>
-                <Link to="/gst-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/gst-registration" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
                   <span>GST Monthly &amp; Annual Returns</span>
                 </Link>
-                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/itr-filing" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>TDS / TCS Return Filings</span>
                 </Link>
-                <Link to="/nri-taxation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/nri-taxation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>NRI 15CA &amp; 15CB Certificates</span>
                 </Link>
-                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/itr-filing" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Tax Notice Scrutiny Support</span>
                 </Link>
@@ -309,19 +349,19 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 <span>Audits &amp; Assurance</span>
               </div>
               <div className="space-y-1">
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Tax Audit (Sec 44AB Form 3CD)</span>
                 </Link>
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>DISA (ICAI) Systems Audit</span>
                 </Link>
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Company Statutory Audit</span>
                 </Link>
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Bank &amp; Stock Concurrent Audit</span>
                 </Link>
@@ -335,26 +375,26 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 <span>Corporate &amp; Advisory</span>
               </div>
               <div className="space-y-1">
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>ROC Annual Filings (AOC-4)</span>
                 </Link>
-                <Link to="/networth-certificate" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/networth-certificate" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Visa CA Networth Statement</span>
                 </Link>
-                <Link to="/project-financing-cma" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/project-financing-cma" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Bank CMA Data &amp; Project DPR</span>
                 </Link>
-                <Link to="/trademark-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/trademark-registration" onClick={() => setActiveDropdown(null)} className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all cursor-pointer">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Trademark Brand Registration</span>
                 </Link>
               </div>
 
               <div className="mt-3 pt-2.5 border-t border-slate-100 text-center">
-                <Link to="/services" className="text-xs font-black text-gold-600 hover:text-navy-950 flex items-center justify-center gap-1">
+                <Link to="/services" onClick={() => setActiveDropdown(null)} className="text-xs font-black text-gold-600 hover:text-navy-950 flex items-center justify-center gap-1 cursor-pointer">
                   <span>View All 38+ Services &rarr;</span>
                 </Link>
               </div>

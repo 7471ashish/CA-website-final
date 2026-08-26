@@ -55,7 +55,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
   }, [mobileOpen]);
 
   const navLinkClass = ({ isActive }) =>
-    `text-xs lg:text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold tracking-tight whitespace-nowrap py-1.5 transition-colors duration-150 relative flex items-center gap-1 ${
+    `text-[11.5px] lg:text-[12.5px] xl:text-[14px] 2xl:text-[15px] font-extrabold tracking-tight whitespace-nowrap px-1 lg:px-1.5 py-1.5 transition-colors duration-150 relative flex items-center gap-1 ${
       isActive 
         ? 'text-[#102c4c] font-black after:w-full' 
         : 'text-slate-700 hover:text-[#102c4c]'
@@ -64,30 +64,30 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 shadow-md transition-colors duration-200 w-full">
-        <div className="w-full max-w-[1600px] mx-auto px-3 sm:px-5 lg:px-7">
-          <div className="flex items-center justify-between h-16 sm:h-18 lg:h-20 w-full gap-2 sm:gap-3 lg:gap-4 xl:gap-6">
+        <div className="w-full max-w-[1600px] mx-auto px-2 sm:px-4 lg:px-5 xl:px-7">
+          <div className="flex items-center justify-between h-15 sm:h-17 lg:h-19 xl:h-20 w-full gap-1.5 sm:gap-2 lg:gap-3 xl:gap-6">
             
             {/* 1. BRAND LOGO (Left - Compact & Centered Text) */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
+            <Link to="/" className="flex items-center gap-1.5 sm:gap-2.5 shrink-0 group">
               <div className="p-1 sm:p-1.5 bg-white rounded-xl shadow-sm border border-gold-500/40 group-hover:border-gold-500 transition-colors">
                 <img
                   src={siteConfig.caLogoUrl}
                   alt="ICAI Chartered Accountants Logo"
-                  className="h-8 sm:h-9 lg:h-11 xl:h-12 w-auto object-contain"
+                  className="h-7 sm:h-8 lg:h-9 xl:h-11 2xl:h-12 w-auto object-contain"
                 />
               </div>
               <div className="flex flex-col items-center justify-center text-center whitespace-nowrap">
-                <span className="block font-heading font-black text-xs sm:text-base lg:text-lg xl:text-xl text-[#102c4c] tracking-tight leading-tight group-hover:text-gold-600 transition-colors">
+                <span className="block font-heading font-black text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#102c4c] tracking-tight leading-tight group-hover:text-gold-600 transition-colors">
                   {siteConfig.firmName}
                 </span>
-                <span className="inline-block text-[8px] sm:text-[9px] lg:text-[10px] xl:text-[11px] font-black text-gold-600 uppercase tracking-[0.16em] sm:tracking-[0.18em] leading-none mt-0.5 sm:mt-1 bg-gold-50/80 px-1.5 sm:px-2 py-0.5 rounded border border-gold-300/70 text-center">
+                <span className="inline-block text-[7.5px] sm:text-[8.5px] lg:text-[9.5px] xl:text-[11px] font-black text-gold-600 uppercase tracking-[0.14em] sm:tracking-[0.18em] leading-none mt-0.5 bg-gold-50/80 px-1.5 py-0.5 rounded border border-gold-300/70 text-center">
                   {siteConfig.legalTitle}
                 </span>
               </div>
             </Link>
 
-            {/* 2. DESKTOP & TABLET NAVIGATION (Visible on xl: >= 1280px) */}
-            <nav className="hidden xl:flex items-center gap-3 xl:gap-4 2xl:gap-7 whitespace-nowrap">
+            {/* 2. DESKTOP NAVIGATION (Visible on 14-inch laptops & desktops: >= 1024px) */}
+            <nav className="hidden lg:flex items-center gap-1.5 lg:gap-2.5 xl:gap-4 2xl:gap-7 whitespace-nowrap">
               <NavLink to="/" className={navLinkClass}>
                 Home
               </NavLink>
@@ -98,13 +98,13 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 onMouseEnter={() => setActiveDropdown('business')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
+                <button className="text-[11.5px] lg:text-[12.5px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5">
                   <span>Start Business</span>
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
+                  <ChevronDown className={`w-3 h-3 lg:w-3.5 lg:h-3.5 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
 
                 {activeDropdown === 'business' && (
-                  <div className="absolute top-full left-0 xl:left-1/2 xl:-translate-x-1/2 w-[740px] xl:w-[840px] max-w-[calc(100vw-2rem)] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-6 sm:p-7 animate-fadeIn z-50 grid grid-cols-3 gap-5">
+                  <div className="absolute top-full left-0 xl:left-1/2 xl:-translate-x-1/2 w-[720px] xl:w-[840px] max-w-[calc(100vw-2rem)] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-7 animate-fadeIn z-50 grid grid-cols-3 gap-4 sm:gap-5">
                     {/* Sub-Service Category 1 */}
                     <div>
                       <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
@@ -206,13 +206,13 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 onMouseEnter={() => setActiveDropdown('audit')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
+                <button className="text-[11.5px] lg:text-[12.5px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5">
                   <span>Compliances &amp; Audit</span>
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180 text-gold-500' : ''}`} />
+                  <ChevronDown className={`w-3 h-3 lg:w-3.5 lg:h-3.5 transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
 
                 {activeDropdown === 'audit' && (
-                  <div className="absolute top-full left-0 xl:left-1/2 xl:-translate-x-1/2 w-[740px] xl:w-[840px] max-w-[calc(100vw-2rem)] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-6 sm:p-7 animate-fadeIn z-50 grid grid-cols-3 gap-5">
+                  <div className="absolute top-full left-0 xl:left-1/2 xl:-translate-x-1/2 w-[720px] xl:w-[840px] max-w-[calc(100vw-2rem)] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-7 animate-fadeIn z-50 grid grid-cols-3 gap-4 sm:gap-5">
                     {/* Sub-Service Category 1 */}
                     <div>
                       <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
@@ -322,31 +322,31 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
             </nav>
 
             {/* 3. RIGHT ACTIONS (Golden Consultation CTA) */}
-            <div className="hidden xl:flex items-center gap-2.5 xl:gap-3.5 shrink-0 whitespace-nowrap">
+            <div className="hidden lg:flex items-center gap-1.5 lg:gap-2.5 xl:gap-3.5 shrink-0 whitespace-nowrap">
               <button
                 onClick={() => onOpenConsultation()}
-                className="h-9 px-3.5 xl:px-5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
+                className="h-8.5 lg:h-9 px-2.5 lg:px-3.5 xl:px-5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-[11px] lg:text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
               >
                 <BookmarkCheck className="w-3.5 h-3.5 shrink-0" />
                 <span>Book Consultation</span>
               </button>
             </div>
 
-            {/* 4. MOBILE & TABLET DRAWER HAMBURGER & SEARCH (On screens < xl / < 1280px) */}
-            <div className="flex xl:hidden items-center gap-2">
+            {/* 4. MOBILE DRAWER HAMBURGER & SEARCH (Only on phones & small screens < lg / < 1024px) */}
+            <div className="flex lg:hidden items-center gap-1.5">
               <button
                 onClick={() => onOpenSearch?.()}
-                className="p-2 sm:p-2.5 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
+                className="p-1.5 sm:p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
                 aria-label="Search services"
               >
-                <Search className="w-5 h-5 text-gold-600" />
+                <Search className="w-4.5 h-4.5 text-gold-600" />
               </button>
               <button
                 onClick={() => setMobileOpen(true)}
-                className="p-2 sm:p-2.5 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
+                className="p-1.5 sm:p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
                 aria-label="Open navigation menu"
               >
-                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
+                <Menu className="w-5 h-5" />
               </button>
             </div>
 
@@ -356,7 +356,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-[9999] xl:hidden">
+        <div className="fixed inset-0 z-[9999] lg:hidden">
           <div
             className="fixed inset-0 bg-navy-950/80 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileOpen(false)}

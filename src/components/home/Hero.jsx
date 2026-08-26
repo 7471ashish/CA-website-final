@@ -109,28 +109,38 @@ export default function Hero({ onOpenConsultation, onOpenSearch }) {
             <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">CLIENTS SERVED</span>
           </div>
 
-          {/* 2nd Block: Clickable Link to About Us with Hover Effect */}
+          {/* 2nd Block: Clickable Link to About Us with Partner Deepanshi Bansal */}
           <Link
             to="/about"
-            className="bg-black/60 hover:bg-black/80 backdrop-blur-md border border-white/20 hover:border-gold-400 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center transition-all duration-200 group cursor-pointer"
+            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
+            title="View CA. DEEPANSHI BANSAL Profile"
           >
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 group-hover:text-gold-300 block mb-0.5">2</span>
-            <span className="text-[11px] sm:text-xs font-black text-gold-400 group-hover:text-gold-300 uppercase tracking-wider flex items-center justify-center gap-1">
-              <span>PARTNERS (CA)</span>
-              <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
+              CA. DEEPANSHI BANSAL
+            </span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">
+              B.COM, ACA, DISA (ICAI)
             </span>
           </Link>
 
-          {/* 3rd Block: Static (All Golden) */}
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">100%</span>
-            <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">UDIN VERIFIED</span>
-          </div>
+          {/* 3rd Block: Clickable Link to About Us with Partner Parul */}
+          <Link
+            to="/about"
+            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
+            title="View CA. PARUL Profile"
+          >
+            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
+              CA. PARUL
+            </span>
+            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">
+              M.COM, FCA
+            </span>
+          </Link>
 
           {/* 4th Block: Static (All Golden) */}
           <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
-            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">Budhana Gate</span>
-            <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">MEERUT CENTRAL</span>
+            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CLIENT FOCUSED</span>
+            <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">APPROACH</span>
           </div>
         </div>
 

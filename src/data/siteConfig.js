@@ -41,5 +41,10 @@ export const siteConfig = {
   googleMapsDirect: "https://maps.google.com/?q=28.981012,77.703935",
   officeImageUrl: "/images/drb-office.jpg",
   // Google Apps Script Web App URL for storing leads into Google Sheets
-  googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbwg2CSuiyZWF_-wQ5SeENNrxrbISqUCwLbHJbY41lOkS9d4RuxQwplicTDAM00zVOzA/exec"
+  googleSheetWebhookUrl: "https://script.google.com/macros/s/AKfycbwg2CSuiyZWF_-wQ5SeENNrxrbISqUCwLbHJbY41lOkS9d4RuxQwplicTDAM00zVOzA/exec",
+  // Official Social Media Profiles
+  socialLinks: {
+    linkedin: "https://www.linkedin.com/in/ca-deepanshi-bansal-4908b0278?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
+    instagram: "https://www.instagram.com/grow.with.me0011?utm_source=qr"
+  }
 };

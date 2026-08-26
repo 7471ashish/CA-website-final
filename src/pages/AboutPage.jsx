@@ -235,7 +235,7 @@ export default function AboutPage() {
       </section>
 
       {/* Office & Infrastructure Showcase Section (Photo with Floating Location Card) */}
-      <OfficeShowcaseSection onOpenConsultation={onOpenConsultation} />
+      <OfficeShowcaseSection onOpenConsultation={onOpenConsultation} showProfileButton={false} />
 
       {/* Vision & Mission Cards and Core Commitments */}
       <section className="py-20 bg-slate-50 dark:bg-navy-950 transition-colors duration-200">

@@ -14,7 +14,9 @@ import {
   FileCheck,
   Heart,
   Sparkles,
-  ChevronRight
+  ChevronRight,
+  Search,
+  X
 } from 'lucide-react';
 import SEO from '../components/common/SEO';
 import { servicesCategories, servicesData } from '../data/servicesData';
@@ -37,6 +39,7 @@ const iconMap = {
 export default function ServicesPage() {
   const { onOpenConsultation } = useOutletContext();
   const [selectedCatId, setSelectedCatId] = useState(servicesCategories[0].id);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const activeCategory = servicesCategories.find(cat => cat.id === selectedCatId) || servicesCategories[0];
   const CategoryIcon = iconMap[activeCategory.iconName] || Briefcase;
@@ -70,115 +73,228 @@ export default function ServicesPage() {
           
           <TrustBanner />
 
-          {/* Interactive 6-Category Pill Bar (Instant Zero-Scroll Navigation) */}
-          <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-2 sm:p-2.5 shadow-md mb-8 flex items-center gap-2 overflow-x-auto no-scrollbar">
-            {servicesCategories.map((cat) => {
-              const isActive = selectedCatId === cat.id;
-              const TabIcon = iconMap[cat.iconName] || Briefcase;
-              return (
+          {/* Search Bar */}
+          <div className="relative mb-6">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gold-600 pointer-events-none" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search across all 38+ services (e.g. ITR, GST, Pvt Ltd, Tax Audit, Section 8, Networth, DISA...)"
+              className="w-full pl-12 pr-10 py-3 sm:py-3.5 rounded-2xl bg-white border-2 border-slate-300 focus:border-gold-500 focus:ring-4 focus:ring-gold-500/15 text-sm font-semibold text-navy-950 placeholder-slate-400 shadow-sm transition-all"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1 cursor-pointer"
+                title="Clear Search"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+
+          {searchQuery ? (
+            /* Search Results View */
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="font-heading text-lg font-black text-[#102c4c]">
+                  Search Results for "{searchQuery}"
+                </h3>
                 <button
-                  key={cat.id}
-                  onClick={() => setSelectedCatId(cat.id)}
-                  className={`py-2 px-3.5 sm:px-4 rounded-xl text-xs sm:text-[13px] font-heading font-black tracking-wide whitespace-nowrap transition-all duration-200 flex items-center gap-2 cursor-pointer shrink-0 ${
-                    isActive
-                      ? 'bg-[#102c4c] text-gold-400 shadow-sm border border-[#102c4c]'
-                      : 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-[#102c4c]'
-                  }`}
+                  onClick={() => setSearchQuery('')}
+                  className="text-xs font-bold text-gold-700 hover:underline"
                 >
-                  <TabIcon className={`w-3.5 h-3.5 ${isActive ? 'text-gold-400' : 'text-slate-500'}`} />
-                  <span>{cat.categoryTitle}</span>
-                  <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
-                    isActive ? 'bg-gold-500 text-navy-950' : 'bg-slate-200 text-slate-600'
-                  }`}>
-                    {cat.services.length}
-                  </span>
+                  Clear Search (Show All Categories)
                 </button>
-              );
-            })}
-          </div>
-
-          {/* Active Category Header Banner */}
-          <div className="bg-white border-2 border-slate-300 rounded-2xl p-4 sm:p-6 mb-6 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center shrink-0 shadow-sm border border-slate-800">
-                <CategoryIcon className="w-6 h-6" />
               </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-black uppercase tracking-wider text-gold-600">
-                    {activeCategory.badge}
-                  </span>
-                  <span className="text-slate-300">&bull;</span>
-                  <span className="text-[11px] font-bold text-slate-500">{activeCategory.services.length} Sub-Services Available</span>
-                </div>
-                <h2 className="font-heading text-xl sm:text-2xl font-extrabold text-[#102c4c]">
-                  {activeCategory.categoryTitle}
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
-                  {activeCategory.categorySubtitle}
-                </p>
-              </div>
-            </div>
 
-            <button
-              onClick={() => onOpenConsultation(activeCategory.categoryTitle)}
-              className="py-2 px-4 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs uppercase tracking-wider shadow-xs hover:from-gold-300 hover:to-gold-500 transition-all text-center cursor-pointer shrink-0 whitespace-nowrap"
-            >
-              Consult On {activeCategory.categoryTitle.split(' ')[0]}
-            </button>
-          </div>
+              {(() => {
+                const clean = searchQuery.trim().toLowerCase();
+                const matched = servicesCategories.flatMap((cat) =>
+                  cat.services
+                    .filter(
+                      (s) =>
+                        s.title.toLowerCase().includes(clean) ||
+                        s.shortDesc.toLowerCase().includes(clean) ||
+                        cat.categoryTitle.toLowerCase().includes(clean)
+                    )
+                    .map((s) => ({ ...s, categoryName: cat.categoryTitle }))
+                );
 
-          {/* All Sub-Services in Active Category (Compact Multi-Column Grid) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {activeCategory.services.map((svc) => {
-              const SubIcon = iconMap[svc.icon] || FileText;
-              return (
-                <div
-                  key={svc.id}
-                  className="bg-white border-2 border-slate-300 hover:border-gold-500/80 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
-                >
-                  <div>
-                    {/* Sub-Service Top Row */}
-                    <div className="flex items-start justify-between gap-2 mb-2.5">
-                      <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-navy-900 group-hover:text-gold-400 text-slate-700 flex items-center justify-center shrink-0 transition-colors">
-                        <SubIcon className="w-4 h-4" />
-                      </div>
-                      <span className="text-[10px] font-bold text-gold-700 bg-gold-50 border border-gold-300 px-2 py-0.5 rounded-md text-right leading-tight">
-                        {svc.highlight}
-                      </span>
+                if (matched.length === 0) {
+                  return (
+                    <div className="bg-white rounded-2xl border-2 border-slate-200 p-12 text-center">
+                      <p className="text-sm font-bold text-slate-700">No services found matching "{searchQuery}"</p>
+                      <p className="text-xs text-slate-500 mt-1">Try keywords like ITR, GST, Audit, Incorporation, Trademark, or Networth.</p>
                     </div>
+                  );
+                }
 
-                    {/* Sub-Service Title */}
-                    <h3 className="font-heading text-sm font-bold text-[#102c4c] group-hover:text-gold-600 transition-colors leading-snug mb-2">
-                      {svc.title}
-                    </h3>
+                return (
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                    {matched.map((svc) => {
+                      const SubIcon = iconMap[svc.icon] || FileText;
+                      return (
+                        <div
+                          key={svc.id}
+                          className="bg-white border-2 border-slate-300 hover:border-gold-500/80 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+                        >
+                          <div>
+                            <div className="flex items-start justify-between gap-2 mb-2.5">
+                              <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-navy-900 group-hover:text-gold-400 text-slate-700 flex items-center justify-center shrink-0 transition-colors">
+                                <SubIcon className="w-4 h-4" />
+                              </div>
+                              <span className="text-[10px] font-bold text-gold-700 bg-gold-50 border border-gold-300 px-2 py-0.5 rounded-md text-right leading-tight">
+                                {svc.categoryName}
+                              </span>
+                            </div>
 
-                    {/* Sub-Service Description */}
-                    <p className="text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
-                      {svc.shortDesc}
+                            <h3 className="font-heading text-sm font-bold text-[#102c4c] group-hover:text-gold-600 transition-colors leading-snug mb-2">
+                              {svc.title}
+                            </h3>
+
+                            <p className="text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
+                              {svc.shortDesc}
+                            </p>
+                          </div>
+
+                          <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                            <button
+                              onClick={() => onOpenConsultation(svc.title)}
+                              className="py-1 px-2.5 rounded-lg bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-[11px] uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-2xs transition-all cursor-pointer"
+                            >
+                              Book
+                            </button>
+                            <Link
+                              to={svc.link}
+                              className="py-1 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-[11px] flex items-center gap-1 transition-colors border border-slate-200"
+                            >
+                              <span>Dedicated Page</span>
+                              <ArrowRight className="w-2.5 h-2.5" />
+                            </Link>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
+            </div>
+          ) : (
+            /* Normal Categorized Tabs View */
+            <>
+              {/* Interactive 6-Category Pill Bar (Instant Zero-Scroll Navigation) */}
+              <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-md border border-slate-200 rounded-2xl p-2 sm:p-2.5 shadow-md mb-8 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                {servicesCategories.map((cat) => {
+                  const isActive = selectedCatId === cat.id;
+                  const TabIcon = iconMap[cat.iconName] || Briefcase;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setSelectedCatId(cat.id)}
+                      className={`py-2 px-3.5 sm:px-4 rounded-xl text-xs sm:text-[13px] font-heading font-black tracking-wide whitespace-nowrap transition-all duration-200 flex items-center gap-2 cursor-pointer shrink-0 ${
+                        isActive
+                          ? 'bg-[#102c4c] text-gold-400 shadow-sm border border-[#102c4c]'
+                          : 'bg-slate-100 hover:bg-slate-200 text-slate-700 hover:text-[#102c4c]'
+                      }`}
+                    >
+                      <TabIcon className={`w-3.5 h-3.5 ${isActive ? 'text-gold-400' : 'text-slate-500'}`} />
+                      <span>{cat.categoryTitle}</span>
+                      <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                        isActive ? 'bg-gold-500 text-navy-950' : 'bg-slate-200 text-slate-600'
+                      }`}>
+                        {cat.services.length}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Active Category Header Banner */}
+              <div className="bg-white border-2 border-slate-300 rounded-2xl p-4 sm:p-6 mb-6 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-3.5">
+                  <div className="w-12 h-12 rounded-xl bg-navy-900 text-gold-400 flex items-center justify-center shrink-0 shadow-sm border border-slate-800">
+                    <CategoryIcon className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] font-black uppercase tracking-wider text-gold-600">
+                        {activeCategory.badge}
+                      </span>
+                      <span className="text-slate-300">&bull;</span>
+                      <span className="text-[11px] font-bold text-slate-500">{activeCategory.services.length} Sub-Services Available</span>
+                    </div>
+                    <h2 className="font-heading text-xl sm:text-2xl font-extrabold text-[#102c4c]">
+                      {activeCategory.categoryTitle}
+                    </h2>
+                    <p className="text-xs sm:text-sm text-slate-600 mt-0.5">
+                      {activeCategory.categorySubtitle}
                     </p>
                   </div>
-
-                  {/* Actions */}
-                  <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
-                    <button
-                      onClick={() => onOpenConsultation(svc.title)}
-                      className="py-1 px-2.5 rounded-lg bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-[11px] uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-2xs transition-all cursor-pointer"
-                    >
-                      Book
-                    </button>
-                    <Link
-                      to={svc.link}
-                      className="py-1 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-[11px] flex items-center gap-1 transition-colors border border-slate-200"
-                    >
-                      <span>Dedicated Page</span>
-                      <ArrowRight className="w-2.5 h-2.5" />
-                    </Link>
-                  </div>
                 </div>
-              );
-            })}
-          </div>
+
+                <button
+                  onClick={() => onOpenConsultation(activeCategory.categoryTitle)}
+                  className="py-2 px-4 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs uppercase tracking-wider shadow-xs hover:from-gold-300 hover:to-gold-500 transition-all text-center cursor-pointer shrink-0 whitespace-nowrap"
+                >
+                  Consult On {activeCategory.categoryTitle.split(' ')[0]}
+                </button>
+              </div>
+
+              {/* All Sub-Services in Active Category (Compact Multi-Column Grid) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {activeCategory.services.map((svc) => {
+                  const SubIcon = iconMap[svc.icon] || FileText;
+                  return (
+                    <div
+                      key={svc.id}
+                      className="bg-white border-2 border-slate-300 hover:border-gold-500/80 rounded-2xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between group"
+                    >
+                      <div>
+                        {/* Sub-Service Top Row */}
+                        <div className="flex items-start justify-between gap-2 mb-2.5">
+                          <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-navy-900 group-hover:text-gold-400 text-slate-700 flex items-center justify-center shrink-0 transition-colors">
+                            <SubIcon className="w-4 h-4" />
+                          </div>
+                          <span className="text-[10px] font-bold text-gold-700 bg-gold-50 border border-gold-300 px-2 py-0.5 rounded-md text-right leading-tight">
+                            {svc.highlight}
+                          </span>
+                        </div>
+
+                        {/* Sub-Service Title */}
+                        <h3 className="font-heading text-sm font-bold text-[#102c4c] group-hover:text-gold-600 transition-colors leading-snug mb-2">
+                          {svc.title}
+                        </h3>
+
+                        {/* Sub-Service Description */}
+                        <p className="text-xs text-slate-600 leading-relaxed mb-4 line-clamp-3">
+                          {svc.shortDesc}
+                        </p>
+                      </div>
+
+                      {/* Actions */}
+                      <div className="pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                        <button
+                          onClick={() => onOpenConsultation(svc.title)}
+                          className="py-1 px-2.5 rounded-lg bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-[11px] uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-2xs transition-all cursor-pointer"
+                        >
+                          Book
+                        </button>
+                        <Link
+                          to={svc.link}
+                          className="py-1 px-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-heading font-bold text-[11px] flex items-center gap-1 transition-colors border border-slate-200"
+                        >
+                          <span>Dedicated Page</span>
+                          <ArrowRight className="w-2.5 h-2.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
 
         </div>
       </section>

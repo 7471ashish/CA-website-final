@@ -183,15 +183,8 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
               </button>
             </div>
 
-            {/* 4. MOBILE DRAWER HAMBURGER & SEARCH (< 1024px) */}
-            <div className="flex lg:hidden items-center gap-1.5">
-              <button
-                onClick={() => onOpenSearch?.()}
-                className="p-1.5 sm:p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
-                aria-label="Search services"
-              >
-                <Search className="w-4.5 h-4.5 text-gold-600" />
-              </button>
+            {/* 4. MOBILE DRAWER HAMBURGER (< 1024px) */}
+            <div className="flex lg:hidden items-center">
               <button
                 onClick={() => setMobileOpen(true)}
                 className="p-1.5 sm:p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"

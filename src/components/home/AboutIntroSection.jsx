@@ -62,7 +62,7 @@ export default function AboutIntroSection({ onOpenConsultation }) {
         </div>
 
         {/* TWO PARTNER CARDS EXPANDED */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
           
           {/* Card 1: CA DEEPANSHI BANSAL */}
           <div className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] p-6 sm:p-7 rounded-3xl text-white border-2 border-gold-400/50 shadow-xl flex flex-col justify-between">
@@ -100,6 +100,18 @@ export default function AboutIntroSection({ onOpenConsultation }) {
             </div>
           </div>
 
+        </div>
+
+        {/* Read Complete Firm Profile CTA Button */}
+        <div className="text-center">
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2.5 py-3.5 px-8 rounded-2xl bg-[#102c4c] hover:bg-[#0c223c] text-white font-heading font-black text-xs sm:text-sm uppercase tracking-wider border-2 border-gold-400/80 hover:border-gold-300 shadow-xl hover:shadow-2xl transition-all duration-200 hover:scale-105 group cursor-pointer"
+            title="Read Complete Firm Profile & Leadership Experience"
+          >
+            <span>Read Complete Firm Profile</span>
+            <ArrowRight className="w-4 h-4 text-gold-400 group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
 
       </div>

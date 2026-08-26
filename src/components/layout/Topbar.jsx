@@ -27,11 +27,13 @@ export default function Topbar() {
           {/* Divider */}
           <span className="text-white/20 hidden sm:inline">&bull;</span>
 
-          {/* Full Email Address (Always Full Text, Never Truncated with ...) */}
+          {/* Full Email Address (Direct Gmail Compose) */}
           <a
-            href={`mailto:${siteConfig.email}`}
+            href={siteConfig.gmailUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden sm:flex items-center gap-1.5 text-slate-200 hover:text-gold-400 transition-colors shrink-0 group whitespace-nowrap"
-            title="Email CA Deepanshi Bansal"
+            title="Compose email to CA Deepanshi Bansal on Gmail"
           >
             <span className="p-0.5 rounded bg-gold-500/15 text-gold-400 group-hover:bg-gold-500/25 transition-colors shrink-0">
               <Mail className="w-3.5 h-3.5" />

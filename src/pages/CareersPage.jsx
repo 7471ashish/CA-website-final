@@ -97,7 +97,9 @@ export default function CareersPage() {
               <p className="font-semibold text-navy-950 dark:text-gold-300">
                 You may drop your CV at{' '}
                 <a 
-                  href={`mailto:${siteConfig.email}?subject=Resume%20for%20Future%20Opportunity%20-%20DRB%20%26%20COMPANY`}
+                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.email}&su=Resume%20for%20Future%20Opportunity%20-%20DRB%20%26%20COMPANY`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gold-600 dark:text-gold-400 underline underline-offset-4 font-bold"
                 >
                   {siteConfig.email}

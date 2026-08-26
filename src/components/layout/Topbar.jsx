@@ -1,77 +1,69 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Clock, ShieldCheck, MapPin } from 'lucide-react';
+import { Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
 export default function Topbar() {
   return (
-    <div className="bg-gradient-to-r from-[#0e2744] via-[#13345a] to-[#0e2744] text-white text-xs py-1.5 sm:py-2 border-b-2 border-gold-400/40 relative z-50 transition-colors duration-200 w-full overflow-hidden shadow-sm">
-      <div className="w-full max-w-[1600px] mx-auto px-3 sm:px-5 lg:px-6 flex justify-between items-center gap-2">
+    <div className="bg-gradient-to-r from-[#0c223c] via-[#102c4c] to-[#0c223c] text-white text-[11px] sm:text-xs py-1.5 border-b border-gold-400/30 relative z-50 transition-colors duration-200 w-full overflow-hidden shadow-xs">
+      <div className="w-full max-w-[1600px] mx-auto px-2 sm:px-3 lg:px-4 xl:px-6 flex justify-between items-center gap-2 sm:gap-4">
         
-        {/* Left Contact Details */}
-        <div className="flex items-center gap-3 sm:gap-6 lg:gap-8 min-w-0">
+        {/* Left Side: Contact Information (Phone & Email) */}
+        <div className="flex items-center gap-2 sm:gap-4 lg:gap-6 shrink min-w-0">
           {/* Phone */}
           <a
             href={`tel:${siteConfig.phones[0].raw}`}
-            className="flex items-center gap-1.5 sm:gap-2 text-slate-100 hover:text-gold-400 transition-colors shrink-0 group"
+            className="flex items-center gap-1.5 text-slate-100 hover:text-gold-400 transition-colors shrink-0 group"
             title="Call CA DRB & COMPANY"
           >
-            <span className="p-1 rounded-md bg-gold-500/10 group-hover:bg-gold-500/20 text-gold-400">
+            <span className="p-0.5 rounded bg-gold-500/15 text-gold-400 group-hover:bg-gold-500/25 transition-colors">
               <Phone className="w-3.5 h-3.5" />
             </span>
-            <span className="font-extrabold tracking-wide text-xs sm:text-xs">
+            <span className="font-extrabold tracking-wide text-[11px] sm:text-xs">
               {siteConfig.phones[0].display}
             </span>
           </a>
-          
-          {/* Email (Hidden on smallest mobile, shown from sm:) */}
+
+          {/* Divider */}
+          <span className="text-white/20 hidden sm:inline">|</span>
+
+          {/* Email */}
           <a
             href={`mailto:${siteConfig.email}`}
-            className="hidden sm:flex items-center gap-1.5 sm:gap-2 text-slate-200 hover:text-gold-400 transition-colors truncate group"
+            className="hidden sm:flex items-center gap-1.5 text-slate-200 hover:text-gold-400 transition-colors truncate group"
             title="Email CA Deepanshi Bansal"
           >
-            <span className="p-1 rounded-md bg-gold-500/10 group-hover:bg-gold-500/20 text-gold-400 shrink-0">
+            <span className="p-0.5 rounded bg-gold-500/15 text-gold-400 group-hover:bg-gold-500/25 transition-colors shrink-0">
               <Mail className="w-3.5 h-3.5" />
             </span>
-            <span className="font-medium text-xs truncate max-w-[180px] lg:max-w-none">
+            <span className="font-semibold text-[11px] sm:text-xs truncate max-w-[180px] md:max-w-[240px] xl:max-w-none">
               {siteConfig.email}
             </span>
           </a>
-
-          {/* Partner Credentials Badge (Only on 2xl large screens) */}
-          <Link
-            to="/about"
-            className="hidden 2xl:flex flex-col text-left group border-l border-white/20 pl-4 py-0.5"
-            title="Partner: CA. DEEPANSHI BANSAL"
-          >
-            <span className="text-white text-xs font-black leading-tight group-hover:text-gold-300 transition-colors tracking-wide">
-              CA. DEEPANSHI BANSAL
-            </span>
-            <span className="text-gold-400 text-[10px] font-black uppercase tracking-wider leading-tight">
-              B.COM, ACA, DISA (ICAI)
-            </span>
-          </Link>
         </div>
 
-        {/* Right Badges & Working Hours */}
-        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-          {/* ICAI Regulated Badge (Visible on md:) */}
+        {/* Right Side: Credential Badge & Timings */}
+        <div className="flex items-center gap-2 sm:gap-3 lg:gap-5 shrink-0">
+          {/* ICAI Regulated Badge */}
           <Link
             to="/about"
-            className="hidden md:inline-flex items-center gap-1.5 bg-gold-500/20 hover:bg-gold-500/30 text-gold-300 border border-gold-500/40 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full font-black text-[10px] sm:text-xs uppercase tracking-wider transition-colors"
+            className="hidden md:inline-flex items-center gap-1.5 bg-gold-500/15 hover:bg-gold-500/25 text-gold-300 border border-gold-500/40 px-2.5 py-0.5 rounded-full font-extrabold text-[10px] sm:text-[11px] uppercase tracking-wider transition-all"
             title="View ICAI Firm Credentials"
           >
             <ShieldCheck className="w-3.5 h-3.5 text-gold-400 shrink-0" />
             <span>ICAI Regulated Practice &bull; {siteConfig.locationCity}</span>
           </Link>
-          
-          {/* Timings (On mobile & desktop) */}
+
+          {/* Divider */}
+          <span className="text-white/20 hidden md:inline">|</span>
+
+          {/* Working Timings */}
           <Link
             to="/contact"
-            className="flex items-center gap-1.5 text-slate-200 hover:text-gold-400 transition-colors text-[11px] sm:text-xs group"
-            title="Office Timings"
+            className="flex items-center gap-1.5 text-slate-200 hover:text-gold-400 transition-colors text-[10.5px] sm:text-xs shrink-0 group"
+            title="Office Working Hours"
           >
-            <span className="p-1 rounded-md bg-gold-500/10 group-hover:bg-gold-500/20 text-gold-400 shrink-0">
+            <span className="p-0.5 rounded bg-gold-500/15 text-gold-400 group-hover:bg-gold-500/25 transition-colors shrink-0">
               <Clock className="w-3.5 h-3.5" />
             </span>
             <span className="hidden sm:inline font-semibold">{siteConfig.workingHours}</span>

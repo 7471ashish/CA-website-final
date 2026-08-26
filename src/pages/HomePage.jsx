@@ -4,7 +4,6 @@ import SEO from '../components/common/SEO';
 import Hero from '../components/home/Hero';
 import AboutIntroSection from '../components/home/AboutIntroSection';
 import CategorizedServicesSection from '../components/home/CategorizedServicesSection';
-import OfficeShowcaseSection from '../components/home/OfficeShowcaseSection';
 import WhyChooseUsSection from '../components/home/WhyChooseUsSection';
 import IndustriesSection from '../components/home/IndustriesSection';
 import FAQSection from '../components/home/FAQSection';
@@ -24,7 +23,6 @@ export default function HomePage() {
         onOpenSearch={onOpenSearch} 
       />
       <AboutIntroSection onOpenConsultation={onOpenConsultation} />
-      <OfficeShowcaseSection onOpenConsultation={onOpenConsultation} />
       <CategorizedServicesSection onOpenConsultation={onOpenConsultation} />
       <WhyChooseUsSection onOpenConsultation={onOpenConsultation} />
       <IndustriesSection />

@@ -225,10 +225,10 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
             </div>
 
             {/* Left/Right Controls & See All Button */}
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-2 sm:gap-3 shrink-0">
               <Link
                 to="/services"
-                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+                className="inline-flex items-center gap-1 sm:gap-1.5 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 hover:bg-emerald-600 hover:text-white font-heading font-black text-[11px] sm:text-xs uppercase tracking-wider transition-all shadow-xs"
               >
                 <span>See All Services</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -236,17 +236,17 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               <div className="flex items-center gap-1.5">
                 <button
                   onClick={prevBiz}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
                   title="Previous Service"
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
                 <button
                   onClick={nextBiz}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-slate-300 hover:border-emerald-600 text-slate-700 hover:text-emerald-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
                   title="Next Service"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
             </div>
@@ -384,10 +384,10 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
             </div>
 
             {/* Left/Right Controls & See All Button */}
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center justify-between sm:justify-end w-full sm:w-auto gap-2 sm:gap-3 shrink-0">
               <Link
                 to="/services"
-                className="hidden sm:inline-flex items-center gap-1.5 py-2.5 px-4 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 hover:bg-orange-600 hover:text-white font-heading font-black text-xs uppercase tracking-wider transition-all shadow-xs"
+                className="inline-flex items-center gap-1 sm:gap-1.5 py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 hover:bg-orange-600 hover:text-white font-heading font-black text-[11px] sm:text-xs uppercase tracking-wider transition-all shadow-xs"
               >
                 <span>See All Services</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -395,17 +395,17 @@ export default function CategorizedServicesSection({ onOpenConsultation }) {
               <div className="flex items-center gap-1.5">
                 <button
                   onClick={prevAudit}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
                   title="Previous Service"
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
                 <button
                   onClick={nextAudit}
-                  className="w-10 h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white border-2 border-slate-300 hover:border-orange-500 text-slate-700 hover:text-orange-700 shadow-md flex items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95"
                   title="Next Service"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
             </div>

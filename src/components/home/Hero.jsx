@@ -34,12 +34,11 @@ export default function Hero({ onOpenConsultation, onOpenSearch }) {
       <div className="absolute top-4 right-4 sm:top-6 sm:right-8 z-20">
         <button
           onClick={onOpenSearch}
-          className="flex items-center gap-2 sm:gap-2.5 py-2 sm:py-2.5 px-3.5 sm:px-5 rounded-2xl bg-black/60 hover:bg-black/85 text-white border-2 border-gold-400/80 hover:border-gold-300 backdrop-blur-md shadow-2xl transition-all duration-200 hover:scale-105 cursor-pointer group"
-          title="Search all 38+ services (Ctrl+K)"
+          className="flex items-center gap-2 sm:gap-2.5 py-2 sm:py-2.5 px-4 sm:px-5 rounded-2xl bg-black/65 hover:bg-black/85 text-white border-2 border-gold-400/90 hover:border-gold-300 backdrop-blur-md shadow-2xl transition-all duration-200 hover:scale-105 cursor-pointer group"
+          title="Search all 38+ services"
         >
           <Search className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 group-hover:scale-110 transition-transform" />
           <span className="text-xs sm:text-sm font-black tracking-wide">Search 38+ Services...</span>
-          <kbd className="hidden sm:inline text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono text-gold-300">Ctrl K</kbd>
         </button>
       </div>
 

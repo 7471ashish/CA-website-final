@@ -86,8 +86,8 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
               </div>
             </Link>
 
-            {/* 2. DESKTOP & TABLET NAVIGATION (Visible on lg: >= 1024px) */}
-            <nav className="hidden lg:flex items-center gap-2.5 lg:gap-3.5 xl:gap-5 2xl:gap-7 whitespace-nowrap">
+            {/* 2. DESKTOP & TABLET NAVIGATION (Visible on xl: >= 1280px) */}
+            <nav className="hidden xl:flex items-center gap-3 xl:gap-4 2xl:gap-7 whitespace-nowrap">
               <NavLink to="/" className={navLinkClass}>
                 Home
               </NavLink>
@@ -98,7 +98,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 onMouseEnter={() => setActiveDropdown('business')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-xs lg:text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
+                <button className="text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
                   <span>Start Business</span>
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
@@ -206,7 +206,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 onMouseEnter={() => setActiveDropdown('audit')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-xs lg:text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
+                <button className="text-[13px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap">
                   <span>Compliances &amp; Audit</span>
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
@@ -322,7 +322,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
             </nav>
 
             {/* 3. RIGHT ACTIONS (Golden Consultation CTA) */}
-            <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0 whitespace-nowrap">
+            <div className="hidden xl:flex items-center gap-2.5 xl:gap-3.5 shrink-0 whitespace-nowrap">
               <button
                 onClick={() => onOpenConsultation()}
                 className="h-9 px-3.5 xl:px-5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
@@ -332,8 +332,8 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
               </button>
             </div>
 
-            {/* 4. MOBILE DRAWER HAMBURGER & SEARCH (Only on phones < lg / < 1024px) */}
-            <div className="flex lg:hidden items-center gap-2">
+            {/* 4. MOBILE & TABLET DRAWER HAMBURGER & SEARCH (On screens < xl / < 1280px) */}
+            <div className="flex xl:hidden items-center gap-2">
               <button
                 onClick={() => onOpenSearch?.()}
                 className="p-2 sm:p-2.5 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
@@ -356,7 +356,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-[9999] lg:hidden">
+        <div className="fixed inset-0 z-[9999] xl:hidden">
           <div
             className="fixed inset-0 bg-navy-950/80 backdrop-blur-sm transition-opacity"
             onClick={() => setMobileOpen(false)}

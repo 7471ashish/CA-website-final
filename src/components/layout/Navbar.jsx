@@ -55,7 +55,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
   }, [mobileOpen]);
 
   const navLinkClass = ({ isActive }) =>
-    `text-xs lg:text-[12.5px] xl:text-[14px] 2xl:text-[15px] font-extrabold tracking-tight whitespace-nowrap px-2 py-1.5 transition-colors duration-150 relative flex items-center gap-1 ${
+    `text-[11px] lg:text-[11.5px] xl:text-[13.5px] 2xl:text-[15px] font-extrabold tracking-tight whitespace-nowrap px-1 lg:px-1.5 py-1 transition-colors duration-150 relative flex items-center gap-0.5 ${
       isActive 
         ? 'text-[#102c4c] font-black after:w-full' 
         : 'text-slate-700 hover:text-[#102c4c]'
@@ -64,55 +64,55 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b-2 border-slate-200 shadow-sm transition-colors duration-200 w-full relative">
-        <div className="w-full max-w-[1600px] mx-auto px-3 sm:px-5 lg:px-6">
-          <div className="flex items-center justify-between h-16 sm:h-18 lg:h-19 xl:h-20 w-full gap-2 sm:gap-3 lg:gap-4 xl:gap-6">
+        <div className="w-full max-w-[1600px] mx-auto px-2 sm:px-3 lg:px-4 xl:px-6">
+          <div className="flex items-center justify-between h-14 sm:h-16 lg:h-17 xl:h-19 w-full gap-1 sm:gap-2 lg:gap-2.5 xl:gap-5">
             
             {/* 1. BRAND LOGO (Left) */}
-            <Link to="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group">
-              <div className="p-1 sm:p-1.5 bg-white rounded-xl shadow-2xs border border-gold-500/40 group-hover:border-gold-500 transition-colors">
+            <Link to="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0 group">
+              <div className="p-1 bg-white rounded-lg shadow-2xs border border-gold-500/40 group-hover:border-gold-500 transition-colors">
                 <img
                   src={siteConfig.caLogoUrl}
                   alt="ICAI Chartered Accountants Logo"
-                  className="h-8 sm:h-9 lg:h-9 xl:h-11 2xl:h-12 w-auto object-contain"
+                  className="h-7 sm:h-8 lg:h-8.5 xl:h-10 2xl:h-11 w-auto object-contain"
                 />
               </div>
               <div className="flex flex-col items-center justify-center text-center whitespace-nowrap">
-                <span className="block font-heading font-black text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl text-[#102c4c] tracking-tight leading-tight group-hover:text-gold-600 transition-colors">
+                <span className="block font-heading font-black text-xs sm:text-sm lg:text-sm xl:text-base 2xl:text-lg text-[#102c4c] tracking-tight leading-tight group-hover:text-gold-600 transition-colors">
                   {siteConfig.firmName}
                 </span>
-                <span className="inline-block text-[7.5px] sm:text-[8.5px] lg:text-[9.5px] xl:text-[10.5px] font-black text-gold-600 uppercase tracking-[0.14em] sm:tracking-[0.16em] leading-none mt-0.5 bg-gold-50/80 px-1.5 py-0.5 rounded border border-gold-300/70 text-center">
+                <span className="inline-block text-[7px] sm:text-[8px] lg:text-[8px] xl:text-[9.5px] 2xl:text-[10.5px] font-black text-gold-600 uppercase tracking-[0.12em] sm:tracking-[0.16em] leading-none mt-0.5 bg-gold-50/80 px-1 py-0.5 rounded border border-gold-300/70 text-center">
                   {siteConfig.legalTitle}
                 </span>
               </div>
             </Link>
 
             {/* 2. DESKTOP NAVIGATION (Visible on >= 1024px) */}
-            <nav className="hidden lg:flex items-center gap-2 lg:gap-2.5 xl:gap-4 2xl:gap-6 whitespace-nowrap">
+            <nav className="hidden lg:flex items-center gap-1 lg:gap-1.5 xl:gap-3.5 2xl:gap-6 whitespace-nowrap shrink">
               <NavLink to="/" className={navLinkClass}>
                 Home
               </NavLink>
 
               {/* Start Business Mega Dropdown Trigger */}
               <div
-                className="py-1.5"
+                className="py-1"
                 onMouseEnter={() => setActiveDropdown('business')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-xs lg:text-[12.5px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-2 py-1.5">
+                <button className="text-[11px] lg:text-[11.5px] xl:text-[13.5px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5">
                   <span>Start Business</span>
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === 'business' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
               </div>
 
               {/* Compliances & Audit Mega Dropdown Trigger */}
               <div
-                className="py-1.5"
+                className="py-1"
                 onMouseEnter={() => setActiveDropdown('audit')}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-xs lg:text-[12.5px] xl:text-[14px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-2 py-1.5">
+                <button className="text-[11px] lg:text-[11.5px] xl:text-[13.5px] 2xl:text-[15px] font-extrabold text-slate-700 hover:text-[#102c4c] transition-colors flex items-center gap-0.5 cursor-pointer whitespace-nowrap px-1 lg:px-1.5">
                   <span>Compliances &amp; Audit</span>
-                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180 text-gold-500' : ''}`} />
+                  <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180 text-gold-500' : ''}`} />
                 </button>
               </div>
 
@@ -133,11 +133,11 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
               </NavLink>
             </nav>
 
-            {/* 3. RIGHT ACTIONS (Golden Consultation CTA) */}
-            <div className="hidden lg:flex items-center gap-2 lg:gap-3 shrink-0 whitespace-nowrap">
+            {/* 3. RIGHT ACTIONS (Golden Consultation CTA - Always fully visible, never clipped) */}
+            <div className="hidden lg:flex items-center shrink-0 whitespace-nowrap">
               <button
                 onClick={() => onOpenConsultation()}
-                className="h-8.5 lg:h-9 px-3 xl:px-4.5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-xs xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
+                className="h-8 lg:h-8.5 xl:h-9 px-2.5 lg:px-3.5 xl:px-4.5 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 font-heading font-black text-[10.5px] lg:text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-wider hover:from-gold-300 hover:to-gold-500 shadow-md transition-all duration-200 transform hover:-translate-y-0.5 flex items-center gap-1.5 cursor-pointer shrink-0 whitespace-nowrap"
               >
                 <BookmarkCheck className="w-3.5 h-3.5 shrink-0" />
                 <span>Book Consultation</span>
@@ -145,17 +145,17 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
             </div>
 
             {/* 4. MOBILE DRAWER HAMBURGER & SEARCH (< 1024px) */}
-            <div className="flex lg:hidden items-center gap-2">
+            <div className="flex lg:hidden items-center gap-1.5">
               <button
                 onClick={() => onOpenSearch?.()}
-                className="p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
+                className="p-1.5 sm:p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
                 aria-label="Search services"
               >
-                <Search className="w-5 h-5 text-gold-600" />
+                <Search className="w-4.5 h-4.5 text-gold-600" />
               </button>
               <button
                 onClick={() => setMobileOpen(true)}
-                className="p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
+                className="p-1.5 sm:p-2 rounded-xl bg-slate-100 text-[#102c4c] hover:bg-slate-200 active:scale-95 transition-all cursor-pointer border border-slate-200"
                 aria-label="Open navigation menu"
               >
                 <Menu className="w-5 h-5" />
@@ -165,99 +165,99 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
           </div>
         </div>
 
-        {/* 🌟 GLOBAL POSITIONED MEGA DROPDOWNS (Centered on Screen with Zero Column Overflow) */}
+        {/* 🌟 MEGA DROPDOWN (Responsive: Vertical 2-Column on small laptops, 3-Column on wide desktops) */}
         {activeDropdown === 'business' && (
           <div 
-            className="absolute top-full left-1/2 -translate-x-1/2 w-[820px] xl:w-[880px] max-w-[calc(100vw-2rem)] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-6 sm:p-7 animate-fadeIn z-50 grid grid-cols-3 gap-6"
+            className="absolute top-full left-1/2 -translate-x-1/2 w-[560px] lg:w-[620px] xl:w-[840px] max-w-[calc(100vw-2rem)] max-h-[80vh] overflow-y-auto bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-6 animate-fadeIn z-50 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5"
             onMouseEnter={() => setActiveDropdown('business')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            {/* Column 1 */}
-            <div className="border-r border-slate-100 pr-4">
-              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
+            {/* Section 1 */}
+            <div className="border-b lg:border-b-0 lg:border-r border-slate-100 pb-3 lg:pb-0 lg:pr-4">
+              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-2.5 flex items-center gap-1.5">
                 <Building2 className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                 <span>Company Formation</span>
               </div>
               <div className="space-y-1">
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Private Limited Company</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>LLP Registration</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>One Person Company (OPC)</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Public Limited Company</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Foreign Subsidiary Setup</span>
                 </Link>
               </div>
             </div>
 
-            {/* Column 2 */}
-            <div className="border-r border-slate-100 pr-4">
-              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
+            {/* Section 2 */}
+            <div className="border-b lg:border-b-0 xl:border-r border-slate-100 pb-3 lg:pb-0 xl:pr-4">
+              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-2.5 flex items-center gap-1.5">
                 <Tags className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                 <span>Statutory Licenses</span>
               </div>
               <div className="space-y-1">
-                <Link to="/gst-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/gst-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
                   <span>GST Registration (3-Day)</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>MSME Udyam Certificate</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>FSSAI Food License</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Import Export Code (IEC)</span>
                 </Link>
-                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/services" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Shop &amp; Establishment</span>
                 </Link>
               </div>
             </div>
 
-            {/* Column 3 */}
-            <div>
-              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
+            {/* Section 3 */}
+            <div className="lg:col-span-2 xl:col-span-1">
+              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-2.5 flex items-center gap-1.5">
                 <Award className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                 <span>Specialized Entities</span>
               </div>
               <div className="space-y-1">
-                <Link to="/ngo-trust-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/ngo-trust-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Section 8 NGO Company</span>
                 </Link>
-                <Link to="/ngo-trust-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/ngo-trust-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Charitable Trust / Society</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Partnership Firm (RoF)</span>
                 </Link>
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Producer Company Setup</span>
                 </Link>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-100 text-center">
+              <div className="mt-3 pt-2.5 border-t border-slate-100 text-center">
                 <Link to="/services" className="text-xs font-black text-gold-600 hover:text-navy-950 flex items-center justify-center gap-1">
                   <span>View All 38+ Services &rarr;</span>
                 </Link>
@@ -268,92 +268,92 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
 
         {activeDropdown === 'audit' && (
           <div 
-            className="absolute top-full left-1/2 -translate-x-1/2 w-[820px] xl:w-[880px] max-w-[calc(100vw-2rem)] bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-6 sm:p-7 animate-fadeIn z-50 grid grid-cols-3 gap-6"
+            className="absolute top-full left-1/2 -translate-x-1/2 w-[560px] lg:w-[620px] xl:w-[840px] max-w-[calc(100vw-2rem)] max-h-[80vh] overflow-y-auto bg-white border-2 border-slate-200 rounded-3xl shadow-2xl p-5 sm:p-6 animate-fadeIn z-50 grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5"
             onMouseEnter={() => setActiveDropdown('audit')}
             onMouseLeave={() => setActiveDropdown(null)}
           >
-            {/* Column 1 */}
-            <div className="border-r border-slate-100 pr-4">
-              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
+            {/* Section 1 */}
+            <div className="border-b lg:border-b-0 lg:border-r border-slate-100 pb-3 lg:pb-0 lg:pr-4">
+              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-2.5 flex items-center gap-1.5">
                 <FileText className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                 <span>Direct &amp; Indirect Tax</span>
               </div>
               <div className="space-y-1">
-                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>ITR Filing (Forms 1-7)</span>
                 </Link>
-                <Link to="/gst-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/gst-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
                   <span>GST Monthly &amp; Annual Returns</span>
                 </Link>
-                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>TDS / TCS Return Filings</span>
                 </Link>
-                <Link to="/nri-taxation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/nri-taxation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>NRI 15CA &amp; 15CB Certificates</span>
                 </Link>
-                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/itr-filing" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Tax Notice Scrutiny Support</span>
                 </Link>
               </div>
             </div>
 
-            {/* Column 2 */}
-            <div className="border-r border-slate-100 pr-4">
-              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
+            {/* Section 2 */}
+            <div className="border-b lg:border-b-0 xl:border-r border-slate-100 pb-3 lg:pb-0 xl:pr-4">
+              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-2.5 flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                 <span>Audits &amp; Assurance</span>
               </div>
               <div className="space-y-1">
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Tax Audit (Sec 44AB Form 3CD)</span>
                 </Link>
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>DISA (ICAI) Systems Audit</span>
                 </Link>
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Company Statutory Audit</span>
                 </Link>
-                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/audit-assurance" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Bank &amp; Stock Concurrent Audit</span>
                 </Link>
               </div>
             </div>
 
-            {/* Column 3 */}
-            <div>
-              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-3 flex items-center gap-1.5">
+            {/* Section 3 */}
+            <div className="lg:col-span-2 xl:col-span-1">
+              <div className="px-2 py-1 text-xs font-black uppercase tracking-wider text-gold-600 border-b-2 border-gold-200/80 mb-2.5 flex items-center gap-1.5">
                 <Briefcase className="w-3.5 h-3.5 text-gold-600 shrink-0" />
                 <span>Corporate &amp; Advisory</span>
               </div>
               <div className="space-y-1">
-                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/company-incorporation" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>ROC Annual Filings (AOC-4)</span>
                 </Link>
-                <Link to="/networth-certificate" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/networth-certificate" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Visa CA Networth Statement</span>
                 </Link>
-                <Link to="/project-financing-cma" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/project-financing-cma" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Bank CMA Data &amp; Project DPR</span>
                 </Link>
-                <Link to="/trademark-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[13px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
+                <Link to="/trademark-registration" className="flex items-center gap-2 px-2.5 py-1.5 text-xs sm:text-[12.5px] font-bold text-slate-800 hover:text-[#102c4c] hover:bg-gold-50/70 rounded-lg transition-all">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span>
                   <span>Trademark Brand Registration</span>
                 </Link>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-slate-100 text-center">
+              <div className="mt-3 pt-2.5 border-t border-slate-100 text-center">
                 <Link to="/services" className="text-xs font-black text-gold-600 hover:text-navy-950 flex items-center justify-center gap-1">
                   <span>View All 38+ Services &rarr;</span>
                 </Link>

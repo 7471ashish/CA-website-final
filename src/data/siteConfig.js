@@ -34,6 +34,7 @@ export const siteConfig = {
   phones: [
     { display: "+91 91490 56549", raw: "+919149056549" }
   ],
+  whatsappUrl: "https://api.whatsapp.com/send?phone=919149056549&text=Hello%20DRB%20%26%20COMPANY%2C%20I%20would%20like%20to%20inquire%20about%20your%20CA%20services.",
   email: "CA.deepanshibansal2023@gmail.com",
   workingHours: "Mon - Sat: 10:00 AM - 6:30 PM",
   caLogoUrl: "https://image2url.com/r2/default/images/1772174301055-15470431-39a8-47c7-b7be-51c4e641ec2f.png",

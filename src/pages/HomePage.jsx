@@ -10,7 +10,7 @@ import IndustriesSection from '../components/home/IndustriesSection';
 import FAQSection from '../components/home/FAQSection';
 
 export default function HomePage() {
-  const { onOpenConsultation } = useOutletContext();
+  const { onOpenConsultation, onOpenSearch } = useOutletContext();
 
   return (
     <>
@@ -19,7 +19,10 @@ export default function HomePage() {
         description="DRB & COMPANY is a premier Chartered Accountants Partnership Firm in Budhana Gate, Meerut. Company Incorporation, ITR, GST, Statutory Audits, Tax Audit Sec 44AB & DISA Systems Audit."
         canonical="https://www.drbandcompany.com/"
       />
-      <Hero onOpenConsultation={onOpenConsultation} />
+      <Hero 
+        onOpenConsultation={onOpenConsultation} 
+        onOpenSearch={onOpenSearch} 
+      />
       <AboutIntroSection onOpenConsultation={onOpenConsultation} />
       <OfficeShowcaseSection onOpenConsultation={onOpenConsultation} />
       <CategorizedServicesSection onOpenConsultation={onOpenConsultation} />

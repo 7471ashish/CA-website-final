@@ -10,11 +10,12 @@ import {
   Sparkles, 
   Zap,
   MapPin,
-  Check
+  Check,
+  Search
 } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 
-export default function Hero({ onOpenConsultation }) {
+export default function Hero({ onOpenConsultation, onOpenSearch }) {
   return (
     <section className="relative min-h-[720px] lg:min-h-[840px] flex items-center justify-center text-white overflow-hidden border-b-4 border-gold-500 py-16 sm:py-24">
       
@@ -27,6 +28,19 @@ export default function Hero({ onOpenConsultation }) {
       >
         {/* Minimal Neutral Shadow for Perfect Text Readability (Zero Color Tint) */}
         <div className="absolute inset-0 bg-black/45"></div>
+      </div>
+
+      {/* Absolute Floating Search Button Over Hero Background Image */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-8 z-20">
+        <button
+          onClick={onOpenSearch}
+          className="flex items-center gap-2 sm:gap-2.5 py-2 sm:py-2.5 px-3.5 sm:px-5 rounded-2xl bg-black/60 hover:bg-black/85 text-white border-2 border-gold-400/80 hover:border-gold-300 backdrop-blur-md shadow-2xl transition-all duration-200 hover:scale-105 cursor-pointer group"
+          title="Search all 38+ services (Ctrl+K)"
+        >
+          <Search className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold-400 group-hover:scale-110 transition-transform" />
+          <span className="text-xs sm:text-sm font-black tracking-wide">Search 38+ Services...</span>
+          <kbd className="hidden sm:inline text-[10px] bg-white/20 px-1.5 py-0.5 rounded font-mono text-gold-300">Ctrl K</kbd>
+        </button>
       </div>
 
       {/* Spacious, Open, Uncluttered Container */}
@@ -99,35 +113,25 @@ export default function Hero({ onOpenConsultation }) {
           {/* 2nd Block: Clickable Link to About Us with Hover Effect */}
           <Link
             to="/about"
-            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
-            title="View CA Deepanshi Bansal Profile"
+            className="bg-black/60 hover:bg-black/80 backdrop-blur-md border border-white/20 hover:border-gold-400 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center transition-all duration-200 group cursor-pointer"
           >
-            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
-              CA DEEPANSHI BANSAL
-            </span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">
-              B.COM, ACA, DISA
+            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 group-hover:text-gold-300 block mb-0.5">2</span>
+            <span className="text-[11px] sm:text-xs font-black text-gold-400 group-hover:text-gold-300 uppercase tracking-wider flex items-center justify-center gap-1">
+              <span>PARTNERS (CA)</span>
+              <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
             </span>
           </Link>
 
-          {/* 3rd Block: Clickable Link to About Us with Hover Effect */}
-          <Link
-            to="/about"
-            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
-            title="View CA Parul Profile"
-          >
-            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
-              CA PARUL
-            </span>
-            <span className="text-[11px] sm:text-xs font-bold text-slate-100 uppercase tracking-wider">
-              M.COM, FCA
-            </span>
-          </Link>
+          {/* 3rd Block: Static (All Golden) */}
+          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
+            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">100%</span>
+            <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">UDIN VERIFIED</span>
+          </div>
 
           {/* 4th Block: Static (All Golden) */}
           <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
-            <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CLIENT FOCUSED</span>
-            <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">APPROACH</span>
+            <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">Budhana Gate</span>
+            <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">MEERUT CENTRAL</span>
           </div>
         </div>
 

@@ -478,7 +478,7 @@ export default function Navbar({ onOpenConsultation, onOpenSearch }) {
                 }}
                 className="w-full py-3 rounded-xl bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 text-navy-950 text-xs font-black uppercase tracking-wider shadow-md text-center cursor-pointer"
               >
-                Partner Consultation
+                Book Consultation
               </button>
             </div>
           </div>

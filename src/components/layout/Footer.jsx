@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
+import { handleSmartEmailClick } from '../../utils/emailHelper';
 
 // Crisp LinkedIn Icon SVG
 function LinkedinIcon({ className = "w-4 h-4" }) {
@@ -196,7 +197,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold-400 shrink-0" />
-                <a href={`mailto:${siteConfig.email}?subject=Inquiry%20Regarding%20CA%20Services%20-%20DRB%20%26%20COMPANY`} className="hover:text-gold-400">{siteConfig.email}</a>
+                <a href={`mailto:${siteConfig.email}`} onClick={handleSmartEmailClick} className="hover:text-gold-400 cursor-pointer">{siteConfig.email}</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />

@@ -4,6 +4,7 @@ import { Briefcase, CheckCircle2, User, Mail, Phone, Upload, Send, AlertCircle, 
 import SEO from '../components/common/SEO';
 import { siteConfig } from '../data/siteConfig';
 import { submitLeadToSpreadsheet } from '../services/leadService';
+import { handleSmartEmailClick } from '../utils/emailHelper';
 
 export default function CareersPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -96,9 +97,10 @@ export default function CareersPage() {
               </p>
               <p className="font-semibold text-navy-950 dark:text-gold-300">
                 You may drop your CV at{' '}
-                <a
-                  href={`mailto:${siteConfig.email}?subject=Resume%20for%20Future%20Opportunity%20-%20DRB%20%26%20COMPANY`}
-                  className="text-gold-600 dark:text-gold-400 underline underline-offset-4 font-bold"
+                <a 
+                  href={`mailto:${siteConfig.email}`}
+                  onClick={(e) => handleSmartEmailClick(e, 'Resume for Future Opportunity - DRB & COMPANY')}
+                  className="text-gold-600 dark:text-gold-400 underline underline-offset-4 font-bold cursor-pointer"
                 >
                   {siteConfig.email}
                 </a>

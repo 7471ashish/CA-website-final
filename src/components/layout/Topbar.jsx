@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, Clock, ShieldCheck } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
+import { handleSmartEmailClick } from '../../utils/emailHelper';
 
 export default function Topbar() {
   return (
@@ -27,11 +28,12 @@ export default function Topbar() {
           {/* Divider */}
           <span className="text-white/20 hidden sm:inline">&bull;</span>
 
-          {/* Full Email Address */}
+          {/* Full Email Address (Smart Router: App on Mobile, Gmail Web on Laptop) */}
           <a
-            href={`mailto:${siteConfig.email}?subject=Inquiry%20Regarding%20CA%20Services%20-%20DRB%20%26%20COMPANY`}
-            className="hidden sm:flex items-center gap-1.5 text-slate-200 hover:text-gold-400 transition-colors shrink-0 group whitespace-nowrap"
-            title="Compose email to CA Deepanshi Bansal"
+            href={`mailto:${siteConfig.email}`}
+            onClick={handleSmartEmailClick}
+            className="hidden sm:flex items-center gap-1.5 text-slate-200 hover:text-gold-400 transition-colors shrink-0 group whitespace-nowrap cursor-pointer"
+            title="Send Email to CA Deepanshi Bansal"
           >
             <span className="p-0.5 rounded bg-gold-500/15 text-gold-400 group-hover:bg-gold-500/25 transition-colors shrink-0">
               <Mail className="w-3.5 h-3.5" />

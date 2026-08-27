@@ -5,6 +5,7 @@ import SEO from '../components/common/SEO';
 import { siteConfig } from '../data/siteConfig';
 import { submitLeadToSpreadsheet } from '../services/leadService';
 import ConfirmationPopup from '../components/common/ConfirmationPopup';
+import { handleSmartEmailClick } from '../utils/emailHelper';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -210,7 +211,7 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-gold-400 shrink-0" />
                     <div>
                       <strong className="text-white block mb-0.5">Email Address</strong>
-                      <a href={`mailto:${siteConfig.email}?subject=Inquiry%20Regarding%20CA%20Services%20-%20DRB%20%26%20COMPANY`} className="hover:text-gold-400">{siteConfig.email}</a>
+                      <a href={`mailto:${siteConfig.email}`} onClick={handleSmartEmailClick} className="hover:text-gold-400 cursor-pointer">{siteConfig.email}</a>
                     </div>
                   </div>
 

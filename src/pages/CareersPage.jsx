@@ -45,12 +45,12 @@ export default function CareersPage() {
 
   return (
     <div className="bg-slate-50 dark:bg-navy-950 text-slate-800 dark:text-slate-200 transition-colors duration-200">
-      <SEO 
+      <SEO
         title="Careers & Articleship | DRB & COMPANY - Chartered Accountants Meerut"
         description="Careers & Articleship talent pool at DRB & COMPANY Chartered Accountants in Meerut. Submit your CV for future opportunities in Tax, Audit & Corporate Law."
         canonical="https://www.drbandcompany.com/careers"
       />
-      
+
       {/* Page Hero */}
       <section className="bg-gradient-to-br from-[#102c4c] via-[#143862] to-[#0e2744] text-white py-16 border-b-4 border-gold-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,7 +71,7 @@ export default function CareersPage() {
       {/* Main Content */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* NO ACTIVE OPENINGS NOTICE BANNER */}
           <div className="bg-white dark:bg-navy-900 border-2 border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-12 shadow-xl text-center mb-12 relative overflow-hidden">
             <div className="w-16 h-16 rounded-2xl bg-amber-100 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto mb-5 shadow-inner">
@@ -87,7 +87,7 @@ export default function CareersPage() {
             </h2>
 
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal">
-              We currently do not have any open positions or immediate vacancies at <strong>{siteConfig.firmName}</strong>. 
+              We currently do not have any open positions or immediate vacancies at <strong>{siteConfig.firmName}</strong>.
             </p>
 
             <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 max-w-xl mx-auto text-xs sm:text-sm text-slate-700 dark:text-slate-300 space-y-2">
@@ -96,10 +96,8 @@ export default function CareersPage() {
               </p>
               <p className="font-semibold text-navy-950 dark:text-gold-300">
                 You may drop your CV at{' '}
-                <a 
-                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=${siteConfig.email}&su=Resume%20for%20Future%20Opportunity%20-%20DRB%20%26%20COMPANY`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <a
+                  href={`mailto:${siteConfig.email}?subject=Resume%20for%20Future%20Opportunity%20-%20DRB%20%26%20COMPANY`}
                   className="text-gold-600 dark:text-gold-400 underline underline-offset-4 font-bold"
                 >
                   {siteConfig.email}
@@ -111,7 +109,7 @@ export default function CareersPage() {
           {/* TALENT POOL / RESUME DROP FORM */}
           <div className="bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-lg">
             <div className="max-w-2xl mx-auto">
-              
+
               <div className="text-center mb-8">
                 <span className="text-xs font-black uppercase tracking-widest text-gold-600 dark:text-gold-400">Future Opportunities</span>
                 <h3 className="font-heading text-2xl font-black text-navy-950 dark:text-white tracking-tight mt-1">

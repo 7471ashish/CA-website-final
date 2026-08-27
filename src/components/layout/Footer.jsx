@@ -196,7 +196,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-gold-400 shrink-0" />
-                <a href={siteConfig.gmailUrl} target="_blank" rel="noopener noreferrer" className="hover:text-gold-400">{siteConfig.email}</a>
+                <a href={`mailto:${siteConfig.email}?subject=Inquiry%20Regarding%20CA%20Services%20-%20DRB%20%26%20COMPANY`} className="hover:text-gold-400">{siteConfig.email}</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-gold-400 shrink-0 mt-0.5" />

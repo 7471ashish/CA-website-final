@@ -104,7 +104,7 @@ export default function Hero({ onOpenConsultation, onOpenSearch }) {
         {/* Wide Bottom Trust Badges */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 w-full max-w-5xl mt-6">
           {/* 1st Block: Static (All Golden) */}
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
+          <div className="order-3 sm:order-1 bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
             <span className="font-heading text-2xl sm:text-3xl font-black text-gold-400 block mb-0.5">250+</span>
             <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">CLIENTS SERVED</span>
           </div>
@@ -112,7 +112,7 @@ export default function Hero({ onOpenConsultation, onOpenSearch }) {
           {/* 2nd Block: Clickable Link to About Us with Partner Deepanshi Bansal */}
           <Link
             to="/about"
-            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
+            className="order-1 sm:order-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
             title="View CA. DEEPANSHI BANSAL Profile"
           >
             <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
@@ -126,7 +126,7 @@ export default function Hero({ onOpenConsultation, onOpenSearch }) {
           {/* 3rd Block: Clickable Link to About Us with Partner Parul */}
           <Link
             to="/about"
-            className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
+            className="order-2 sm:order-3 bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl hover:border-gold-400 hover:bg-black/80 hover:scale-[1.02] transition-all duration-200 cursor-pointer flex flex-col justify-center items-center group"
             title="View CA. PARUL Profile"
           >
             <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 group-hover:text-gold-300 block mb-0.5 leading-tight transition-colors">
@@ -138,7 +138,7 @@ export default function Hero({ onOpenConsultation, onOpenSearch }) {
           </Link>
 
           {/* 4th Block: Static (All Golden) */}
-          <div className="bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
+          <div className="order-4 sm:order-4 bg-black/60 backdrop-blur-md border border-white/20 rounded-2xl p-3.5 sm:p-4 text-center shadow-2xl flex flex-col justify-center items-center">
             <span className="font-heading text-sm sm:text-base lg:text-lg font-black text-gold-400 block mb-0.5 leading-tight">CLIENT FOCUSED</span>
             <span className="text-[11px] sm:text-xs font-black text-gold-400 uppercase tracking-wider">APPROACH</span>
           </div>
